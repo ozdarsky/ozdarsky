@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import bwapi.DefaultBWListener;
 import bwapi.Game;
@@ -13,9 +14,12 @@ import bwapi.Player;
 import bwapi.Unit;
 import bwapi.UnitType;
 import bwta.BWTA;
+import ondarsky.gmail.com.orders.IExclusive;
+import ondarsky.gmail.com.orders.IPrioritizedOrder;
 import ondarsky.gmail.com.orders.Order;
-import ondarsky.gmail.com.orders.PrioritizedOrder;
 import ondarsky.gmail.com.orders.custom.DroneGatherOrder;
+import ondarsky.gmail.com.orders.custom.ZergBuildDrone;
+import ondarsky.gmail.com.orders.custom.ZergBuildOverlord;
 
 public class EddieBot extends DefaultBWListener {
     private Mirror mirror = new Mirror();
@@ -24,13 +28,18 @@ public class EddieBot extends DefaultBWListener {
 
     private int nextReportTime = 0;
 
-    private Map<UnitType, List<Order<Unit>>> orders;
+    private Map<UnitType, List<Order>> orders;
 
-    public void initialSetup(Game game) {
+    public void initialSetup(Game game, Player player) {
         orders.computeIfAbsent(UnitType.Zerg_Drone, k -> new LinkedList<>()).add(new DroneGatherOrder(game));
-        orders.computeIfAbsent(UnitType.Zerg_Hatchery, k -> new LinkedList<>()).add(new DroneGatherOrder(game));
-        orders.computeIfAbsent(UnitType.Zerg_Lair, k -> new LinkedList<>()).add(new DroneGatherOrder(game));
-        orders.computeIfAbsent(UnitType.Zerg_Hive, k -> new LinkedList<>()).add(new DroneGatherOrder(game));
+
+        Order droneBuild = new ZergBuildDrone(game, player);
+        Order overlordBuild = new ZergBuildOverlord(game, player);
+        Stream.of(UnitType.Zerg_Hatchery, UnitType.Zerg_Lair, UnitType.Zerg_Hive)
+                .forEach(type -> {
+                    orders.computeIfAbsent(type, k -> new LinkedList<>()).add(droneBuild);
+                    orders.get(type).add(overlordBuild);
+                });
     }
 
     public void run() {
@@ -47,7 +56,7 @@ public class EddieBot extends DefaultBWListener {
     public void onStart() {
         game = mirror.getGame();
         self = game.self();
-        initialSetup(game);
+        initialSetup(game, self);
 
         // Use BWTA to analyze map
         // This may take a few minutes if the map is processed first time!
@@ -69,19 +78,21 @@ public class EddieBot extends DefaultBWListener {
         }
 
         // iterate through my units
-        self.getUnits().parallelStream().collect(Collectors.groupingBy(Unit::getType)).forEach((unitType, unitList) -> {
-            // find first applicable order and execute it
-            for (Unit unit : unitList) {
-                orders.get(unitType).stream().map(Order.class::cast).filter(order -> order.checkCondition(unit))
-                        .findFirst().ifPresent(order -> {
-                            @SuppressWarnings("unchecked")
-                            Boolean result = (Boolean) order.executeFor(unit);
-                            if (Boolean.TRUE.equals(result) && order instanceof PrioritizedOrder) {
-                                ((PrioritizedOrder) order).decay();
-                            }
-                        });
-            }
-        });
+        self.getUnits().parallelStream()
+                .collect(Collectors.groupingBy(Unit::getType))
+                .forEach((unitType, unitList) -> {
+                    // find first applicable order and execute it
+                    for (Unit unit : unitList) {
+                        orders.get(unitType).stream()
+                                .filter(order -> order.checkCondition(unit))
+                                .findFirst().ifPresent(order -> {
+                                    Boolean result = order.executeFor(unit);
+                                    if (Boolean.TRUE.equals(result) && order instanceof IPrioritizedOrder) {
+                                        ((IPrioritizedOrder) order).decay();
+                                    }
+                                });
+                    }
+                });
 
         // for all my units
         if (nextReportTime == 0 || nextReportTime > game.elapsedTime()) {
@@ -94,8 +105,13 @@ public class EddieBot extends DefaultBWListener {
         }
 
         // reorder unit's orders based on their execution
-        for (List<Order<Unit>> allOfThem : orders.values()) {
+        for (List<Order> allOfThem : orders.values()) {
+            // order them by new priorities
             Collections.sort(allOfThem, (o1, o2) -> Double.compare(o1.getPriority(), o2.getPriority()));
+            // also unlock any exclusive orders to be read for next execution
+            allOfThem.stream()
+                    .filter(IExclusive.class::isInstance)
+                    .forEach(o -> ((IExclusive) o).doUnlock());
         }
     }
 
