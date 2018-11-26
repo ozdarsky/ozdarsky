@@ -1,5 +1,6 @@
 package ondarsky.gmail.com.orders;
 
+import java.util.EnumSet;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -10,12 +11,27 @@ public abstract class Order {
     private final Predicate<Unit> condition;
     private final Function<Unit, Boolean> doStuff;
 
+    protected Integer gate;
+    protected Integer originalGateSize;
+
+    private EnumSet<EDirectiveOption> options = EnumSet.noneOf(EDirectiveOption.class);
+
+    public enum EDirectiveOption {
+        Exclusive,
+        Prioritized
+    }
+
     /**
-     * Constructor
+     * Constructors
      */
     protected Order(Predicate<Unit> condition, Function<Unit, Boolean> doStuff) {
+        this(condition, doStuff, 1);
+    }
+
+    protected Order(Predicate<Unit> condition, Function<Unit, Boolean> doStuff, int limit) {
         this.condition = condition;
         this.doStuff = doStuff;
+        this.gate = originalGateSize = limit;
     }
 
     /**
@@ -56,5 +72,14 @@ public abstract class Order {
      */
     public double getPriority() {
         return 10.0;
+    }
+
+    public Order addOption(EDirectiveOption opt) {
+        options.add(opt);
+        return this;
+    }
+
+    public EnumSet<EDirectiveOption> getOptions() {
+        return options;
     }
 }

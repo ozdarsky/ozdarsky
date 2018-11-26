@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import bwapi.DefaultBWListener;
 import bwapi.Game;
@@ -21,7 +20,7 @@ import ondarsky.gmail.com.orders.custom.DroneGatherOrder;
 import ondarsky.gmail.com.orders.custom.ZergBuildDrone;
 import ondarsky.gmail.com.orders.custom.ZergBuildOverlord;
 
-public class EddieBot extends DefaultBWListener {
+public class DepressiveMarvin extends DefaultBWListener {
     private Mirror mirror = new Mirror();
     private Game game;
     private Player self;
@@ -31,19 +30,13 @@ public class EddieBot extends DefaultBWListener {
     private Map<UnitType, List<Order>> orders;
 
     public void initialSetup(Game game, Player player) {
-        orders.computeIfAbsent(UnitType.Zerg_Drone, k -> new LinkedList<>()).add(new DroneGatherOrder(game));
+        initDrones(game);
+        initLarvas(game, player);
 
-        Order droneBuild = new ZergBuildDrone(game, player);
-        Order overlordBuild = new ZergBuildOverlord(game, player);
-        Stream.of(UnitType.Zerg_Hatchery, UnitType.Zerg_Lair, UnitType.Zerg_Hive)
-                .forEach(type -> {
-                    orders.computeIfAbsent(type, k -> new LinkedList<>()).add(droneBuild);
-                    orders.get(type).add(overlordBuild);
-                });
     }
 
     public void run() {
-        mirror.getModule().setEventListener(new EddieBot());
+        mirror.getModule().setEventListener(new DepressiveMarvin());
         mirror.startGame();
     }
 
@@ -87,14 +80,15 @@ public class EddieBot extends DefaultBWListener {
                                 .filter(order -> order.checkCondition(unit))
                                 .findFirst().ifPresent(order -> {
                                     Boolean result = order.executeFor(unit);
-                                    if (Boolean.TRUE.equals(result) && order instanceof IPrioritizedOrder) {
+                                    if (Boolean.TRUE.equals(result) && order.getOptions().contains(
+                                            Order.EDirectiveOption.Prioritized)) {
                                         ((IPrioritizedOrder) order).decay();
                                     }
                                 });
                     }
                 });
 
-        // for all my units
+        // for all my units report them periodically
         if (nextReportTime == 0 || nextReportTime > game.elapsedTime()) {
             nextReportTime = game.elapsedTime() * 30;
             StringBuilder report = new StringBuilder("My units:\n");
@@ -110,15 +104,37 @@ public class EddieBot extends DefaultBWListener {
             Collections.sort(allOfThem, (o1, o2) -> Double.compare(o1.getPriority(), o2.getPriority()));
             // also unlock any exclusive orders to be read for next execution
             allOfThem.stream()
-                    .filter(IExclusive.class::isInstance)
-                    .forEach(o -> ((IExclusive) o).doUnlock());
+                    .filter(order -> order.getOptions().contains(Order.EDirectiveOption.Exclusive))
+                    .map(IExclusive.class::cast)
+                    .forEach(IExclusive::unlock);
         }
+    }
+
+    /**
+     * Do all stuff tied to Larvas
+     */
+    private void initLarvas(Game game, Player player) {
+        List<Order> larvaOrders = orders.computeIfAbsent(UnitType.Zerg_Larva, k -> new LinkedList<>());
+        Collections.addAll(larvaOrders,
+                new ZergBuildDrone(game, player),
+                new ZergBuildOverlord(game, player));
+    }
+
+    /**
+     * Do all the stuff your Drones want you to do
+     * 
+     * @param game
+     */
+    private void initDrones(Game game) {
+        List<Order> droneOrders = orders.computeIfAbsent(UnitType.Zerg_Drone, k -> new LinkedList<>());
+        Collections.addAll(droneOrders,
+                new DroneGatherOrder(game));
     }
 
     /**
      * Runs the bot
      */
     public static void main(String[] args) {
-        new EddieBot().run();
+        new DepressiveMarvin().run();
     }
 }
