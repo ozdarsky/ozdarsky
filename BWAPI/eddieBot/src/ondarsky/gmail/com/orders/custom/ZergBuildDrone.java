@@ -4,57 +4,57 @@ import bwapi.Game;
 import bwapi.Player;
 import bwapi.Unit;
 import bwapi.UnitType;
-import ondarsky.gmail.com.orders.IExclusive;
-import ondarsky.gmail.com.orders.IPrioritizedOrder;
-import ondarsky.gmail.com.orders.Order;
+import ondarsky.gmail.com.orders.IPriortniPrikaz;
+import ondarsky.gmail.com.orders.IVylucny;
+import ondarsky.gmail.com.orders.Prikaz;
 
-public class ZergBuildDrone extends Order implements IPrioritizedOrder, IExclusive {
+public class ZergBuildDrone extends Prikaz implements IPriortniPrikaz, IVylucny {
 
     private double priority = 50;
     private Player player;
 
     public ZergBuildDrone(Game game, Player player) {
-        // if there's enough minerals, train a Drone
+        // pokud je dost mineralu postav Drona
         super(
                 unit -> unit.getType().producesLarva() && UnitType.Zerg_Drone.mineralPrice() <= player.minerals(),
                 unit -> unit.train(UnitType.Zerg_Drone),
                 3);
         this.player = player;
-        this.addOption(EDirectiveOption.Prioritized)
-                .addOption(EDirectiveOption.Exclusive);
+        this.addOption(EVlastnostPrikazu.Prioritni)
+                .addOption(EVlastnostPrikazu.Exklusivni);
     }
 
     @Override
-    public void decay() {
+    public void vyhnij() {
         priority = priority / player.allUnitCount(UnitType.Zerg_Drone);
     }
 
     @Override
-    public void bolster() {
-        raisePriority(player.minerals() / 100);
+    public void propleskni() {
+        zvysPrioritu(player.minerals() / 100);
     }
 
     @Override
-    public void raisePriority(double amount) {
+    public void zvysPrioritu(double amount) {
         priority += amount;
 
     }
 
     @Override
-    public void decreasePriority(double amount) {
+    public void snizPrioritu(double amount) {
         priority -= amount;
     }
 
     @Override
-    public double getPriority() {
+    public double getPrioritu() {
         return this.priority;
     }
 
     @Override
-    public synchronized Boolean executeExclusively(Unit unit) {
-        synchronized (gate) {
-            if (gate >= 0) {
-                gate--;
+    public synchronized Boolean provedVylucne(Unit unit) {
+        synchronized (branka) {
+            if (branka >= 0) {
+                branka--;
                 return executeFor(unit);
             } else {
                 return false;
@@ -63,7 +63,7 @@ public class ZergBuildDrone extends Order implements IPrioritizedOrder, IExclusi
     }
 
     @Override
-    public synchronized void unlock() {
-        gate = originalGateSize;
+    public synchronized void odemkni() {
+        branka = originalniVelikostBranky;
     }
 }
