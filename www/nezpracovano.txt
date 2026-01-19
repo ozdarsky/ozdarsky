@@ -1,0 +1,51 @@
+CONTENT THAT WAS NOT MERGED OR UNCERTAIN HOW TO MERGE:
+======================================================================
+
+1. NAVIGATION ITEMS:
+   - 'O mně' instead of 'O mn' (incomplete in staj.html)
+   - Navigation structure is preserved from index.html
+
+2. PHONE NUMBER FORMAT:
+   - Staj.html shows: '+420 730 194 585' (split as '+420 730 194' and '585')
+   - Merged as: '+420 730 194 585'
+
+3. HIDDEN/INCOMPLETE CONTENT FROM STAJ.HTML:
+   - 'Reference (prozatím skrýt)' - marked to be hidden
+   - 'Moji spokojení klienti (prozatím skrýt)' - marked to be hidden
+   - Testimonials marked with 'XXX', 'Xxxx' - placeholder content
+   - 'Jak poznám, kterou velikost zvolit? - Připravuji.' - incomplete
+   - 'Jak se mám o boty starat? - Připravuji.' - incomplete
+   - 'změnit barvu obdélníku' - design note, not content
+   - '(+ ještě doplním, co by ještě zákazník chtěl vědět...)' - note for future content
+
+4. SOCIAL MEDIA LINKS:
+   - Facebook (odkaz) - link not provided in staj.html
+   - Instagram (odkaz) - link not provided in staj.html
+   - These were not added to index2.html
+
+5. INCOMPLETE FAQ ITEMS:
+   - Only 3 FAQ items were used to replace the 3 testimonials
+   - The incomplete FAQ items ('Jak poznám velikost', 'Jak se starat') were skipped
+
+6. HIGHLIGHTED/MARKED CONTENT IN STAJ.HTML:
+   - Yellow highlighted sections indicate work in progress
+   - 'Obchodní podmínky (přidat odkaz – připravuji)' - link not ready
+
+7. IMAGES/GRAPHICS:
+   - Staj.html references 'staj_files/image001.png' (horses image)
+   - This image was not merged as index.html uses emoji for logo
+   - Logo changed from '🧘 Klidné Asány' to '🐴 Boty ze stáje'
+
+8. ADDITIONAL PRODUCT INFORMATION:
+   - Pricing information is included in product descriptions
+   - Zaváděcí ceny (introductory prices) are preserved
+
+9. WORD-SPECIFIC FORMATTING:
+   - Microsoft Word metadata and VML graphics were stripped
+   - Only text content was extracted and merged
+
+10. STRUCTURE MAPPING:
+   - Yoga types → Jezdecké boty models (3 types)
+   - 5 features maintained from both sources
+   - Testimonials → FAQ items (3 items)
+   - About section adapted to Gabriela's story

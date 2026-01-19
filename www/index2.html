@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.botyzestaje.cz - Boty ze stáje</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #666666;
+            background-color: #ffffff;
+        }
+        
+        header {
+            background-color: #ffffff;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #f3f3ed;
+        }
+        
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            color: #586d3f;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+        
+        nav ul li a {
+            color: #666666;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        nav ul li a:hover {
+            color: #586d3f;
+        }
+        
+        .phone {
+            color: #666666;
+            text-decoration: none;
+        }
+        
+        .hero {
+            background-color: #f3f3ed;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #586d3f;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #666666;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #586d3f;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #586d3f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .yoga-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .yoga-card {
+            background-color: #f3f3ed;
+            padding: 2rem;
+            border-radius: 5px;
+        }
+        
+        .yoga-card h3 {
+            margin-top: 1rem;
+        }
+        
+        .contact-box {
+            background-color: #586d3f;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 5px;
+        }
+        
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-box a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-number {
+            font-size: 2rem;
+            color: #a8a37e;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .about-section {
+            background-color: #f3f3ed;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #586d3f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quote-section {
+            background-color: #f3f3ed;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .quote-section h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        
+        footer {
+            background-color: #586d3f;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .yoga-types,
+            .features,
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo-text">🐴 Boty ze stáje</div>
+            <nav>
+                <ul>
+                    <li><a href="#uvod">Úvod</a></li>
+                    <li><a href="#nase-nabidka">Nabídka</a></li>
+                    <li><a href="#o-nas">O mně</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+420123456789" class="phone">📞 +420 730 194 585</a>
+        </div>
+    </header>
+    
+    <section class="hero" id="uvod">
+        <div class="container">
+            <h1>Boty ze stáje</h1>
+            <p>Ručně šité. Zdravé. Komfortní. Kvalitní. Jedinečné.</p>
+        </div>
+    </section>
+    
+    <section id="nase-nabidka">
+        <div class="container">
+            <h2>Zakázková výroba jezdecké obuvi</h2>
+            <p>Jezdecké boty, ve kterých se budete cítit skvěle. Anatomický tvar s důrazem na zdraví, pohodlí i bezpečnost při jízdě.</p>
+            
+            <div class="yoga-types">
+                <div class="yoga-card">
+                    <h3>Celoroční model</h3>
+                    <p>Kožené jezdecké perka v elegantním střihu jsou změkčené příjemnou podšívkovou usní. Jsou ušité na středně vysoké podešvi, která umožňuje pohodlné opření nohy ve třmenu, aniž by omezovala komfort při chůzi. Model má širší špici, aby respektoval přirozenou anatomii chodidla.</p>
+                </div>
+                
+                <div class="yoga-card">
+                    <h3>Zimní model</h3>
+                    <p>Kožené jezdecké perka v moderním střihu zateplené merinem, vyrobené na vyšší podešvi pro lepší izolaci chladu od země. Přesto jsou dostatečně ohebné a pohodlné pro jízdu i chůzi. Model má širší špici, aby respektoval přirozenou anatomii chodidla.</p>
+                </div>
+                
+                <div class="yoga-card">
+                    <h3>Vlastní model</h3>
+                    <p>Fantazii se meze nekladou. Jezdecké perka si můžete sestavit tak, jak potřebujete. Volit lze barvu kůže — přičemž se nemusíte omezovat na jediný odstín, možné jsou i různé barevné kombinace. Dále si můžete zvolit, zda chcete zateplenou podšívku, nebo celoroční variantu. Podrážka může být hladká, elegantní s jemným vzorkem, nebo robustnější traktorová. Širší špice pro vaše pohodlí je samozřejmostí.</p>
+                </div>
+            </div>
+            
+            <div class="contact-box">
+                <h3>Máte zájem o jezdecké boty?</h3>
+                <p>📞 <a href="tel:+420123456789">+420 730 194 585</a></p>
+                <p>✉️ <a href="mailto:botyzestaje@gmail.com">botyzestaje@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+    
+    <section style="background-color: #f3f3ed;">
+        <div class="container">
+            <h2>Co Vám nabízím</h2>
+            <p>Jsem tu, abych vám nabídla výjimečné jezdecké boty, které se dokonale přizpůsobí vašim potřebám i osobním preferencím. Přitom zůstanou věrné všemu, co správné jezdecké boty musí splňovat.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-number">1</div>
+                    <h3>Osobní přístup</h3>
+                    <p>Přizpůsobuji jezdeckou obuv individuálním potřebám a společně vytvoříme boty, které nebudete chtít sundat.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">2</div>
+                    <h3>Široká variabilita</h3>
+                    <p>Nabízím několik modelů, u kterých si sami můžete zvolit, jak bude bota vypadat zvenku, jakou bude mít podšívku i podešev (podrážku). Vždy však dbám na maximální pohodlí a bezpečnost. Všechny moje modely mají širší špiči – tak akorát pro prsty i do třmenu.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">3</div>
+                    <h3>Flexibilita</h3>
+                    <p>Boty, které pro vás ušiji, vás spolehlivě podrží v sedle, při práci ze země i při každodenním pohybu ve stáji — jedny boty pro všechny vaše chvíle s koňmi.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">4</div>
+                    <h3>Pohodová domluva</h3>
+                    <p>Než cokoliv zaplatíte, společně se setkáme — osobně nebo online — a probereme vaše představy i to, co vám mohu nabídnout. Teprve když si vše jasně shrneme a vzájemně odsouhlasíme, pustím se do výroby.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">5</div>
+                    <h3>Zkušenosti a profesionalita</h3>
+                    <p>Ze světa koní si nesu mnoho let zkušeností — jak z hodin strávených v sedle, tak z každodenní péče o vlastní stáj. Do všeho, co dělám, se nejdřív důkladně ponořím: studuji, zkouším, učím se. Díky tomu vám mohu nabídnout skutečnou kvalitu, za kterou si stojím.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-section" id="o-nas">
+        <div class="container">
+            <h2>Něco o mně</h2>
+            <p>Jmenuji se Gabriela Povýšilová, a mnozí mě možná znáte nejen jako milovnici koní, ale také jako koňskou zubařku, tehdy ještě pod jménem Gabriela Šedivcová. Kvůli postupujícím problémům se zápěstími a zády jsem ale musela zubařinu odložit — a i když to nebylo snadné, otevřelo mi to dveře k nové kapitole.</p>
+            
+            <p>Původně jsem si chtěla jen pořídit jezdecké boty, které nebudou deformovat moje nohy. V běžném životě jsem si zvykla na zdravou, pohodlnou obuv, a stejný komfort jsem hledala i u jezdeckého vybavení. Marně. A tak jsem se do tématu ponořila hlouběji. Měla jsem obrovské štěstí, když jsem narazila na Jitku Le Rach. Spojením mého zkušenostního know-how ze světa koní a Jitčiny špičkové profesionality v ruční výrobě obuvi vznikl design jezdeckých bot nové generace. A na naší nabídce společně nepřestáváme pracovat — dál ji rozvíjíme, rozšiřujeme a ladíme tak, aby jezdcům opravdu sloužila.</p>
+        </div>
+    </section>
+    
+    <section id="reference">
+        <div class="container">
+            <h2>FAQ - Často kladené otázky</h2>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-author">Proč právě Boty ze stáje?</p>
+                    <p>Noha je neuvěřitelně citlivý a důmyslný nástroj. Obsahuje nervová zakončení spojená s klíčovými orgány a zároveň funguje jako náš nejpřirozenější tlumicí systém. Proto ani jezdecká bota nesmí nohu omezovat — naopak ji má chránit, podpořit a umožnit jí pracovat tak, jak byla stvořena. Když bota nohu svazuje nebo deformuje, může to vést k celé řadě potíží: od únavy, zhoršeného prokrvení, snížení výkonnosti až po bolesti hlavy, zad, menší soustředění, přetížení kloubů i měkkých tkání nebo nadměrné pocení. A přesně tomu je potřeba se vyhnout.</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-author">Je v Botách ze stáje jízda na koni bezpečná?</p>
+                    <p>I když mají moje boty špičku dostatečně širokou pro maximální komfort a přirozenou práci prstů, je zároveň navržena tak, aby v případě potřeby umožnila bezpečně vyklouznout ze třmenu. Přesto doporučuji jezdit s bezpečnostními třmeny. Stejně tak jsou Boty ze stáje vybavené menším podpatkem, který zvyšuje stabilitu ve třmenu, ale zůstává dostatečně nízký, aby nenarušoval přirozenou anatomii a funkci nohy.</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-author">Jak probíhá objednávka?</p>
+                    <p>Ozvěte se mi prosím na uvedený kontakt (e‑mailem nebo telefonicky) a domluvíme si osobní či online setkání. Během schůzky probereme vaše představy a já vám navrhnu, jak je můžeme společně proměnit ve skutečnost. Také od vás budu potřebovat míry nohou – vysvětlím vám, jak je správně změřit. Následně pro vás připravím shrnutí zadání, které si spolu finálně odsouhlasíme. Teprve poté vás požádám o zaplacení zálohy ve výši 1500 Kč/2000 Kč (dle výběru materiiálů) a s radostí se pustím do výroby. Doplatek uhradíte až po dokončení. Vaše jedinečné Boty ze stáje si poté můžete převzít osobně, nebo vám je zašlu na adresu. Pak už zbývá jediné – pořádně si je užívat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="quote-section">
+        <div class="container">
+            <h2>Vaše nohy si zaslouží jezdeckou obuv, která je respektuje.<br>Každý pár vzniká na zakázku. Ušiji vám boty, které budou sloužit i těšit.</h2>
+        </div>
+    </section>
+    
+    <section id="kontakt" style="background-color: #f3f3ed;">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p style="text-align: center; margin-top: 1rem;">
+                📞 <a href="tel:+420123456789" style="color: #586d3f; text-decoration: none;">+420 730 194 585</a><br>
+                ✉️ <a href="mailto:botyzestaje@gmail.com" style="color: #586d3f; text-decoration: none;">botyzestaje@gmail.com</a><br><br>
+                Boty ze stáje, Lázeňská 60, Kostelec nad Černými lesy, 281 63<br>IČ: 87649977
+            </p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2026 www.botyzestaje.cz | Gabriela Povýšilová</p>
+    </footer>
+</body>
+</html>
