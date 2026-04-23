@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  COASTAL WIND 35 — 1:11 SCALE MODEL LINES PLAN
+  Model LOA: 955 mm · LWL: 818 mm · Beam: 309 mm · Draft: 177 mm
+  Scale note: All dimensions = full-scale ÷ 11
+  This drawing is in real model mm (1:1 of the model, print A3 at 1:2 for benchtop use)
+  Coordinate system same as full-scale: x=0 at FP, y=0 at DWL (positive upward, SVG inverted)
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1100" height="650"
+     viewBox="-80 -300 1200 750">
+
+  <title>Coastal Wind 35 — 1:11 Scale Model Lines Plan</title>
+
+  <defs>
+    <style>
+      .hull    { stroke:#000; stroke-width:2; fill:none; }
+      .wl      { stroke:#4466aa; stroke-width:1; fill:none; stroke-dasharray:8,4; }
+      .station { stroke:#888; stroke-width:1; fill:none; stroke-dasharray:5,3; }
+      .keel    { stroke:#000; stroke-width:2; fill:none; }
+      .bulb    { stroke:#000; stroke-width:2; fill:#bbbbbb; fill-opacity:0.4; }
+      .dim     { stroke:#000; stroke-width:0.8; fill:none; }
+      .label   { font-family:Arial,sans-serif; font-size:14px; fill:#000; }
+      .labelSm { font-family:Arial,sans-serif; font-size:10px; fill:#333; }
+      .labelXs { font-family:Arial,sans-serif; font-size:8px; fill:#444; }
+      .title   { font-family:Arial,sans-serif; font-size:18px; fill:#000; font-weight:bold; }
+      .section { fill:#e8e8e8; stroke:#000; stroke-width:1.5; }
+      .cl      { stroke:#888; stroke-width:1; stroke-dasharray:6,3; }
+    </style>
+  </defs>
+
+  <!-- TITLE BLOCK -->
+  <rect x="-70" y="-290" width="1180" height="80" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+  <text class="title" x="520" y="-258" text-anchor="middle">COASTAL WIND 35 — 1:11 SCALE MODEL — LINES PLAN</text>
+  <text class="labelSm" x="520" y="-232" text-anchor="middle">Model: LOA 955mm · LWL 818mm · Beam 309mm · Draft 177mm · Displacement 6.39kg · Ballast 2.25kg</text>
+  <text class="labelXs" x="1070" y="-258" text-anchor="end">Sheet M1 of M3</text>
+  <text class="labelXs" x="1070" y="-235" text-anchor="end">Print A3 @ 1:2</text>
+
+  <!-- =================== PROFILE VIEW =================== -->
+  <text class="label" x="-70" y="-210">PROFILE (SIDE VIEW) — 1:1 MODEL SCALE</text>
+
+  <!-- Station lines (x = full_scale_x / 11) spacing = 900/11 = 81.8mm -->
+  <line class="station" x1="0"   y1="-250" x2="0"   y2="200"/>
+  <line class="station" x1="82"  y1="-250" x2="82"  y2="200"/>
+  <line class="station" x1="164" y1="-250" x2="164" y2="200"/>
+  <line class="station" x1="245" y1="-250" x2="245" y2="200"/>
+  <line class="station" x1="327" y1="-250" x2="327" y2="200"/>
+  <line class="station" x1="409" y1="-250" x2="409" y2="200"/>
+  <line class="station" x1="491" y1="-250" x2="491" y2="200"/>
+  <line class="station" x1="573" y1="-250" x2="573" y2="200"/>
+  <line class="station" x1="655" y1="-250" x2="655" y2="200"/>
+  <line class="station" x1="736" y1="-250" x2="736" y2="200"/>
+  <line class="station" x1="818" y1="-250" x2="818" y2="200"/>
+
+  <!-- Station labels -->
+  <text class="labelXs" x="0"   y="-255" text-anchor="middle">FP</text>
+  <text class="labelXs" x="82"  y="-255" text-anchor="middle">1</text>
+  <text class="labelXs" x="164" y="-255" text-anchor="middle">2</text>
+  <text class="labelXs" x="245" y="-255" text-anchor="middle">3</text>
+  <text class="labelXs" x="327" y="-255" text-anchor="middle">4</text>
+  <text class="labelXs" x="409" y="-255" text-anchor="middle">M</text>
+  <text class="labelXs" x="491" y="-255" text-anchor="middle">6</text>
+  <text class="labelXs" x="573" y="-255" text-anchor="middle">7</text>
+  <text class="labelXs" x="655" y="-255" text-anchor="middle">8</text>
+  <text class="labelXs" x="736" y="-255" text-anchor="middle">9</text>
+  <text class="labelXs" x="818" y="-255" text-anchor="middle">AP</text>
+
+  <!-- Waterlines -->
+  <!-- DWL = y=0 -->
+  <line x1="-45" y1="0" x2="860" y2="0" stroke="#0000cc" stroke-width="1.5"/>
+  <text class="labelXs" x="-50" y="3" text-anchor="end" fill="#0000cc">DWL</text>
+  <!-- WL-27 (=300/11) -->
+  <line class="wl" x1="-45" y1="27" x2="860" y2="27"/>
+  <text class="labelXs" x="-50" y="30" text-anchor="end" fill="#4466aa">-27</text>
+  <!-- WL+27 -->
+  <line class="wl" x1="-45" y1="-27" x2="860" y2="-27"/>
+  <text class="labelXs" x="-50" y="-24" text-anchor="end" fill="#4466aa">+27</text>
+  <!-- WL+55 -->
+  <line class="wl" x1="-45" y1="-55" x2="860" y2="-55"/>
+  <text class="labelXs" x="-50" y="-52" text-anchor="end" fill="#4466aa">+55</text>
+  <!-- Hull baseline (64mm below DWL = 700/11) -->
+  <line x1="-45" y1="64" x2="860" y2="64" stroke="#666" stroke-width="1" stroke-dasharray="5,3"/>
+  <text class="labelXs" x="-50" y="67" text-anchor="end">BASE</text>
+
+  <!-- SHEER LINE (deck profile) — model scale coords -->
+  <path class="hull" d="
+    M -36,-136
+    C -18,-130 0,-127 0,-127
+    C 55,-123 109,-115 164,-109
+    C 245,-105 327,-102 409,-100
+    C 491,-100 573,-100 655,-98
+    C 700,-98 736,-100 818,-109
+    C 836,-100 845,-95 900,-100
+  "/>
+  <!-- Bathing platform -->
+  <path class="hull" d="M 900,-100 L 900,-45 L 950,-45"/>
+
+  <!-- STEM -->
+  <path class="hull" d="M -36,-136 C -38,-90 -36,-45 -23,0 C -9,27 0,55 0,64"/>
+  <!-- HULL BOTTOM -->
+  <path class="hull" d="M 0,64 L 818,64 C 828,55 836,45 900,45"/>
+  <!-- TRANSOM -->
+  <path class="hull" d="M 900,-100 L 900,45"/>
+
+  <!-- KEEL (fin + bulb) -->
+  <path class="keel" d="M 318,64 C 309,91 309,127 327,159 C 354,160 409,160 464,159 C 482,127 491,91 473,64"/>
+  <path class="keel" d="M 327,159 C 300,162 282,170 291,177 C 309,181 409,181 518,177 C 527,170 509,162 464,159 Z"/>
+  <text class="labelXs" x="400" y="175" text-anchor="middle" fill="#555">BULB</text>
+
+  <!-- Coachroof indication -->
+  <path d="M 164,-109 L 182,-177 L 718,-177 L 736,-100" stroke="#888" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <text class="labelXs" x="450" y="-183">COACHROOF</text>
+
+  <!-- MAST (model) -->
+  <line x1="291" y1="-177" x2="291" y2="-1600" stroke="#555" stroke-width="2" stroke-dasharray="8,4"/>
+  <text class="labelXs" x="300" y="-1570">MAST 1500mm</text>
+
+  <!-- Forestay + backstay -->
+  <line x1="291" y1="-1600" x2="-9" y2="-118" stroke="#333" stroke-width="1"/>
+  <line x1="291" y1="-1600" x2="836" y2="-118" stroke="#333" stroke-width="1"/>
+  <!-- Boom -->
+  <line x1="291" y1="-118" x2="791" y2="-118" stroke="#000" stroke-width="2"/>
+  <text class="labelXs" x="540" y="-124" text-anchor="middle">BOOM 500mm</text>
+
+  <!-- Annotations -->
+  <line class="dim" x1="-36" y1="230" x2="950" y2="230"/>
+  <line class="dim" x1="-36" y1="222" x2="-36" y2="238"/>
+  <line class="dim" x1="950" y1="222" x2="950" y2="238"/>
+  <text class="label" x="457" y="228" text-anchor="middle">LOA = 955 mm</text>
+
+  <line class="dim" x1="0" y1="215" x2="818" y2="215"/>
+  <line class="dim" x1="0" y1="210" x2="0" y2="220"/>
+  <line class="dim" x1="818" y1="210" x2="818" y2="220"/>
+  <text class="labelXs" x="409" y="212" text-anchor="middle">LWL = 818 mm</text>
+
+  <line class="dim" x1="870" y1="0" x2="870" y2="177"/>
+  <line class="dim" x1="862" y1="0" x2="878" y2="0"/>
+  <line class="dim" x1="862" y1="177" x2="878" y2="177"/>
+  <text class="labelXs" x="880" y="90">DRAFT</text>
+  <text class="labelXs" x="880" y="103">177mm</text>
+
+  <!-- =================== HALF-BREADTH PLAN =================== -->
+  <text class="label" x="-70" y="300">HALF-BREADTH PLAN (STARBOARD) — 1:1 MODEL SCALE</text>
+
+  <!-- CL -->
+  <line class="cl" x1="-45" y1="360" x2="870" y2="360"/>
+  <text class="labelXs" x="-50" y="363" text-anchor="end">CL</text>
+
+  <!-- DWL waterplane curve at model scale
+       Half-breadths (full/11): St0=9,St1=56,St2=95,St3=115,St4=125,St5=129,
+                                 St6=124,St7=109,St8=89,St9=58,St10=25
+  -->
+  <path d="
+    M 0,351
+    C 20,345 55,335 82,304
+    C 123,319 150,328 164,332
+    C 205,337 227,340 245,345
+    C 282,348 315,352 327,353
+    C 368,354 385,355 409,356
+    C 437,356 464,353 491,352
+    C 527,349 546,346 573,347
+    C 609,344 636,342 655,342
+    C 682,347 700,350 736,350
+    C 754,350 791,354 818,360
+  " stroke="#0000cc" stroke-width="1.5" fill="none"/>
+  <text class="labelXs" x="409" y="380" text-anchor="middle" fill="#0000cc">DWL WATERPLANE</text>
+
+  <!-- Sheer (deck) curve half-breadth model scale
+       Half-breadths (full/11): St0=45,St1=112,St2=151,St3=165,St4=171,St5=171,
+                                 St6=164,St7=149,St8=130,St9=99,St10=76
+  -->
+  <path d="
+    M 0,315
+    C 27,334 55,335 82,248
+    C 123,275 150,297 164,209
+    C 205,220 245,222 327,195
+    C 368,195 409,189 491,192
+    C 546,196 573,211 655,230
+    C 682,244 718,259 736,261
+    C 763,269 791,285 818,284
+    C 836,280 845,277 900,284
+  " stroke="#000" stroke-width="2" fill="none"/>
+  <text class="labelXs" x="409" y="165" text-anchor="middle">SHEER / DECK EDGE</text>
+
+  <!-- Fill sheer and CL for half-breadth -->
+  <path d="
+    M 0,315 C 27,334 55,335 82,248 C 123,275 150,297 164,209
+    C 205,220 245,222 327,195 C 368,195 409,189 491,192
+    C 546,196 573,211 655,230 C 682,244 718,259 736,261
+    C 763,269 791,285 818,284 L 900,284 L 900,360 L 0,360 Z
+  " fill="#e8f0d8" stroke="none" opacity="0.5"/>
+
+  <!-- Keel top-view -->
+  <line x1="318" y1="360" x2="473" y2="360" stroke="#555" stroke-width="3"/>
+  <text class="labelXs" x="400" y="373" text-anchor="middle">FIN KEEL (top view)</text>
+
+  <!-- Bow thruster tunnel -->
+  <line x1="64" y1="342" x2="64" y2="360" stroke="#060" stroke-width="5"/>
+  <text class="labelXs" x="64" y="390" text-anchor="middle" fill="#060">BOW</text>
+  <text class="labelXs" x="64" y="400" text-anchor="middle" fill="#060">THRSTR</text>
+
+  <!-- Beam dimension -->
+  <line class="dim" x1="-65" y1="360" x2="-65" y2="189"/>
+  <line class="dim" x1="-73" y1="360" x2="-57" y2="360"/>
+  <line class="dim" x1="-73" y1="189" x2="-57" y2="189"/>
+  <text class="labelXs" x="-75" y="280" text-anchor="end">BOA/2</text>
+  <text class="labelXs" x="-75" y="293" text-anchor="end">155mm</text>
+
+  <!-- =================== BODY PLAN =================== -->
+  <text class="label" x="960" y="-210">BODY PLAN (1:1)</text>
+  <text class="labelXs" x="960" y="-195">Fwd left · Aft right</text>
+
+  <!-- Body plan CL -->
+  <line x1="1050" y1="-220" x2="1050" y2="200" stroke="#000" stroke-width="1" stroke-dasharray="6,3"/>
+  <!-- Body plan DWL -->
+  <line x1="960" y1="0" x2="1140" y2="0" stroke="#0000cc" stroke-width="1"/>
+  <!-- Body plan baseline -->
+  <line x1="960" y1="64" x2="1140" y2="64" stroke="#666" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Midship section (St5) — half section left and right -->
+  <!-- Left (forward) = mirror of half-breadth at DWL=129, deck=171 -->
+  <path class="section" d="
+    M 1050,64
+    C 980,64 950,55 935,27
+    C 925,10 925,0 930,-27
+    C 940,-55 960,-82 975,-100
+    L 1050,-100 Z
+  "/>
+  <text class="labelXs" x="1000" y="-110">St5</text>
+
+  <!-- Right (aft) -->
+  <path d="M 1050,64 C 1120,64 1150,55 1165,27 C 1175,10 1175,0 1170,-27 C 1160,-55 1140,-82 1125,-100 L 1050,-100"
+        stroke="#000" stroke-width="1.5" fill="none"/>
+  <text class="labelXs" x="1100" y="-110">St6</text>
+
+  <!-- St4 fwd -->
+  <path d="M 1050,64 C 990,64 960,50 947,27 C 937,10 937,0 940,-27 C 948,-55 962,-75 975,-95 L 1050,-95"
+        stroke="#000" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+
+  <!-- St6 stbd -->
+  <path d="M 1050,64 C 1110,64 1140,50 1153,27 C 1163,10 1163,0 1160,-27 C 1152,-55 1138,-75 1125,-95 L 1050,-95"
+        stroke="#000" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+
+  <!-- Beam at DWL -->
+  <line class="dim" x1="925" y1="20" x2="1175" y2="20"/>
+  <text class="labelXs" x="1050" y="15" text-anchor="middle">BWL=264mm</text>
+  <!-- Beam at sheer -->
+  <line class="dim" x1="975" y1="-115" x2="1125" y2="-115"/>
+  <text class="labelXs" x="1050" y="-122" text-anchor="middle">BOA=309mm</text>
+
+  <!-- SCALE BAR -->
+  <rect x="-70" y="440" width="200" height="12" fill="#000"/>
+  <rect x="-70" y="440" width="100" height="12" fill="#fff"/>
+  <text class="labelXs" x="-70" y="464">0</text>
+  <text class="labelXs" x="30" y="464">100mm</text>
+  <text class="labelXs" x="130" y="464">200mm</text>
+  <text class="label" x="-70" y="490">SCALE: 1:1 (model) — print at 1:2 for A3 work drawing</text>
+
+  <text class="labelXs" x="-70" y="520">NOTE: Model coordinates = full-scale ÷ 11. All dims in mm (model). Build frames at 81.8mm spacing along LWL.</text>
+  <text class="labelXs" x="-70" y="536">Float test: model should sit at DWL with 6.39kg total weight including 2.25kg lead keel ballast.</text>
+
+</svg>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  COASTAL WIND 35 — FULL SCALE LINES PLAN
+  Drawing: Profile (sheer), Half-Breadth Plan, Body Plan
+  Scale: 1:20 (print on A0/A1 paper)
+  Coordinate system: x = mm from FP (forward perpendicular at LWL bow)
+                     y = mm, positive upward (DWL at y=0, below DWL negative)
+  All dimensions in mm.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="900"
+     viewBox="-800 -3200 12000 7800">
+
+  <title>Coastal Wind 35 — Full Scale Lines Plan</title>
+
+  <defs>
+    <style>
+      .hull    { stroke:#000; stroke-width:8; fill:none; }
+      .wl      { stroke:#4466aa; stroke-width:4; fill:none; stroke-dasharray:60,30; }
+      .station { stroke:#888; stroke-width:3; fill:none; stroke-dasharray:30,20; }
+      .dim     { stroke:#000; stroke-width:2; fill:none; }
+      .keel    { stroke:#000; stroke-width:8; fill:none; }
+      .bulb    { stroke:#000; stroke-width:8; fill:#cccccc; fill-opacity:0.3; }
+      .label   { font-family:Arial,sans-serif; font-size:120px; fill:#000; }
+      .labelSm { font-family:Arial,sans-serif; font-size:90px; fill:#000; }
+      .labelXs { font-family:Arial,sans-serif; font-size:70px; fill:#444; }
+      .title   { font-family:Arial,sans-serif; font-size:160px; fill:#000; font-weight:bold; }
+      .note    { font-family:Arial,sans-serif; font-size:75px; fill:#333; font-style:italic; }
+      .section { fill:#e8e8e8; stroke:#000; stroke-width:6; }
+    </style>
+  </defs>
+
+  <!-- ============================================================
+       TITLE BLOCK
+       ============================================================ -->
+  <rect x="-750" y="-3150" width="11900" height="310" fill="#f0f0f0" stroke="#000" stroke-width="4"/>
+  <text class="title" x="5200" y="-2960" text-anchor="middle">COASTAL WIND 35 — LINES PLAN</text>
+  <text class="labelSm" x="5200" y="-2850" text-anchor="middle">LOA 10500 mm · LWL 9000 mm · Beam 3400 mm · Draft 1950 mm · Scale 1:20 (print A0)</text>
+  <text class="labelXs" x="10900" y="-2960" text-anchor="end">Sheet 1 of 5</text>
+  <text class="labelXs" x="10900" y="-2855" text-anchor="end">All dims in mm</text>
+
+  <!-- ============================================================
+       SECTION 1: PROFILE (SIDE) VIEW
+       Top half of drawing — sheer line, WLs, stations, keel & bulb
+       DWL at y=0; y-axis: positive = above DWL (upward in SVG = negative y)
+       In SVG coordinates: SVG_y = -design_y (invert)
+       ============================================================ -->
+
+  <text class="label" x="-700" y="-2400">PROFILE VIEW (PORT SIDE)</text>
+
+  <!-- Station vertical lines (dashed) at x = 0,900,1800...9000 -->
+  <line class="station" x1="0"    y1="-2600" x2="0"    y2="2100"/>
+  <line class="station" x1="900"  y1="-2600" x2="900"  y2="2100"/>
+  <line class="station" x1="1800" y1="-2600" x2="1800" y2="2100"/>
+  <line class="station" x1="2700" y1="-2600" x2="2700" y2="2100"/>
+  <line class="station" x1="3600" y1="-2600" x2="3600" y2="2100"/>
+  <line class="station" x1="4500" y1="-2600" x2="4500" y2="2100"/>
+  <line class="station" x1="5400" y1="-2600" x2="5400" y2="2100"/>
+  <line class="station" x1="6300" y1="-2600" x2="6300" y2="2100"/>
+  <line class="station" x1="7200" y1="-2600" x2="7200" y2="2100"/>
+  <line class="station" x1="8100" y1="-2600" x2="8100" y2="2100"/>
+  <line class="station" x1="9000" y1="-2600" x2="9000" y2="2100"/>
+
+  <!-- Station labels -->
+  <text class="labelXs" x="0"    y="-2650" text-anchor="middle">0-FP</text>
+  <text class="labelXs" x="900"  y="-2650" text-anchor="middle">1</text>
+  <text class="labelXs" x="1800" y="-2650" text-anchor="middle">2</text>
+  <text class="labelXs" x="2700" y="-2650" text-anchor="middle">3</text>
+  <text class="labelXs" x="3600" y="-2650" text-anchor="middle">4</text>
+  <text class="labelXs" x="4500" y="-2650" text-anchor="middle">5-M</text>
+  <text class="labelXs" x="5400" y="-2650" text-anchor="middle">6</text>
+  <text class="labelXs" x="6300" y="-2650" text-anchor="middle">7</text>
+  <text class="labelXs" x="7200" y="-2650" text-anchor="middle">8</text>
+  <text class="labelXs" x="8100" y="-2650" text-anchor="middle">9</text>
+  <text class="labelXs" x="9000" y="-2650" text-anchor="middle">10-AP</text>
+
+  <!-- Waterlines (horizontal dashed) — in SVG y-coords: DWL=0, above=negative -->
+  <!-- WL-300 (300mm below DWL) = SVG y=+300 -->
+  <line class="wl" x1="-450" y1="300" x2="9400" y2="300"/>
+  <text class="labelXs" x="-500" y="320" text-anchor="end" fill="#4466aa">WL-300</text>
+
+  <!-- DWL = SVG y=0 -->
+  <line x1="-450" y1="0" x2="9400" y2="0" stroke="#0000cc" stroke-width="6"/>
+  <text class="label" x="-500" y="30" text-anchor="end" fill="#0000cc">DWL</text>
+
+  <!-- WL+300 -->
+  <line class="wl" x1="-450" y1="-300" x2="9400" y2="-300"/>
+  <text class="labelXs" x="-500" y="-280" text-anchor="end" fill="#4466aa">WL+300</text>
+
+  <!-- WL+600 -->
+  <line class="wl" x1="-450" y1="-600" x2="9400" y2="-600"/>
+  <text class="labelXs" x="-500" y="-580" text-anchor="end" fill="#4466aa">WL+600</text>
+
+  <!-- WL+900 -->
+  <line class="wl" x1="-450" y1="-900" x2="9400" y2="-900"/>
+  <text class="labelXs" x="-500" y="-880" text-anchor="end" fill="#4466aa">WL+900</text>
+
+  <!-- Hull baseline (keel root = 700mm below DWL) = SVG y=+700 -->
+  <line x1="-450" y1="700" x2="9400" y2="700" stroke="#666" stroke-width="4" stroke-dasharray="20,15"/>
+  <text class="labelXs" x="-500" y="720" text-anchor="end">HULL BASE</text>
+
+  <!-- SHEER LINE (deck edge profile) — smooth curve via bezier
+       Key points (x, SVG_y = -freeboard):
+       Bow (-400, -1500), FP (0, -1400), St2 (1800,-1200), St3(2700,-1150),
+       St4(3600,-1120), St5-midship(4500,-1100), St6(5400,-1100),
+       cockpit area (6400,-900 — deck steps down for cockpit),
+       St7(6300,-1080), St8(7200,-1100), St9(8100,-1150), AP(9000,-1200),
+       transom(9300,-1100), bathing platform(9900,-600)
+  -->
+  <path class="hull" d="
+    M -400,-1500
+    C -200,-1450 -100,-1420 0,-1400
+    C 600,-1350 1200,-1270 1800,-1200
+    C 2250,-1170 2580,-1155 2700,-1150
+    C 3100,-1130 3350,-1120 3600,-1120
+    C 4050,-1110 4200,-1100 4500,-1100
+    C 4800,-1100 5100,-1100 5400,-1100
+    C 5700,-1095 6000,-1090 6300,-1080
+    C 6600,-1070 6900,-1060 7200,-1100
+    C 7600,-1130 8000,-1150 8100,-1150
+    C 8500,-1160 8800,-1180 9000,-1200
+    C 9100,-1190 9200,-1160 9300,-1100
+  "/>
+  <!-- Bathing platform (low stern extension) -->
+  <path class="hull" d="M 9300,-1100 L 9300,-500 L 9900,-500 L 9900,-400"/>
+
+  <!-- STEM / BOW PROFILE -->
+  <path class="hull" d="
+    M -400,-1500
+    C -420,-1000 -400,-500 -250,0
+    C -100,300 0,500 0,700
+  "/>
+
+  <!-- WATERLINE ENTRY AT BOW (bulb bow visible in profile) -->
+  <path d="M -250,0 C -150,50 -50,80 0,100" stroke="#000" stroke-width="5" fill="none" stroke-dasharray="20,10"/>
+
+  <!-- BOTTOM OF HULL (keel root baseline at y=700) -->
+  <path class="hull" d="M 0,700 C 1000,700 2000,700 2700,700 C 3200,700 3400,700 3600,700 C 4000,700 4200,700 4500,700 C 5000,700 5500,700 6000,700 C 6500,700 7000,700 7500,700 C 8000,700 8500,700 9000,700"/>
+  <!-- Stern bottom rounds up to transom -->
+  <path class="hull" d="M 9000,700 C 9100,650 9200,600 9300,500"/>
+
+  <!-- TRANSOM -->
+  <path class="hull" d="M 9300,-1100 L 9300,500"/>
+
+  <!-- FIN KEEL (from hull baseline down)
+       Root chord at approximately x=3400 to x=5300 (1900mm chord tapers)
+       Leading edge at x=3400, trailing edge at x=5300
+       Fin height below hull baseline: 1050mm (SVG y: 700 to 1750)
+  -->
+  <!-- Keel leading edge -->
+  <path class="keel" d="M 3500,700 C 3450,900 3400,1200 3600,1750"/>
+  <!-- Keel trailing edge -->
+  <path class="keel" d="M 5200,700 C 5300,900 5400,1200 5100,1750"/>
+  <!-- Keel bottom connecting to bulb top -->
+  <path class="keel" d="M 3600,1750 C 3900,1760 4500,1760 5100,1750"/>
+
+  <!-- BULB (at keel bottom, centred ~x=4350, depth 200mm below fin)
+       Bulb is streamlined ellipsoid: spans x=3200-5500, max depth y=1950
+  -->
+  <path class="bulb" d="
+    M 3600,1750
+    C 3300,1780 3100,1840 3200,1950
+    C 3400,1980 4000,1990 4500,1990
+    C 5000,1990 5600,1980 5700,1950
+    C 5800,1840 5600,1780 5100,1750
+    Z
+  "/>
+  <text class="labelXs" x="4400" y="1930" text-anchor="middle">LEAD BULB</text>
+  <text class="labelXs" x="4400" y="2000" text-anchor="middle">2400 kg</text>
+
+  <!-- Dimension: Draft total -->
+  <line class="dim" x1="9500" y1="0" x2="9500" y2="1990"/>
+  <line class="dim" x1="9400" y1="0" x2="9600" y2="0"/>
+  <line class="dim" x1="9400" y1="1990" x2="9600" y2="1990"/>
+  <text class="labelXs" x="9700" y="1000" text-anchor="start">DRAFT</text>
+  <text class="label" x="9700" y="1100" text-anchor="start">1950 mm</text>
+
+  <!-- Dimension: LOA -->
+  <line class="dim" x1="-400" y1="2200" x2="9900" y2="2200"/>
+  <line class="dim" x1="-400" y1="2100" x2="-400" y2="2300"/>
+  <line class="dim" x1="9900" y1="2100" x2="9900" y2="2300"/>
+  <text class="label" x="4750" y="2150" text-anchor="middle">LOA = 10500 mm</text>
+
+  <!-- Dimension: LWL -->
+  <line class="dim" x1="0" y1="-80" x2="9000" y2="-80"/>
+  <line class="dim" x1="0" y1="-120" x2="0" y2="-40"/>
+  <line class="dim" x1="9000" y1="-120" x2="9000" y2="-40"/>
+  <text class="labelXs" x="4500" y="-100" text-anchor="middle">LWL = 9000 mm</text>
+
+  <!-- Dimension: Freeboard at midship -->
+  <line class="dim" x1="-650" y1="-1100" x2="-650" y2="0"/>
+  <line class="dim" x1="-700" y1="-1100" x2="-600" y2="-1100"/>
+  <line class="dim" x1="-700" y1="0" x2="-600" y2="0"/>
+  <text class="labelXs" x="-660" y="-600" text-anchor="end">FB mid</text>
+  <text class="labelXs" x="-660" y="-500" text-anchor="end">1100 mm</text>
+
+  <!-- Coachroof height indicator -->
+  <line class="hull" x1="1800" y1="-1200" x2="2000" y2="-1950" stroke-dasharray="20,10"/>
+  <line class="hull" x1="2000" y1="-1950" x2="7800" y2="-1950"/>
+  <line class="hull" x1="7800" y1="-1950" x2="8000" y2="-1200" stroke-dasharray="20,10"/>
+  <text class="labelXs" x="4900" y="-1980" text-anchor="middle">COACHROOF TOP</text>
+  <!-- Headroom arrow -->
+  <line class="dim" x1="4500" y1="-1950" x2="4500" y2="-1100"/>
+  <text class="labelXs" x="4560" y="-1550">850mm (coachroof)</text>
+  <!-- Interior headroom -->
+  <line x1="4500" y1="-1100" x2="4500" y2="-400" stroke="#c00" stroke-width="4"/>
+  <text class="labelXs" x="4560" y="-750" fill="#c00">INT HT</text>
+  <text class="labelXs" x="4560" y="-660" fill="#c00">1950 mm</text>
+  <line x1="4500" y1="-400" x2="4500" y2="550" stroke="#c00" stroke-width="4" stroke-dasharray="10,8"/>
+
+  <!-- Mast position (step at approx x=3200) -->
+  <line x1="3200" y1="-1950" x2="3200" y2="-17800" stroke="#555" stroke-width="5" stroke-dasharray="40,20"/>
+  <text class="labelXs" x="3300" y="-17700">MAST</text>
+  <text class="labelXs" x="3300" y="-17610">16500mm</text>
+  <text class="labelXs" x="3300" y="-17510">above deck</text>
+
+  <!-- Forestay (from masthead to bow) -->
+  <line x1="3200" y1="-17800" x2="-200" y2="-1200" stroke="#333" stroke-width="4"/>
+  <text class="labelXs" x="1300" y="-10200" transform="rotate(-48,1300,-10200)">FORESTAY 16139mm</text>
+
+  <!-- Backstay -->
+  <line x1="3200" y1="-17800" x2="9200" y2="-1200" stroke="#333" stroke-width="4"/>
+  <text class="labelXs" x="6700" y="-9500" transform="rotate(35,6700,-9500)">BACKSTAY</text>
+
+  <!-- Boom -->
+  <line x1="3200" y1="-1300" x2="8700" y2="-1300" stroke="#000" stroke-width="8"/>
+  <text class="labelXs" x="5900" y="-1360" text-anchor="middle">BOOM — E = 5500 mm</text>
+
+  <!-- Cockpit position label -->
+  <rect x="6400" y="-950" width="1400" height="600" fill="#ffffc0" stroke="#888" stroke-width="4"/>
+  <text class="labelXs" x="7100" y="-710" text-anchor="middle">CENTRE</text>
+  <text class="labelXs" x="7100" y="-630" text-anchor="middle">COCKPIT</text>
+
+  <!-- Anchor locker label -->
+  <rect x="-380" y="-1380" width="880" height="700" fill="#e0f0ff" stroke="#888" stroke-width="4" fill-opacity="0.5"/>
+  <text class="labelXs" x="60" y="-900" text-anchor="middle">ANCHOR</text>
+  <text class="labelXs" x="60" y="-820" text-anchor="middle">LOCKER</text>
+
+  <!-- Saildrive position -->
+  <circle cx="6800" cy="900" r="120" fill="none" stroke="#c00" stroke-width="6"/>
+  <text class="labelXs" x="6800" y="1120" text-anchor="middle" fill="#c00">SAILDRIVE</text>
+  <text class="labelXs" x="6800" y="1210" text-anchor="middle" fill="#c00">x=6800</text>
+
+  <!-- Bow thruster position -->
+  <circle cx="700" cy="-200" r="80" fill="none" stroke="#060" stroke-width="6"/>
+  <text class="labelXs" x="700" y="-320" text-anchor="middle" fill="#060">BOW THRUSTER</text>
+  <text class="labelXs" x="700" y="-240" text-anchor="middle" fill="#060">x=700</text>
+
+  <!-- Bathing platform label -->
+  <text class="labelXs" x="9600" y="-450" text-anchor="middle">BATHING</text>
+  <text class="labelXs" x="9600" y="-370" text-anchor="middle">PLATFORM</text>
+
+  <!-- ============================================================
+       SECTION 2: HALF-BREADTH PLAN (top view of hull below coachroof)
+       Positioned below the profile view: y_offset = +3200
+       x = same station positions; y = half-breadth (distance from CL)
+       ============================================================ -->
+
+  <text class="label" x="-700" y="2700">HALF-BREADTH PLAN (STARBOARD HALF)</text>
+  <text class="labelXs" x="-700" y="2800">Half-breadths in mm from centreline. Mirror for port.</text>
+
+  <!-- Centreline -->
+  <line x1="-450" y1="3200" x2="9400" y2="3200" stroke="#000" stroke-width="4" stroke-dasharray="40,20"/>
+  <text class="labelXs" x="-500" y="3200" text-anchor="end">CL</text>
+
+  <!-- Station lines (vertical in plan view) -->
+  <line class="station" x1="0"    y1="3100" x2="0"    y2="4900"/>
+  <line class="station" x1="900"  y1="3100" x2="900"  y2="4900"/>
+  <line class="station" x1="1800" y1="3100" x2="1800" y2="4900"/>
+  <line class="station" x1="2700" y1="3100" x2="2700" y2="4900"/>
+  <line class="station" x1="3600" y1="3100" x2="3600" y2="4900"/>
+  <line class="station" x1="4500" y1="3100" x2="4500" y2="4900"/>
+  <line class="station" x1="5400" y1="3100" x2="5400" y2="4900"/>
+  <line class="station" x1="6300" y1="3100" x2="6300" y2="4900"/>
+  <line class="station" x1="7200" y1="3100" x2="7200" y2="4900"/>
+  <line class="station" x1="8100" y1="3100" x2="8100" y2="4900"/>
+  <line class="station" x1="9000" y1="3100" x2="9000" y2="4900"/>
+
+  <!-- DWL waterplane curve (half-breadth at DWL level)
+       y_half_breadth from offset table at DWL:
+       St0=100, St1=620, St2=1050, St3=1270, St4=1380,
+       St5=1420, St6=1360, St7=1200, St8=980, St9=640, St10=280
+       In half-breadth plan: y_SVG = 3200 + half_breadth
+  -->
+  <path d="
+    M 0,3300
+    C 200,3340 600,3500 900,3820
+    C 1350,4120 1600,4200 1800,4250
+    C 2250,4320 2500,4370 2700,4470
+    C 3100,4520 3350,4570 3600,4580
+    C 4050,4590 4200,4600 4500,4620
+    C 4800,4620 5100,4580 5400,4560
+    C 5800,4520 6000,4480 6300,4400
+    C 6700,4310 7000,4200 7200,4180
+    C 7500,4130 7900,4090 8100,4140
+    C 8500,4180 8800,4200 9000,4280
+  " stroke="#0000cc" stroke-width="6" fill="none"/>
+  <text class="labelXs" x="4500" y="4700" text-anchor="middle" fill="#0000cc">DWL WATERPLANE</text>
+
+  <!-- Deck / sheer curve (half-breadth)
+       St0=490,St1=1230,St2=1660,St3=1810,St4=1880,St5=1880,
+       St6=1800,St7=1635,St8=1430,St9=1090,St10=840
+  -->
+  <path d="
+    M 0,3690
+    C 300,3810 600,3980 900,4430
+    C 1350,4760 1600,4840 1800,4860
+    C 2250,4970 2500,5010 2700,5010
+    C 3100,5050 3350,5070 3600,5080
+    C 4050,5080 4200,5080 4500,5080
+    C 4800,5080 5100,5050 5400,5000
+    C 5700,4940 6000,4870 6300,4835
+    C 6600,4800 6900,4800 7200,4830
+    C 7500,4860 7800,4870 8100,4830
+    C 8500,4820 8700,4820 9000,5040
+    C 9100,4980 9200,4930 9300,5040
+  " stroke="#000" stroke-width="8" fill="none"/>
+  <text class="labelXs" x="4500" y="5120" text-anchor="middle">SHEER / DECK EDGE</text>
+
+  <!-- Keel planform (top view of fin keel, centred on CL) -->
+  <path d="M 3500,3200 C 3400,3210 3380,3220 3600,3220 C 4000,3220 4800,3220 5100,3220 C 5300,3220 5250,3210 5200,3200" stroke="#000" stroke-width="6" fill="#ddd"/>
+  <text class="labelXs" x="4350" y="3260" text-anchor="middle">FIN KEEL</text>
+
+  <!-- Bow thruster tunnel (top view: circle at bow) -->
+  <line x1="700" y1="3200" x2="700" y2="3260" stroke="#060" stroke-width="8"/>
+  <text class="labelXs" x="700" y="3310" text-anchor="middle" fill="#060">THRSTR</text>
+
+  <!-- Saildrive position (dot on CL) -->
+  <circle cx="6800" cy="3200" r="60" fill="#c00" stroke="#c00"/>
+  <text class="labelXs" x="6800" y="3340" text-anchor="middle" fill="#c00">SD</text>
+
+  <!-- Beam dimension -->
+  <line class="dim" x1="-450" y1="3200" x2="-450" y2="5080"/>
+  <line class="dim" x1="-550" y1="3200" x2="-350" y2="3200"/>
+  <line class="dim" x1="-550" y1="5080" x2="-350" y2="5080"/>
+  <text class="labelXs" x="-460" y="4200" text-anchor="end">BOA/2</text>
+  <text class="labelXs" x="-460" y="4300" text-anchor="end">1700 mm</text>
+
+  <!-- ============================================================
+       SECTION 3: BODY PLAN (cross-sections at each station)
+       Positioned to the right side, starting x=9600
+       Shows half-sections of hull shape at each station
+       ============================================================ -->
+
+  <text class="label" x="9600" y="-2400">BODY PLAN</text>
+  <text class="labelXs" x="9600" y="-2300">Fwd stations left · Aft stations right</text>
+
+  <!-- Body plan centreline -->
+  <line x1="10850" y1="-2200" x2="10850" y2="2100" stroke="#000" stroke-width="4" stroke-dasharray="40,20"/>
+  <!-- Body plan DWL -->
+  <line x1="9600" y1="0" x2="11200" y2="0" stroke="#0000cc" stroke-width="4"/>
+  <!-- Body plan baseline -->
+  <line x1="9600" y1="700" x2="11200" y2="700" stroke="#666" stroke-width="3" stroke-dasharray="20,10"/>
+
+  <!-- Body plan sections — each is a half-section curve
+       x offset from body plan centreline = half-breadth at each WL
+       Stations 1-5 drawn left of centreline; stations 6-10 right of centreline
+       Scale: same 1:1 mm, half-breadths plotted as offsets from centre (x=10850)
+       
+       Station 5 (midship) — widest: HB at DWL=1420, WL+300=1660, WL-300=1070, deck=1880
+       Using centred body plan at x_body=10850, y=0 is DWL
+       left section (fwd): x = 10850 - half_breadth
+       right section (aft): x = 10850 + half_breadth
+  -->
+
+  <!-- Forward sections (left of CL): St1–St5 -->
+  <!-- St5 midship — left -->
+  <path class="section" d="
+    M 10850,700
+    C 10450,700 10000,680 9780,300
+    C 9700,100 9700,0 9730,-300
+    C 9780,-600 9870,-900 9970,-1100
+    L 10850,-1100
+    Z
+  "/>
+  <text class="labelXs" x="10200" y="-1150" text-anchor="middle">St5</text>
+
+  <!-- St4 -->
+  <path d="M 10850,700 C 10500,700 10100,680 9870,300 C 9800,100 9800,0 9830,-300 C 9880,-600 9960,-900 10050,-1100 L 10850,-1100" stroke="#000" stroke-width="4" fill="none"/>
+  <text class="labelXs" x="10400" y="-1150" text-anchor="middle">St4</text>
+
+  <!-- St3 -->
+  <path d="M 10850,700 C 10550,700 10200,660 10000,300 C 9940,100 9940,0 9960,-300 C 10000,-600 10070,-900 10140,-1050 L 10850,-1050" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+  <text class="labelXs" x="10500" y="-1100" text-anchor="middle">St3</text>
+
+  <!-- St2 -->
+  <path d="M 10850,700 C 10620,700 10380,640 10200,300 C 10140,100 10140,0 10160,-300 C 10200,-600 10250,-800 10300,-980 L 10850,-980" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+
+  <!-- St1 -->
+  <path d="M 10850,700 C 10730,700 10600,640 10540,300 C 10500,100 10500,0 10510,-200 C 10530,-500 10560,-700 10600,-870 L 10850,-870" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+
+  <!-- Aft sections (right of CL): St6–St10 -->
+  <!-- St6 -->
+  <path d="M 10850,700 C 11200,700 11560,660 11730,300 C 11790,100 11790,0 11770,-300 C 11730,-600 11660,-900 11580,-1090 L 10850,-1090" stroke="#000" stroke-width="4" fill="none"/>
+  <text class="labelXs" x="11400" y="-1140" text-anchor="middle">St6</text>
+
+  <!-- St7 -->
+  <path d="M 10850,700 C 11280,700 11600,660 11760,300 C 11810,100 11810,0 11790,-300 C 11750,-600 11690,-880 11620,-1050 L 10850,-1050" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+  <text class="labelXs" x="11550" y="-1100" text-anchor="middle">St7</text>
+
+  <!-- St8 -->
+  <path d="M 10850,700 C 11200,700 11500,650 11660,300 C 11710,100 11710,0 11690,-300 C 11650,-560 11590,-780 11530,-960 L 10850,-960" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+
+  <!-- St9 -->
+  <path d="M 10850,700 C 11100,700 11310,620 11430,300 C 11480,100 11480,0 11470,-200 C 11450,-500 11410,-720 11380,-870 L 10850,-870" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+
+  <!-- St10/AP -->
+  <path d="M 10850,700 C 10960,700 11060,640 11090,300 C 11100,100 11100,0 11090,-200 C 11060,-500 11020,-680 11000,-820 L 10850,-820" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+
+  <!-- Body plan beam dimension at DWL -->
+  <line class="dim" x1="9730" y1="80" x2="11730" y2="80"/>
+  <text class="labelXs" x="10850" y="200" text-anchor="middle">BWL = 2900 mm (at DWL)</text>
+
+  <!-- Body plan beam max -->
+  <line class="dim" x1="9780" y1="-1200" x2="11580" y2="-1200"/>
+  <text class="labelXs" x="10850" y="-1240" text-anchor="middle">BOA = 3400 mm (max at sheer)</text>
+
+  <!-- ============================================================
+       SCALE BAR & NOTES
+       ============================================================ -->
+  <rect x="-700" y="5400" width="2000" height="80" fill="#000"/>
+  <rect x="-700" y="5400" width="1000" height="80" fill="#fff"/>
+  <rect x="-700" y="5480" width="2000" height="40" fill="none" stroke="#000" stroke-width="3"/>
+  <text class="labelXs" x="-700" y="5580">0</text>
+  <text class="labelXs" x="300" y="5580">1000 mm</text>
+  <text class="labelXs" x="1300" y="5580">2000 mm</text>
+  <text class="label" x="-700" y="5700">SCALE BAR (1:20 print scale: 50mm = 1000mm real)</text>
+
+  <text class="note" x="-700" y="5850">NOTE: All dimensions in mm. Offset table in calculations_and_notes.md. Station spacing = 900 mm. Bezier curves approximate hull — loft from offset table for construction.</text>
+  <text class="note" x="-700" y="5950">Keel bulb centred approx. x=3600–5700 mm from FP. Saildrive at x=6800 mm. Bow thruster at x=700 mm.</text>
+
+</svg>

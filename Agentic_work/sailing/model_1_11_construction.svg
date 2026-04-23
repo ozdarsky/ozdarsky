@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  COASTAL WIND 35 — 1:11 SCALE MODEL CONSTRUCTION
+  Shows: frame positions, keel assembly, ballast placement, rigging attachment points,
+         bow thruster stub, saildrive stub, waterline mark
+  Model LOA: 955mm · All dims in mm (model scale)
+  Print A3 at 1:1 for direct use on workbench
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1100" height="700"
+     viewBox="-100 -350 1200 800">
+
+  <title>Coastal Wind 35 — 1:11 Model Construction</title>
+
+  <defs>
+    <style>
+      .hull    { stroke:#000; stroke-width:2.5; fill:none; }
+      .frame   { stroke:#c44; stroke-width:2; fill:none; stroke-dasharray:4,2; }
+      .struc   { stroke:#000; stroke-width:2; fill:#ddd; }
+      .lead    { stroke:#000; stroke-width:2; fill:#888; }
+      .label   { font-family:Arial,sans-serif; font-size:14px; fill:#000; }
+      .labelSm { font-family:Arial,sans-serif; font-size:10px; fill:#333; }
+      .labelXs { font-family:Arial,sans-serif; font-size:8.5px; fill:#444; }
+      .title   { font-family:Arial,sans-serif; font-size:18px; fill:#000; font-weight:bold; }
+      .note    { font-family:Arial,sans-serif; font-size:8px; fill:#444; font-style:italic; }
+      .dim     { stroke:#000; stroke-width:0.8; fill:none; }
+      .wl      { stroke:#0000cc; stroke-width:1.5; stroke-dasharray:8,4; }
+      .cl      { stroke:#888; stroke-width:1; stroke-dasharray:5,3; }
+      .green   { stroke:#060; stroke-width:2; fill:none; }
+      .red     { stroke:#c00; stroke-width:2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- TITLE BLOCK -->
+  <rect x="-90" y="-340" width="1170" height="90" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+  <text class="title" x="490" y="-308" text-anchor="middle">COASTAL WIND 35 — 1:11 SCALE MODEL CONSTRUCTION PLAN</text>
+  <text class="labelSm" x="490" y="-283" text-anchor="middle">Model LOA 955mm · 10 frames @ 81.8mm pitch · Ballast 2.25kg lead · Build material: 3mm balsa + epoxy or XPS foam</text>
+  <text class="labelXs" x="1050" y="-308" text-anchor="end">Sheet M3 of M3</text>
+  <text class="labelXs" x="1050" y="-283" text-anchor="end">Print A3 @ 1:1</text>
+
+  <!-- =================== PLAN VIEW (DECK REMOVED) =================== -->
+  <text class="label" x="-90" y="-235">TOP VIEW (DECK REMOVED) — FRAME POSITIONS</text>
+
+  <!-- CL -->
+  <line class="cl" x1="-80" y1="-100" x2="990" y2="-100"/>
+  <text class="labelXs" x="-85" y="-97" text-anchor="end">CL</text>
+
+  <!-- Hull outline (starboard half, top view — sheer line in plan) -->
+  <path class="hull" d="
+    M 0,55
+    C 20,65 55,88 82,112
+    C 123,132 150,143 164,151
+    C 245,158 327,171 409,171
+    C 491,164 573,149 655,148
+    C 718,143 763,123 818,76
+    L 900,76 L 900,-100
+  "/>
+  <!-- Port half (mirror) -->
+  <path class="hull" d="
+    M 0,-255
+    C 20,-265 55,-288 82,-312
+    C 123,-332 150,-343 164,-351
+    C 245,-358 327,-371 409,-371
+    C 491,-364 573,-349 655,-348
+    C 718,-343 763,-323 818,-276
+    L 900,-276 L 900,-100
+  "/>
+  <!-- Bow (stem in plan view) -->
+  <path class="hull" d="M 0,55 C -15,0 -15,-200 0,-255"/>
+  <!-- Transom -->
+  <line class="hull" x1="900" y1="76" x2="900" y2="-276"/>
+
+  <!-- FRAMES (10 frames, red dashed, at x = 0,82,164,245,327,409,491,573,655,736,818) -->
+  <!-- Frame 0 (FP) -->
+  <line class="frame" x1="0" y1="55" x2="0" y2="-255"/>
+  <text class="labelXs" x="0" y="95" text-anchor="middle" fill="#c44">F0</text>
+  <!-- Frame 1 -->
+  <line class="frame" x1="82" y1="112" x2="82" y2="-312"/>
+  <text class="labelXs" x="82" y="128" text-anchor="middle" fill="#c44">F1</text>
+  <!-- Frame 2 -->
+  <line class="frame" x1="164" y1="151" x2="164" y2="-351"/>
+  <text class="labelXs" x="164" y="167" text-anchor="middle" fill="#c44">F2</text>
+  <!-- Frame 3 -->
+  <line class="frame" x1="245" y1="165" x2="245" y2="-365"/>
+  <text class="labelXs" x="245" y="181" text-anchor="middle" fill="#c44">F3</text>
+  <!-- Frame 4 -->
+  <line class="frame" x1="327" y1="171" x2="327" y2="-371"/>
+  <text class="labelXs" x="327" y="187" text-anchor="middle" fill="#c44">F4</text>
+  <!-- Frame 5 (midship) -->
+  <line x1="409" y1="171" x2="409" y2="-371" stroke="#c44" stroke-width="3" stroke-dasharray="8,3"/>
+  <text class="labelSm" x="409" y="190" text-anchor="middle" fill="#c44">F5-M</text>
+  <!-- Frame 6 -->
+  <line class="frame" x1="491" y1="164" x2="491" y2="-364"/>
+  <text class="labelXs" x="491" y="180" text-anchor="middle" fill="#c44">F6</text>
+  <!-- Frame 7 -->
+  <line class="frame" x1="573" y1="149" x2="573" y2="-349"/>
+  <text class="labelXs" x="573" y="165" text-anchor="middle" fill="#c44">F7</text>
+  <!-- Frame 8 -->
+  <line class="frame" x1="655" y1="148" x2="655" y2="-348"/>
+  <text class="labelXs" x="655" y="164" text-anchor="middle" fill="#c44">F8</text>
+  <!-- Frame 9 -->
+  <line class="frame" x1="736" y1="120" x2="736" y2="-320"/>
+  <text class="labelXs" x="736" y="136" text-anchor="middle" fill="#c44">F9</text>
+  <!-- Frame 10 (AP) -->
+  <line class="frame" x1="818" y1="76" x2="818" y2="-276"/>
+  <text class="labelXs" x="818" y="92" text-anchor="middle" fill="#c44">F10</text>
+
+  <!-- MAST POSITION (x=291) -->
+  <circle cx="291" cy="-100" r="10" fill="#555" stroke="#000" stroke-width="2"/>
+  <text class="labelXs" x="291" y="-115" text-anchor="middle">MAST STEP x=291</text>
+
+  <!-- KEEL SLOT (centred on CL, x=318 to 473) -->
+  <rect x="318" y="-110" width="155" height="20" fill="#888" stroke="#000" stroke-width="2"/>
+  <text class="labelXs" x="400" y="-95" text-anchor="middle" fill="#555">KEEL SLOT</text>
+
+  <!-- BOW THRUSTER TUNNEL (at x=64, horizontal line across hull) -->
+  <line x1="64" y1="70" x2="64" y2="-270" stroke="#060" stroke-width="3"/>
+  <text class="labelXs" x="64" y="82" text-anchor="middle" fill="#060">THRSTR TUNNEL x=64</text>
+  <text class="labelXs" x="64" y="93" text-anchor="middle" fill="#060">Ø11mm (120/11)</text>
+
+  <!-- SAILDRIVE POSITION (x=618, CL) -->
+  <circle cx="618" cy="-100" r="14" fill="none" stroke="#c00" stroke-width="3"/>
+  <text class="labelXs" x="618" y="-125" text-anchor="middle" fill="#c00">SAILDRIVE STUB x=618</text>
+  <text class="labelXs" x="618" y="-113" text-anchor="middle" fill="#c00">Ø18mm hole</text>
+
+  <!-- CHAINPLATE PORT positions (approx x=273, near F3) -->
+  <rect x="268" y="-370" width="10" height="30" fill="#999" stroke="#000" stroke-width="1.5"/>
+  <text class="labelXs" x="245" y="-395" text-anchor="middle">CP-P</text>
+  <!-- CHAINPLATE STBD -->
+  <rect x="268" y="-70" width="10" height="30" fill="#999" stroke="#000" stroke-width="1.5"/>
+  <text class="labelXs" x="245" y="-40" text-anchor="middle">CP-S</text>
+
+  <!-- Anchor locker boundary -->
+  <rect x="0" y="-220" width="82" height="240" fill="#cce4ff" stroke="#888" stroke-width="1.5" fill-opacity="0.5"/>
+  <text class="labelXs" x="41" y="-170" text-anchor="middle">ANCHOR</text>
+  <text class="labelXs" x="41" y="-155" text-anchor="middle">LOCKER</text>
+
+  <!-- Dimension: frame spacing -->
+  <line class="dim" x1="0" y1="220" x2="82" y2="220"/>
+  <line class="dim" x1="0" y1="215" x2="0" y2="225"/>
+  <line class="dim" x1="82" y1="215" x2="82" y2="225"/>
+  <text class="labelXs" x="41" y="215" text-anchor="middle">81.8mm</text>
+  <text class="labelXs" x="41" y="240" text-anchor="middle">(FRAME PITCH)</text>
+
+  <!-- LOA dimension -->
+  <line class="dim" x1="-36" y1="260" x2="955" y2="260"/>
+  <line class="dim" x1="-36" y1="253" x2="-36" y2="267"/>
+  <line class="dim" x1="955" y1="253" x2="955" y2="267"/>
+  <text class="label" x="459" y="258" text-anchor="middle">LOA = 955 mm</text>
+
+  <!-- LWL dimension -->
+  <line class="dim" x1="0" y1="248" x2="818" y2="248"/>
+  <line class="dim" x1="0" y1="244" x2="0" y2="252"/>
+  <line class="dim" x1="818" y1="244" x2="818" y2="252"/>
+  <text class="labelXs" x="409" y="246" text-anchor="middle">LWL = 818 mm</text>
+
+  <!-- =================== KEEL/BALLAST DETAIL =================== -->
+  <text class="label" x="-90" y="330">KEEL / BALLAST ASSEMBLY — 1:1 MODEL SCALE</text>
+
+  <!-- Fin profile (side view, model scale) -->
+  <path class="struc" d="
+    M 60,380
+    C 55,390 52,410 60,445
+    C 66,460 80,465 90,465
+    C 100,465 114,460 120,445
+    C 128,410 125,390 120,380
+    Z
+  "/>
+  <text class="labelXs" x="90" y="440" text-anchor="middle">FIN</text>
+  <text class="labelXs" x="90" y="453" text-anchor="middle">(brass sheet)</text>
+  <text class="labelXs" x="90" y="466" text-anchor="middle">3mm</text>
+
+  <!-- Bulb profile -->
+  <ellipse cx="90" cy="480" rx="55" ry="18" class="lead"/>
+  <text class="labelXs" x="90" y="483" text-anchor="middle" fill="#fff">BULB 2.25kg</text>
+  <!-- Bulb side view dimension -->
+  <line class="dim" x1="-10" y1="462" x2="-10" y2="498"/>
+  <text class="labelXs" x="-15" y="483" text-anchor="end">18mm</text>
+  <line class="dim" x1="35" y1="500" x2="145" y2="500"/>
+  <text class="labelXs" x="90" y="513" text-anchor="middle">110mm span</text>
+
+  <!-- Keel draft dimension -->
+  <line class="dim" x1="160" y1="380" x2="160" y2="498"/>
+  <line class="dim" x1="153" y1="380" x2="167" y2="380"/>
+  <line class="dim" x1="153" y1="498" x2="167" y2="498"/>
+  <text class="labelXs" x="170" y="443">FIN 95mm</text>
+  <text class="labelXs" x="170" y="455">+BULB 18mm</text>
+  <text class="labelXs" x="170" y="467">=DRAFT 113mm</text>
+  <text class="labelXs" x="170" y="488">(≈177mm incl.</text>
+  <text class="labelXs" x="170" y="500"> hull depth 64mm)</text>
+
+  <!-- Lead casting note -->
+  <rect x="-90" y="510" width="400" height="130" fill="#ffffd0" stroke="#888" stroke-width="1"/>
+  <text class="labelXs" x="-80" y="530">BALLAST: 2.25kg lead. Fin: 3mm brass. Bulb: cast lead.</text>
+  <text class="labelXs" x="-80" y="548">Melt fishing sinkers (lead) in steel ladle.</text>
+  <text class="labelXs" x="-80" y="566">Pour into carved foam or clay mould (bulb shape).</text>
+  <text class="labelXs" x="-80" y="584">Solder or epoxy-bond bulb to fin bottom.</text>
+  <text class="labelXs" x="-80" y="602">Verify mass with scale: 2250g ± 50g.</text>
+  <text class="labelXs" x="-80" y="620">If too light: add lead shot embedded in epoxy filler.</text>
+
+  <!-- =================== HULL CROSS-SECTION AT MIDSHIP =================== -->
+  <text class="label" x="270" y="330">CROSS-SECTION AT MIDSHIP (F5) — 1:1</text>
+
+  <!-- Outer hull at midship (model half-breadth at DWL = 129mm, deck = 171mm) -->
+  <!-- Full section centred at x=500 -->
+  <path class="struc" d="
+    M 500,380
+    C 420,380 380,375 360,360
+    C 340,345 330,320 330,290
+    C 330,260 345,230 370,210
+    C 400,190 450,380 500,380
+    C 550,380 600,190 630,210
+    C 655,230 670,260 670,290
+    C 670,320 660,345 640,360
+    C 620,375 580,380 500,380
+    Z
+  "/>
+  <!-- Inner hull (thin shell) -->
+  <path d="
+    M 500,372
+    C 425,372 388,367 370,354
+    C 354,341 345,318 345,290
+    C 345,262 358,235 381,216
+    C 408,197 455,372 500,372
+    C 545,372 592,197 619,216
+    C 642,235 655,262 655,290
+    C 655,318 646,341 630,354
+    C 612,367 575,372 500,372
+    Z
+  " fill="#fffff0" stroke="#000" stroke-width="1"/>
+  <text class="labelXs" x="500" y="390" text-anchor="middle">HULL BASE (keel slot)</text>
+
+  <!-- DWL at model scale: midship freeboard = 1100/11 = 100mm above DWL
+       So DWL is 100mm below deck, deck is at y=280 (approx, in this local coord)
+       Let: DWL = y=320, deck = y=220
+  -->
+  <line x1="310" y1="320" x2="690" y2="320" stroke="#0000cc" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text class="labelXs" x="305" y="323" text-anchor="end" fill="#0000cc">DWL</text>
+
+  <!-- Deck at sheer -->
+  <line x1="329" y1="210" x2="671" y2="210" stroke="#000" stroke-width="2"/>
+
+  <!-- Coachroof (77mm above deck = 850/11) -->
+  <rect x="370" y="133" width="260" height="77" rx="8" fill="#e0d8c0" stroke="#000" stroke-width="1.5"/>
+  <text class="labelXs" x="500" y="178" text-anchor="middle">COACHROOF 77mm</text>
+
+  <!-- Headroom arrow -->
+  <line x1="500" y1="133" x2="500" y2="372" stroke="#c00" stroke-width="2"/>
+  <text class="labelXs" x="510" y="265" fill="#c00">HT=177mm</text>
+  <text class="labelXs" x="510" y="278" fill="#c00">(1950/11)</text>
+
+  <!-- Sole at midship: 1100/11=100mm below deck → y=310 -->
+  <line x1="355" y1="310" x2="645" y2="310" stroke="#555" stroke-width="2"/>
+  <text class="labelXs" x="305" y="313" text-anchor="end">SOLE</text>
+
+  <!-- Keel slot -->
+  <rect x="487" y="372" width="26" height="95" fill="#888" stroke="#000" stroke-width="1.5"/>
+  <text class="labelXs" x="500" y="460" text-anchor="middle">KEEL SLOT</text>
+
+  <!-- Beam at DWL dimension -->
+  <line class="dim" x1="330" y1="335" x2="670" y2="335"/>
+  <text class="labelXs" x="500" y="333" text-anchor="middle">BWL = 264mm</text>
+
+  <!-- Beam at sheer dimension -->
+  <line class="dim" x1="329" y1="202" x2="671" y2="202"/>
+  <text class="labelXs" x="500" y="200" text-anchor="middle">BOA = 309mm</text>
+
+  <!-- =================== STEP-BY-STEP CONSTRUCTION NOTES =================== -->
+  <text class="label" x="750" y="330">CONSTRUCTION SEQUENCE</text>
+
+  <rect x="745" y="340" width="440" height="300" fill="#f8f8f8" stroke="#888" stroke-width="1"/>
+  <text class="labelXs" x="760" y="363">1. Cut 11 frames from 3mm plywood using section offsets.</text>
+  <text class="labelXs" x="760" y="381">2. Mount frames on a strongback at 81.8mm spacing.</text>
+  <text class="labelXs" x="760" y="399">3. Plank hull with 3mm balsa strips (wet-bend around curves).</text>
+  <text class="labelXs" x="760" y="417">4. Sand fair (80→220 grit). Apply 2× epoxy coats.</text>
+  <text class="labelXs" x="760" y="435">5. Mark DWL from plans — this line must be prominent.</text>
+  <text class="labelXs" x="760" y="453">6. Cut keel slot (26mm wide). Install brass fin.</text>
+  <text class="labelXs" x="760" y="471">7. Cast lead bulb. Bond to fin. Total keel = 2.25kg.</text>
+  <text class="labelXs" x="760" y="489">8. Drill bow thruster hole (Ø11mm) at x=64mm.</text>
+  <text class="labelXs" x="760" y="507">9. Install 18mm stub at x=618 for saildrive indication.</text>
+  <text class="labelXs" x="760" y="525">10. Build deck (2mm ply). Install coachroof.</text>
+  <text class="labelXs" x="760" y="543">11. Install mast step at x=291. Step mast (12mm Al tube).</text>
+  <text class="labelXs" x="760" y="561">12. Rig sails (see M2 sail plan). Tune shroud tension.</text>
+  <text class="labelXs" x="760" y="579">13. FLOAT TEST: place in bathtub. Trim to DWL mark.</text>
+  <text class="labelXs" x="760" y="597">14. STABILITY TEST: heel to 30°, release → must self-right.</text>
+  <text class="labelXs" x="760" y="615">15. SAILING TEST: calm pond, should track on close reach.</text>
+  <text class="labelXs" x="760" y="633">If persistent weather helm: rake mast aft 5mm. If lee helm: rake fwd.</text>
+
+  <!-- Scale bar -->
+  <rect x="-90" y="660" width="200" height="10" fill="#000"/>
+  <rect x="-90" y="660" width="100" height="10" fill="#fff"/>
+  <text class="labelXs" x="-90" y="680">0</text>
+  <text class="labelXs" x="10" y="680">100mm</text>
+  <text class="labelXs" x="110" y="680">200mm</text>
+  <text class="label" x="-90" y="700">SCALE 1:1 (MODEL) — print on A3</text>
+  <text class="note" x="-90" y="718">Frame half-breadths (from offset table ÷11): F0=45, F1=112, F2=151, F3=165, F4=171, F5=171, F6=164, F7=149, F8=130, F9=99, F10=76mm (at sheer/deck)</text>
+  <text class="note" x="-90" y="733">DWL half-breadths: F0=9, F1=56, F2=95, F3=115, F4=125, F5=129, F6=124, F7=109, F8=89, F9=58, F10=25mm</text>
+
+</svg>
