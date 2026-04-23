@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  COASTAL WIND 35 — FULL SCALE DECK PLAN (TOP VIEW)
+  Shows: deck layout, cockpit, anchor locker, bow thruster, solar arch area,
+         bathing platform, hatches, winches, cleats, chainplates
+  Coordinate system: x = mm from FP along centreline; y = mm from centreline (port = left/negative, stbd = right/positive)
+  Scale: 1:20 (print A0)
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1300" height="600"
+     viewBox="-800 -3000 12200 6000">
+
+  <title>Coastal Wind 35 — Full Scale Deck Plan</title>
+
+  <defs>
+    <style>
+      .hull    { stroke:#000; stroke-width:10; fill:#f5f0e8; }
+      .deck    { stroke:#000; stroke-width:6; fill:#e8edd5; }
+      .opening { stroke:#000; stroke-width:5; fill:#cce4ff; }
+      .label   { font-family:Arial,sans-serif; font-size:110px; fill:#000; }
+      .labelSm { font-family:Arial,sans-serif; font-size:80px; fill:#333; }
+      .labelXs { font-family:Arial,sans-serif; font-size:65px; fill:#444; }
+      .title   { font-family:Arial,sans-serif; font-size:180px; fill:#000; font-weight:bold; }
+      .note    { font-family:Arial,sans-serif; font-size:70px; fill:#444; font-style:italic; }
+      .dim     { stroke:#000; stroke-width:3; fill:none; }
+      .fitting { stroke:#000; stroke-width:5; fill:#d0d0d0; }
+      .winch   { stroke:#000; stroke-width:5; fill:#888; }
+      .port    { fill:#ddeedd; stroke:#000; stroke-width:4; }
+      .stbd    { fill:#dde8ff; stroke:#000; stroke-width:4; }
+      .cockpit { fill:#ffe8c0; stroke:#000; stroke-width:6; }
+      .anchor  { fill:#e0f0ff; stroke:#000; stroke-width:5; }
+      .solar   { fill:#fff8cc; stroke:#f0a000; stroke-width:5; stroke-dasharray:30,15; }
+      .cl      { stroke:#888; stroke-width:3; stroke-dasharray:40,20; fill:none; }
+    </style>
+  </defs>
+
+  <!-- TITLE BLOCK -->
+  <rect x="-750" y="-2950" width="11900" height="350" fill="#f0f0f0" stroke="#000" stroke-width="4"/>
+  <text class="title" x="5200" y="-2730" text-anchor="middle">COASTAL WIND 35 — DECK PLAN (TOP VIEW)</text>
+  <text class="label" x="5200" y="-2610" text-anchor="middle">LOA 10500 mm · Beam 3400 mm · Centre Cockpit · Scale 1:20</text>
+  <text class="labelXs" x="10900" y="-2730" text-anchor="end">Sheet 3 of 5</text>
+
+  <!-- CENTRELINE -->
+  <line class="cl" x1="-700" y1="0" x2="10200" y2="0"/>
+  <text class="labelXs" x="-720" y="20" text-anchor="end">CL</text>
+
+  <!-- DECK OUTLINE (hull viewed from above — sheer line as top-view boundary)
+       Port = y negative (upper in this drawing); Stbd = y positive (lower)
+       Using half-breadths from offset table (deck/sheer line)
+       St0/FP=490,St1=1230,St2=1660,St3=1810,St4=1880,St5=1880,
+       St6=1800,St7=1635,St8=1430,St9=1090,St10/AP=840
+  -->
+  <!-- Starboard sheer (y positive = downward in SVG) -->
+  <path class="hull" d="
+    M 0,490
+    C 400,700 700,1000 900,1230
+    C 1300,1450 1600,1580 1800,1660
+    C 2200,1740 2500,1780 2700,1810
+    C 3100,1840 3350,1860 3600,1880
+    C 4100,1880 4300,1880 4500,1880
+    C 4800,1880 5100,1850 5400,1800
+    C 5700,1750 6000,1700 6300,1635
+    C 6700,1580 6900,1560 7200,1430
+    C 7500,1360 7800,1200 8100,1090
+    C 8500,1000 8700,920 9000,840
+    C 9100,830 9200,830 9300,840
+    L 9900,840
+    C 9900,600 9900,300 9900,0
+  " fill="none" stroke="#000" stroke-width="8"/>
+
+  <!-- Port sheer (y negative = upward in SVG) -->
+  <path d="
+    M 0,-490
+    C 400,-700 700,-1000 900,-1230
+    C 1300,-1450 1600,-1580 1800,-1660
+    C 2200,-1740 2500,-1780 2700,-1810
+    C 3100,-1840 3350,-1860 3600,-1880
+    C 4100,-1880 4300,-1880 4500,-1880
+    C 4800,-1880 5100,-1850 5400,-1800
+    C 5700,-1750 6000,-1700 6300,-1635
+    C 6700,-1580 6900,-1560 7200,-1430
+    C 7500,-1360 7800,-1200 8100,-1090
+    C 8500,-1000 8700,-920 9000,-840
+    C 9100,-830 9200,-830 9300,-840
+    L 9900,-840
+    C 9900,-600 9900,-300 9900,0
+  " fill="none" stroke="#000" stroke-width="8"/>
+
+  <!-- Fill the deck area -->
+  <path class="deck" d="
+    M 0,490
+    C 400,700 700,1000 900,1230
+    C 1300,1450 1600,1580 1800,1660
+    C 2200,1740 2500,1780 2700,1810
+    C 3100,1840 3350,1860 3600,1880
+    C 4500,1880 5400,1800 6300,1635
+    C 7200,1430 8100,1090 9000,840
+    L 9900,840 L 9900,-840
+    C 9000,-840 8100,-1090 7200,-1430
+    C 6300,-1635 5400,-1800 4500,-1880
+    C 3600,-1880 2700,-1810 1800,-1660
+    C 900,-1230 400,-700 0,-490
+    C -200,-300 -350,-100 -400,0
+    C -350,100 -200,300 0,490
+    Z
+  "/>
+
+  <!-- BOW AREA (anchor locker region x=0 to 1200) -->
+  <rect class="anchor" x="0" y="-700" width="900" height="1400" rx="50"/>
+  <text class="labelSm" x="450" y="-80">ANCHOR</text>
+  <text class="labelSm" x="450" y="50">LOCKER</text>
+  <!-- Chain pipe -->
+  <circle cx="350" cy="0" r="80" fill="#888" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="350" y="200" text-anchor="middle">CHAIN</text>
+  <text class="labelXs" x="350" y="290" text-anchor="middle">PIPE</text>
+  <!-- Gas bottle bay separator (port side of anchor locker) -->
+  <line x1="0" y1="-400" x2="900" y2="-400" stroke="#000" stroke-width="6"/>
+  <text class="labelXs" x="450" y="-500" text-anchor="middle">GAS</text>
+  <text class="labelXs" x="450" y="-420" text-anchor="middle">BTLS</text>
+  <!-- Anchor (bow roller) -->
+  <rect x="-200" y="-250" width="250" height="500" rx="40" class="fitting"/>
+  <text class="labelXs" x="-75" y="30" text-anchor="middle">ANCHOR</text>
+  <text class="labelXs" x="-75" y="100" text-anchor="middle">ROLLER</text>
+
+  <!-- WINDLASS on foredeck -->
+  <ellipse cx="700" cy="0" rx="150" ry="120" class="winch"/>
+  <text class="labelXs" x="700" y="230" text-anchor="middle">WINDLASS</text>
+
+  <!-- BOW THRUSTER position (circle at x=700, on CL) -->
+  <rect x="600" y="-1100" width="200" height="2200" rx="100" fill="none" stroke="#060" stroke-width="8"/>
+  <text class="labelXs" x="700" y="-1200" text-anchor="middle" fill="#060">BOW</text>
+  <text class="labelXs" x="700" y="-1130" text-anchor="middle" fill="#060">THRUSTER</text>
+  <text class="labelXs" x="700" y="-1060" text-anchor="middle" fill="#060">Ø120mm TUNNEL</text>
+
+  <!-- FOREDECK (x=900 to 2400) - forehatch, genoa track -->
+  <rect class="opening" x="1200" y="-350" width="600" height="700" rx="40"/>
+  <text class="labelXs" x="1500" y="30" text-anchor="middle">FWD</text>
+  <text class="labelXs" x="1500" y="120" text-anchor="middle">HATCH</text>
+  <!-- Genoa track, port -->
+  <line x1="1000" y1="-1200" x2="3800" y2="-1400" stroke="#666" stroke-width="10"/>
+  <text class="labelXs" x="2400" y="-1500" text-anchor="middle">GENOA TRACK (PORT)</text>
+  <!-- Genoa track, stbd -->
+  <line x1="1000" y1="1200" x2="3800" y2="1400" stroke="#666" stroke-width="10"/>
+  <text class="labelXs" x="2400" y="1560" text-anchor="middle">GENOA TRACK (STBD)</text>
+
+  <!-- COACHROOF (x=1800 to 7800 approx — spans saloon + fwd cabin) -->
+  <rect x="1800" y="-1200" width="4200" height="2400" rx="200" fill="#d8d0c0" stroke="#000" stroke-width="8" opacity="0.7"/>
+  <text class="label" x="3900" y="-50" text-anchor="middle" fill="#555">COACHROOF</text>
+  <text class="labelXs" x="3900" y="80" text-anchor="middle" fill="#555">850mm above deck</text>
+
+  <!-- Saloon hatches on coachroof -->
+  <rect class="opening" x="2800" y="-450" width="700" height="900" rx="40"/>
+  <text class="labelXs" x="3150" y="30" text-anchor="middle">SALOON</text>
+  <text class="labelXs" x="3150" y="110" text-anchor="middle">HATCH</text>
+  <rect class="opening" x="4500" y="-450" width="700" height="900" rx="40"/>
+  <text class="labelXs" x="4850" y="30" text-anchor="middle">SALOON</text>
+  <text class="labelXs" x="4850" y="110" text-anchor="middle">HATCH 2</text>
+
+  <!-- MAST on deck -->
+  <circle cx="3200" cy="0" r="140" fill="#aaa" stroke="#000" stroke-width="8"/>
+  <text class="labelXs" x="3200" y="300" text-anchor="middle">MAST</text>
+  <text class="labelXs" x="3200" y="380" text-anchor="middle">x=3200</text>
+
+  <!-- CHAINPLATES (port & stbd, approx x=3000) -->
+  <rect x="2850" y="-2000" width="200" height="400" fill="#999" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="2950" y="-2100" text-anchor="middle">CPLATE</text>
+  <text class="labelXs" x="2950" y="-2040" text-anchor="middle">PORT</text>
+  <rect x="2850" y="1600" width="200" height="400" fill="#999" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="2950" y="2100" text-anchor="middle">CPLATE</text>
+  <text class="labelXs" x="2950" y="2040" text-anchor="middle">STBD</text>
+
+  <!-- CENTRE COCKPIT (x=6400 to 7800) -->
+  <rect class="cockpit" x="6400" y="-800" width="1400" height="1600" rx="100"/>
+  <text class="label" x="7100" y="-100" text-anchor="middle">CENTRE</text>
+  <text class="label" x="7100" y="50" text-anchor="middle">COCKPIT</text>
+  <!-- Wheel/tiller -->
+  <circle cx="7400" cy="0" r="350" fill="none" stroke="#333" stroke-width="8"/>
+  <circle cx="7400" cy="0" r="50" fill="#333"/>
+  <text class="labelXs" x="7400" y="480" text-anchor="middle">WHEEL Ø700</text>
+  <!-- Cockpit winches -->
+  <ellipse cx="6600" cy="-700" rx="130" ry="100" class="winch"/>
+  <text class="labelXs" x="6500" y="-820" text-anchor="middle">WINCH</text>
+  <ellipse cx="6600" cy="700" rx="130" ry="100" class="winch"/>
+  <text class="labelXs" x="6500" y="820" text-anchor="middle">WINCH</text>
+  <!-- Mainsheet block -->
+  <rect x="7050" y="-100" width="200" height="200" fill="#555" stroke="#000" stroke-width="4"/>
+  <text class="labelXs" x="7150" y="-130" text-anchor="middle">SHEET</text>
+  <!-- Companionway into saloon (forward of cockpit) -->
+  <rect class="opening" x="6150" y="-400" width="250" height="800" rx="30"/>
+  <text class="labelXs" x="6275" y="600" text-anchor="middle">COMPANIONWAY</text>
+  <!-- Companionway into aft cabins (aft of cockpit) -->
+  <rect class="opening" x="7800" y="-400" width="250" height="800" rx="30"/>
+  <text class="labelXs" x="7925" y="600" text-anchor="middle">AFT ENTRY</text>
+
+  <!-- PORT AFT CABIN AREA (x=7800 to 9000, port side) -->
+  <path class="port" d="M 7800,-200 L 9000,-840 L 9000,-200 Z" opacity="0.6"/>
+  <text class="labelSm" x="8300" y="-430" text-anchor="middle">PORT AFT</text>
+  <text class="labelSm" x="8300" y="-330" text-anchor="middle">OWNER'S CABIN</text>
+  <text class="labelXs" x="8300" y="-230" text-anchor="middle">(port coachroof)</text>
+  <!-- Aft cabin hatch / port -->
+  <rect class="opening" x="8200" y="-1000" width="500" height="300" rx="30"/>
+  <text class="labelXs" x="8450" y="-730" text-anchor="middle">AFT HATCH (PORT)</text>
+
+  <!-- STBD AFT ENGINE/TOOLBOX (x=7800 to 9000, stbd side) -->
+  <path class="stbd" d="M 7800,200 L 9000,840 L 9000,200 Z" opacity="0.6"/>
+  <text class="labelSm" x="8300" y="430" text-anchor="middle">STBD AFT</text>
+  <text class="labelSm" x="8300" y="530" text-anchor="middle">ENGINE/TOOLBOX</text>
+  <!-- Saildrive access hatch -->
+  <rect class="opening" x="8000" y="200" width="600" height="400" rx="30"/>
+  <text class="labelXs" x="8300" y="430" text-anchor="middle">SAILDRIVE</text>
+  <text class="labelXs" x="8300" y="510" text-anchor="middle">ACCESS HATCH</text>
+  <!-- Stbd aft deck hatch -->
+  <rect class="opening" x="8200" y="700" width="500" height="300" rx="30"/>
+  <text class="labelXs" x="8450" y="730" text-anchor="middle">AFT HATCH (STBD)</text>
+
+  <!-- Saildrive position mark on deck -->
+  <circle cx="6800" cy="0" r="100" fill="none" stroke="#c00" stroke-width="8"/>
+  <text class="labelXs" x="6800" y="-130" text-anchor="middle" fill="#c00">SAILDRIVE</text>
+  <text class="labelXs" x="6800" y="-50" text-anchor="middle" fill="#c00">x=6800</text>
+
+  <!-- AFT DECK (x=9000 to 9300 — between transom and cabin) -->
+  <text class="labelXs" x="9150" y="-150">AFT DECK</text>
+
+  <!-- TRANSOM -->
+  <line x1="9300" y1="-840" x2="9300" y2="840" stroke="#000" stroke-width="10"/>
+
+  <!-- BATHING PLATFORM (x=9300 to 9900) -->
+  <rect x="9300" y="-840" width="600" height="1680" fill="#e0ffd0" stroke="#060" stroke-width="6"/>
+  <text class="labelSm" x="9600" y="-200" text-anchor="middle" fill="#060">BATHING</text>
+  <text class="labelSm" x="9600" y="-100" text-anchor="middle" fill="#060">PLATFORM</text>
+  <text class="labelXs" x="9600" y="0" text-anchor="middle" fill="#060">600mm × 1680mm</text>
+  <!-- Platform hinges / fold indication -->
+  <line x1="9300" y1="-840" x2="9300" y2="840" stroke="#060" stroke-width="3"/>
+  <text class="labelXs" x="9350" y="900" text-anchor="start" fill="#060">FOLD/HINGE</text>
+
+  <!-- SOLAR ARCH / PANEL AREA (above transom/bathing platform) -->
+  <rect class="solar" x="9000" y="-1600" width="900" height="3200" rx="80"/>
+  <text class="labelSm" x="9450" y="-1750" text-anchor="middle" fill="#c07000">SOLAR PANEL</text>
+  <text class="labelSm" x="9450" y="-1640" text-anchor="middle" fill="#c07000">DEPLOYMENT AREA</text>
+  <text class="labelXs" x="9450" y="-1530" text-anchor="middle" fill="#c07000">6× 400W = 2400W peak</text>
+  <!-- Solar arch feet -->
+  <circle cx="9000" cy="-1500" r="80" fill="#888" stroke="#000" stroke-width="5"/>
+  <circle cx="9000" cy="1500" r="80" fill="#888" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="9000" y="-1640" text-anchor="middle">ARCH</text>
+  <text class="labelXs" x="9000" y="-1560" text-anchor="middle">FOOT</text>
+
+  <!-- STERN CLEATS -->
+  <rect x="9050" y="-1050" width="200" height="120" class="fitting"/>
+  <text class="labelXs" x="9150" y="-1080" text-anchor="middle">CLEAT</text>
+  <rect x="9050" y="930" width="200" height="120" class="fitting"/>
+  <text class="labelXs" x="9150" y="980" text-anchor="middle">CLEAT</text>
+
+  <!-- BOW CLEATS -->
+  <rect x="400" y="-1400" width="200" height="120" class="fitting"/>
+  <text class="labelXs" x="500" y="-1500" text-anchor="middle">BOW CLEAT P</text>
+  <rect x="400" y="1280" width="200" height="120" class="fitting"/>
+  <text class="labelXs" x="500" y="1500" text-anchor="middle">BOW CLEAT S</text>
+
+  <!-- STANCHION BASES (every 1800mm approx, both sides) -->
+  <g fill="#999" stroke="#000" stroke-width="3">
+    <rect x="1500" y="-1820" width="120" height="80"/>
+    <rect x="2800" y="-1900" width="120" height="80"/>
+    <rect x="4200" y="-1960" width="120" height="80"/>
+    <rect x="5600" y="-1920" width="120" height="80"/>
+    <rect x="7000" y="-1630" width="120" height="80"/>
+    <rect x="8200" y="-1260" width="120" height="80"/>
+    <rect x="1500" y="1740" width="120" height="80"/>
+    <rect x="2800" y="1820" width="120" height="80"/>
+    <rect x="4200" y="1880" width="120" height="80"/>
+    <rect x="5600" y="1840" width="120" height="80"/>
+    <rect x="7000" y="1550" width="120" height="80"/>
+    <rect x="8200" y="1180" width="120" height="80"/>
+  </g>
+  <text class="labelXs" x="1200" y="-2050">STANCHION BASES (typ.)</text>
+
+  <!-- Dimensions -->
+  <!-- LOA -->
+  <line class="dim" x1="-400" y1="2500" x2="9900" y2="2500"/>
+  <line class="dim" x1="-400" y1="2400" x2="-400" y2="2600"/>
+  <line class="dim" x1="9900" y1="2400" x2="9900" y2="2600"/>
+  <text class="label" x="4750" y="2450" text-anchor="middle">LOA = 10500 mm</text>
+
+  <!-- Beam -->
+  <line class="dim" x1="-650" y1="-1880" x2="-650" y2="1880"/>
+  <line class="dim" x1="-700" y1="-1880" x2="-600" y2="-1880"/>
+  <line class="dim" x1="-700" y1="1880" x2="-600" y2="1880"/>
+  <text class="label" x="-660" y="0" text-anchor="end" transform="rotate(-90,-660,0)">BOA = 3400 mm</text>
+
+  <!-- Cockpit dimensions -->
+  <line class="dim" x1="6400" y1="2000" x2="7800" y2="2000"/>
+  <line class="dim" x1="6400" y1="1950" x2="6400" y2="2050"/>
+  <line class="dim" x1="7800" y1="1950" x2="7800" y2="2050"/>
+  <text class="labelXs" x="7100" y="2150" text-anchor="middle">COCKPIT 1400mm</text>
+
+  <!-- Scale bar -->
+  <rect x="-700" y="2700" width="5000" height="120" fill="#000"/>
+  <rect x="-700" y="2700" width="2500" height="120" fill="#fff"/>
+  <text class="labelXs" x="-700" y="2900">0</text>
+  <text class="labelXs" x="1800" y="2900">2500 mm</text>
+  <text class="labelXs" x="4300" y="2900">5000 mm</text>
+  <text class="label" x="-700" y="3050">SCALE 1:20</text>
+
+  <!-- North/Fwd indicator -->
+  <text class="label" x="10200" y="-2000">FWD ↑</text>
+
+  <text class="note" x="-700" y="-2650">NOTE: Port = left, Starboard = right as viewed from above looking forward. All dims in mm. Centre cockpit at x=6400–7800.</text>
+
+</svg>

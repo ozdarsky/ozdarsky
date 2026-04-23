@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  COASTAL WIND 35 — FULL SCALE INTERIOR LAYOUT (TOP VIEW)
+  Shows: interior cabin arrangement — port aft owner's cabin, stbd aft engine/toolbox,
+         centre saloon, galley, nav station, heads, forward V-berth, anchor locker
+  Scale: 1:20 (print A0)
+  Coordinate system: x=mm from FP along CL; y=mm from CL (port=neg, stbd=pos)
+  View: looking down through the hull (deck removed) — below sole level
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1400" height="700"
+     viewBox="-800 -3200 12500 6400">
+
+  <title>Coastal Wind 35 — Full Scale Interior Layout</title>
+
+  <defs>
+    <style>
+      .hull    { stroke:#000; stroke-width:10; fill:none; }
+      .wall    { stroke:#000; stroke-width:8; fill:none; }
+      .bh      { stroke:#000; stroke-width:12; fill:none; }
+      .label   { font-family:Arial,sans-serif; font-size:110px; fill:#000; }
+      .labelSm { font-family:Arial,sans-serif; font-size:80px; fill:#333; }
+      .labelXs { font-family:Arial,sans-serif; font-size:65px; fill:#444; }
+      .title   { font-family:Arial,sans-serif; font-size:180px; fill:#000; font-weight:bold; }
+      .note    { font-family:Arial,sans-serif; font-size:70px; fill:#444; font-style:italic; }
+      .dim     { stroke:#000; stroke-width:3; fill:none; }
+      .cabin   { stroke:#555; stroke-width:4; fill-opacity:0.35; }
+      .berth   { stroke:#666; stroke-width:4; fill:#b8d4b8; fill-opacity:0.5; }
+      .galley  { stroke:#666; stroke-width:4; fill:#f0d8b0; fill-opacity:0.6; }
+      .head    { stroke:#666; stroke-width:4; fill:#c8e0f0; fill-opacity:0.6; }
+      .engine  { stroke:#c00; stroke-width:4; fill:#ffd0c0; fill-opacity:0.6; }
+      .locker  { stroke:#666; stroke-width:4; fill:#e0e0e0; fill-opacity:0.6; }
+      .nav     { stroke:#666; stroke-width:4; fill:#d0c8f0; fill-opacity:0.6; }
+      .saloon  { stroke:#666; stroke-width:4; fill:#e8f0e0; fill-opacity:0.5; }
+      .anchor  { stroke:#666; stroke-width:4; fill:#cce4ff; fill-opacity:0.6; }
+      .cl      { stroke:#888; stroke-width:3; stroke-dasharray:40,20; fill:none; }
+      .door    { stroke:#000; stroke-width:4; fill:none; }
+    </style>
+  </defs>
+
+  <!-- TITLE BLOCK -->
+  <rect x="-750" y="-3150" width="12100" height="350" fill="#f0f0f0" stroke="#000" stroke-width="4"/>
+  <text class="title" x="5500" y="-2940" text-anchor="middle">COASTAL WIND 35 — INTERIOR LAYOUT (BELOW DECK)</text>
+  <text class="label" x="5500" y="-2820" text-anchor="middle">Scale 1:20 · 4 berths · 1950mm headroom amidships · Port Aft: Owner's Cabin · Stbd Aft: Engine/Toolbox</text>
+  <text class="labelXs" x="11100" y="-2940" text-anchor="end">Sheet 4 of 5</text>
+
+  <!-- CENTRELINE -->
+  <line class="cl" x1="-700" y1="0" x2="10500" y2="0"/>
+  <text class="labelXs" x="-720" y="20" text-anchor="end">CL</text>
+
+  <!-- HULL WATERPLANE OUTLINE (approx at deck level, same as deck plan) -->
+  <path class="hull" d="
+    M 0,490
+    C 400,700 700,1000 900,1230
+    C 1300,1450 1600,1580 1800,1660
+    C 2200,1740 2500,1780 2700,1810
+    C 3100,1840 3600,1880 4500,1880
+    C 5400,1800 6300,1635 7200,1430
+    C 7500,1360 7800,1200 8100,1090
+    C 8500,1000 8700,920 9000,840
+    L 9300,840 L 9300,-840
+    C 8700,-920 8100,-1090 7200,-1430
+    C 6300,-1635 5400,-1800 4500,-1880
+    C 3600,-1880 2700,-1810 1800,-1660
+    C 900,-1230 400,-700 0,-490
+    C -200,-300 -400,-100 -400,0
+    C -400,100 -200,300 0,490 Z
+  " fill="#f5f0e8" stroke="#000" stroke-width="8"/>
+
+  <!-- =====================================================
+       BULKHEADS (from FP, positions in mm along x-axis)
+       ===================================================== -->
+  <!-- BH-0: x=0 (collision) -->
+  <line class="bh" x1="0" y1="-490" x2="0" y2="490"/>
+  <text class="labelXs" x="0" y="620" text-anchor="middle">BH-0</text>
+  <!-- BH-1: x=900 (chain locker / gas separator) -->
+  <line class="bh" x1="900" y1="-1230" x2="900" y2="1230"/>
+  <text class="labelXs" x="900" y="1370" text-anchor="middle">BH-1</text>
+  <!-- BH-2: x=1800 (fwd cabin aft wall) -->
+  <line class="bh" x1="1800" y1="-1660" x2="1800" y2="1660"/>
+  <text class="labelXs" x="1800" y="1800" text-anchor="middle">BH-2</text>
+  <!-- BH-3: x=3600 (forward cabin aft, chainplate BH) -->
+  <line class="bh" x1="3600" y1="-1880" x2="3600" y2="1880"/>
+  <text class="labelXs" x="3600" y="2020" text-anchor="middle">BH-3</text>
+  <!-- BH-4: x=4500 (saloon fwd, keel bolt fwd row) -->
+  <line class="bh" x1="4500" y1="-1880" x2="4500" y2="1880"/>
+  <text class="labelXs" x="4500" y="2020" text-anchor="middle">BH-4</text>
+  <!-- BH-5: x=5800 (saloon aft, keel bolt aft row) -->
+  <line class="bh" x1="5800" y1="-1810" x2="5800" y2="1810"/>
+  <text class="labelXs" x="5800" y="1950" text-anchor="middle">BH-5</text>
+  <!-- BH-6: x=6400 (cockpit fwd bulkhead) -->
+  <line class="bh" x1="6400" y1="-1700" x2="6400" y2="1700"/>
+  <text class="labelXs" x="6400" y="1850" text-anchor="middle">BH-6 (WT)</text>
+  <!-- BH-7: x=7800 (cockpit aft / aft cabin fwd) -->
+  <line class="bh" x1="7800" y1="-1430" x2="7800" y2="1430"/>
+  <text class="labelXs" x="7800" y="1600" text-anchor="middle">BH-7</text>
+  <!-- Port/stbd divider in aft cabin: x=7800, y=0 centerline partition -->
+  <line class="wall" x1="7800" y1="0" x2="9300" y2="0"/>
+  <text class="labelXs" x="8550" y="140" text-anchor="middle" fill="#c00">PORT/STBD DIVIDER</text>
+  <!-- BH-8: x=9300 (transom frame) -->
+  <line class="bh" x1="9300" y1="-840" x2="9300" y2="840"/>
+  <text class="labelXs" x="9300" y="980" text-anchor="middle">BH-8 (TRANSOM)</text>
+
+  <!-- =====================================================
+       ZONE LABELS & ROOM FILLS
+       ===================================================== -->
+
+  <!-- ANCHOR LOCKER (x=0 to 900, full width) -->
+  <rect class="anchor" x="0" y="-700" width="900" height="1400" rx="0"/>
+  <text class="label" x="450" y="-80" text-anchor="middle">ANCHOR</text>
+  <text class="label" x="450" y="60" text-anchor="middle">LOCKER</text>
+  <text class="labelXs" x="450" y="200" text-anchor="middle">80m chain + anchor</text>
+  <text class="labelXs" x="450" y="300" text-anchor="middle">GAS BOTTLES (port)</text>
+  <!-- Gas bottle partition -->
+  <line x1="0" y1="-300" x2="900" y2="-300" stroke="#000" stroke-width="6"/>
+  <text class="labelXs" x="450" y="-400" text-anchor="middle">GAS BTLS</text>
+
+  <!-- FORWARD CABIN / V-BERTH (x=900 to 3600) -->
+  <rect class="berth" x="900" y="-1660" width="2700" height="3320" rx="0"/>
+  <text class="label" x="2250" y="-700" text-anchor="middle">FORWARD</text>
+  <text class="label" x="2250" y="-560" text-anchor="middle">CABIN</text>
+  <!-- V-berth port -->
+  <path d="M 900,-1230 C 1200,-1500 1800,-1650 1800,-1650 L 1800,-200 L 900,-200 Z" class="berth"/>
+  <text class="labelXs" x="1350" y="-800" text-anchor="middle">V-BERTH</text>
+  <text class="labelXs" x="1350" y="-700" text-anchor="middle">PORT</text>
+  <!-- V-berth stbd -->
+  <path d="M 900,1230 C 1200,1500 1800,1650 1800,1650 L 1800,200 L 900,200 Z" class="berth"/>
+  <text class="labelXs" x="1350" y="800" text-anchor="middle">V-BERTH</text>
+  <text class="labelXs" x="1350" y="900" text-anchor="middle">STBD</text>
+  <!-- V-berth dimensions -->
+  <text class="labelXs" x="2250" y="-400">FWD CABIN: 2× single berths or 1 double (convertible)</text>
+
+  <!-- HEADS / WC (x=3000 to 3600, port side) -->
+  <rect class="head" x="3000" y="-1880" width="600" height="1000" rx="0"/>
+  <text class="labelXs" x="3300" y="-1430" text-anchor="middle">HEADS</text>
+  <text class="labelXs" x="3300" y="-1330" text-anchor="middle">(WC+SHOWER)</text>
+  <!-- Toilet symbol -->
+  <ellipse cx="3200" cy="-1700" rx="150" ry="200" fill="#b0c8e0" stroke="#000" stroke-width="3" opacity="0.7"/>
+  <!-- Shower pan -->
+  <rect x="3300" y="-1850" width="250" height="350" fill="#d0e8f0" stroke="#000" stroke-width="3" opacity="0.7"/>
+
+  <!-- NAVIGATION STATION (x=3000-3600, stbd side) -->
+  <rect class="nav" x="3000" y="880" width="600" height="1000" rx="0"/>
+  <text class="labelXs" x="3300" y="1330" text-anchor="middle">NAV</text>
+  <text class="labelXs" x="3300" y="1430" text-anchor="middle">STATION</text>
+  <!-- Chart table surface -->
+  <rect x="3050" y="930" width="500" height="500" fill="#c8b8e0" stroke="#000" stroke-width="3" opacity="0.7"/>
+  <text class="labelXs" x="3300" y="1220" text-anchor="middle" fill="#fff">CHART</text>
+  <text class="labelXs" x="3300" y="1300" text-anchor="middle" fill="#fff">TABLE</text>
+
+  <!-- SALOON (x=3600 to 5800, centre) -->
+  <rect class="saloon" x="3600" y="-880" width="2200" height="1760" rx="0"/>
+  <text class="label" x="4700" y="-200" text-anchor="middle">MAIN SALOON</text>
+  <!-- Saloon table -->
+  <rect x="4000" y="-350" width="1200" height="700" fill="#c8b860" stroke="#000" stroke-width="4" opacity="0.7" rx="40"/>
+  <text class="labelXs" x="4600" y="30" text-anchor="middle">TABLE</text>
+  <!-- Port settee berth -->
+  <rect x="3650" y="-870" width="2100" height="550" fill="#b8d4b8" stroke="#555" stroke-width="3" opacity="0.7"/>
+  <text class="labelXs" x="4700" y="-640" text-anchor="middle">PORT SETTEE / BERTH (1850mm)</text>
+  <!-- Stbd settee berth -->
+  <rect x="3650" y="320" width="2100" height="550" fill="#b8d4b8" stroke="#555" stroke-width="3" opacity="0.7"/>
+  <text class="labelXs" x="4700" y="640" text-anchor="middle">STBD SETTEE / BERTH (1850mm)</text>
+
+  <!-- GALLEY (x=5200 to 5800, stbd side) -->
+  <rect class="galley" x="5200" y="450" width="600" height="1360" rx="0"/>
+  <text class="labelSm" x="5500" y="1020" text-anchor="middle">GALLEY</text>
+  <!-- Cooker/stove -->
+  <rect x="5250" y="500" width="500" height="300" fill="#e8c080" stroke="#000" stroke-width="3" opacity="0.8"/>
+  <text class="labelXs" x="5500" y="680" text-anchor="middle">STOVE</text>
+  <!-- Sink -->
+  <rect x="5250" y="820" width="500" height="250" fill="#b0d8f0" stroke="#000" stroke-width="3" opacity="0.8" rx="20"/>
+  <text class="labelXs" x="5500" y="970" text-anchor="middle">SINK</text>
+  <!-- Fridge -->
+  <rect x="5250" y="1090" width="500" height="360" fill="#d8d8f0" stroke="#000" stroke-width="3" opacity="0.8"/>
+  <text class="labelXs" x="5500" y="1300" text-anchor="middle">FRIDGE</text>
+
+  <!-- GALLEY PORT (x=5200-5800, port side) — storage/passage -->
+  <rect class="locker" x="5200" y="-1810" width="600" height="1360" rx="0"/>
+  <text class="labelXs" x="5500" y="-1400" text-anchor="middle">STORAGE</text>
+  <text class="labelXs" x="5500" y="-1300" text-anchor="middle">LOCKERS</text>
+
+  <!-- PASSAGE / COCKPIT ACCESS (x=6000 to 6400, under cockpit sole) -->
+  <rect x="6000" y="-600" width="400" height="1200" fill="#ffe0a0" stroke="#888" stroke-width="5" opacity="0.6"/>
+  <text class="labelXs" x="6200" y="-50" text-anchor="middle">PASSAGEWAY</text>
+  <text class="labelXs" x="6200" y="70" text-anchor="middle">(to aft)</text>
+
+  <!-- KEEL STUB AREA (under sole between BH4-BH5) -->
+  <rect x="4500" y="-200" width="1300" height="400" fill="#888" stroke="#000" stroke-width="6" opacity="0.4"/>
+  <text class="labelXs" x="5150" y="10" text-anchor="middle" fill="#000">KEEL STUB (8 bolts)</text>
+  <!-- Battery bank below sole -->
+  <rect x="4600" y="-150" width="1100" height="300" fill="#60a0e0" stroke="#000" stroke-width="4" opacity="0.5" rx="10"/>
+  <text class="labelXs" x="5150" y="20" text-anchor="middle" fill="#fff">BATTERIES 25kWh</text>
+
+  <!-- COMPRESSION POST (mast at x=3200) -->
+  <rect x="3150" y="-80" width="100" height="160" fill="#aaa" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="3200" y="-110" text-anchor="middle">COMP POST</text>
+
+  <!-- =====================================================
+       AFT SECTION (behind cockpit BH-7)
+       Port: Owner's cabin | Stbd: Engine/Toolbox
+       ===================================================== -->
+
+  <!-- PORT AFT — OWNER'S CABIN (x=7800 to 9300, port y=0 to -840) -->
+  <path class="cabin" d="M 7800,0 L 7800,-1430 C 8500,-1200 8800,-1050 9300,-840 L 9300,0 Z"
+        fill="#d8f0d0"/>
+  <text class="label" x="8500" y="-800" text-anchor="middle">OWNER'S</text>
+  <text class="label" x="8500" y="-660" text-anchor="middle">CABIN (PORT)</text>
+  <text class="labelXs" x="8500" y="-520" text-anchor="middle">Seamlessly extends from saloon</text>
+  <!-- Double berth (port aft) -->
+  <path d="M 7900,-100 L 7900,-1400 C 8400,-1180 8700,-1020 9200,-800 L 9200,-100 Z"
+        class="berth"/>
+  <text class="labelXs" x="8550" y="-650" text-anchor="middle" fill="#333">DBL BERTH</text>
+  <text class="labelXs" x="8550" y="-540" text-anchor="middle" fill="#333">~2100mm long</text>
+  <!-- Optional door position BH-7 port -->
+  <line x1="7800" y1="0" x2="7800" y2="-600" stroke="#f60" stroke-width="8" stroke-dasharray="20,15"/>
+  <text class="labelXs" x="7650" y="-350" fill="#f60" text-anchor="end">OPT.</text>
+  <text class="labelXs" x="7650" y="-260" fill="#f60" text-anchor="end">DOOR</text>
+  <text class="labelXs" x="7650" y="-170" fill="#f60" text-anchor="end">750mm</text>
+
+  <!-- STBD AFT — ENGINE/TOOLBOX (x=7800 to 9300, stbd y=0 to +840) -->
+  <path class="engine" d="M 7800,0 L 7800,1430 C 8500,1200 8800,1050 9300,840 L 9300,0 Z"/>
+  <text class="label" x="8500" y="500" text-anchor="middle">ENGINE ROOM</text>
+  <text class="label" x="8500" y="640" text-anchor="middle">+ TOOLBOX (STBD)</text>
+  <!-- Saildrive unit -->
+  <circle cx="8200" cy="200" r="180" fill="none" stroke="#c00" stroke-width="8"/>
+  <text class="labelXs" x="8200" y="230" text-anchor="middle" fill="#c00">SAILDRIVE</text>
+  <text class="labelXs" x="8200" y="330" text-anchor="middle" fill="#c00">MOTOR</text>
+  <!-- Access hatch from above -->
+  <rect x="8000" y="350" width="600" height="350" fill="#ffccaa" stroke="#c00" stroke-width="5" rx="20"/>
+  <text class="labelXs" x="8300" y="540" text-anchor="middle">ACCESS HATCH ↑</text>
+  <!-- Toolbox area -->
+  <rect x="8500" y="50" width="700" height="750" fill="#f0e0d0" stroke="#888" stroke-width="4" rx="20"/>
+  <text class="labelXs" x="8850" y="350" text-anchor="middle">TOOLBOX</text>
+  <text class="labelXs" x="8850" y="440" text-anchor="middle">SHELVING</text>
+  <!-- Electric cabinet -->
+  <rect x="7850" y="600" width="400" height="350" fill="#d0d8f0" stroke="#00c" stroke-width="4" rx="10"/>
+  <text class="labelXs" x="8050" y="800" text-anchor="middle" fill="#00c">ELEC</text>
+  <text class="labelXs" x="8050" y="890" text-anchor="middle" fill="#00c">PANEL</text>
+  <!-- Shore power inlet -->
+  <circle cx="9200" cy="700" r="80" fill="#60c060" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="9200" y="840" text-anchor="middle">SHORE POWER</text>
+
+  <!-- =====================================================
+       HEADROOM ANNOTATION
+       ===================================================== -->
+  <!-- Headroom bar at midship (x=4500) -->
+  <line x1="4500" y1="-2200" x2="4500" y2="-2600" stroke="#c00" stroke-width="6"/>
+  <text class="label" x="4500" y="-2700" text-anchor="middle" fill="#c00">HEADROOM AT CL: 1950mm (180cm+ clear)</text>
+
+  <!-- STEP DOWN from saloon to aft cabin (optional — annotated) -->
+  <rect x="7750" y="-120" width="100" height="240" fill="#ffa060" stroke="#f60" stroke-width="4"/>
+  <text class="labelXs" x="7700" y="180" fill="#f60" text-anchor="end">STEP 150mm</text>
+  <text class="labelXs" x="7700" y="280" fill="#f60" text-anchor="end">(recommended)</text>
+
+  <!-- LOA/key dimensions -->
+  <line class="dim" x1="-400" y1="-2900" x2="9300" y2="-2900"/>
+  <line class="dim" x1="-400" y1="-2800" x2="-400" y2="-3000"/>
+  <line class="dim" x1="9300" y1="-2800" x2="9300" y2="-3000"/>
+  <text class="label" x="4450" y="-2800" text-anchor="middle">LOA HULL = 9700 mm (FP to transom)</text>
+
+  <!-- Bulkhead position dims along bottom -->
+  <line class="dim" x1="0" y1="2400" x2="9300" y2="2400"/>
+  <g stroke="#000" stroke-width="3">
+    <line x1="0" y1="2350" x2="0" y2="2450"/>
+    <line x1="900" y1="2350" x2="900" y2="2450"/>
+    <line x1="1800" y1="2350" x2="1800" y2="2450"/>
+    <line x1="3600" y1="2350" x2="3600" y2="2450"/>
+    <line x1="4500" y1="2350" x2="4500" y2="2450"/>
+    <line x1="5800" y1="2350" x2="5800" y2="2450"/>
+    <line x1="6400" y1="2350" x2="6400" y2="2450"/>
+    <line x1="7800" y1="2350" x2="7800" y2="2450"/>
+    <line x1="9300" y1="2350" x2="9300" y2="2450"/>
+  </g>
+  <text class="labelXs" x="0" y="2600" text-anchor="middle">0</text>
+  <text class="labelXs" x="900" y="2600" text-anchor="middle">900</text>
+  <text class="labelXs" x="1800" y="2600" text-anchor="middle">1800</text>
+  <text class="labelXs" x="3600" y="2600" text-anchor="middle">3600</text>
+  <text class="labelXs" x="4500" y="2600" text-anchor="middle">4500</text>
+  <text class="labelXs" x="5800" y="2600" text-anchor="middle">5800</text>
+  <text class="labelXs" x="6400" y="2600" text-anchor="middle">6400</text>
+  <text class="labelXs" x="7800" y="2600" text-anchor="middle">7800</text>
+  <text class="labelXs" x="9300" y="2600" text-anchor="middle">9300</text>
+  <text class="labelXs" x="4500" y="2780" text-anchor="middle">BULKHEAD POSITIONS IN mm FROM FP</text>
+
+  <!-- Scale bar -->
+  <rect x="-700" y="2950" width="5000" height="120" fill="#000"/>
+  <rect x="-700" y="2950" width="2500" height="120" fill="#fff"/>
+  <text class="labelXs" x="-700" y="3150">0</text>
+  <text class="labelXs" x="1800" y="3150">2500 mm</text>
+  <text class="labelXs" x="4300" y="3150">5000 mm</text>
+  <text class="label" x="-700" y="3300">SCALE 1:20</text>
+
+  <text class="note" x="-700" y="-3050">NOTE: Port (left) = owner's cabin aft. Stbd (right) = engine/toolbox aft. Seamless saloon-to-cabin transition possible (no door required, optional curtain/step). 4 sleeping positions total.</text>
+
+</svg>
