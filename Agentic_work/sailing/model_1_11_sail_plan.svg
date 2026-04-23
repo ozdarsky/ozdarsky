@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  COASTAL WIND 35 — 1:11 SCALE MODEL SAIL PLAN
+  Model mast: 1500mm · I=1409mm · J=409mm · P=1454mm · E=500mm
+  SA Main=364cm² · SA Jib=289cm²
+  Print A3 at 1:2 for workbench use
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="600" height="1800"
+     viewBox="-100 -1800 800 2200">
+
+  <title>Coastal Wind 35 — 1:11 Scale Model Sail Plan</title>
+
+  <defs>
+    <style>
+      .hull    { stroke:#000; stroke-width:2; fill:#f5f0e8; }
+      .rig     { stroke:#333; stroke-width:3; fill:none; }
+      .sail    { fill:#d8eeff; fill-opacity:0.5; stroke:#000; stroke-width:2; }
+      .wire    { stroke:#555; stroke-width:1.5; stroke-dasharray:6,3; fill:none; }
+      .dim     { stroke:#000; stroke-width:0.8; fill:none; }
+      .label   { font-family:Arial,sans-serif; font-size:20px; fill:#000; }
+      .labelSm { font-family:Arial,sans-serif; font-size:14px; fill:#333; }
+      .labelXs { font-family:Arial,sans-serif; font-size:11px; fill:#444; }
+      .title   { font-family:Arial,sans-serif; font-size:22px; fill:#000; font-weight:bold; }
+      .note    { font-family:Arial,sans-serif; font-size:10px; fill:#444; font-style:italic; }
+      .ce      { fill:#ff6600; }
+      .clr     { fill:#0066ff; }
+    </style>
+  </defs>
+
+  <!-- TITLE BLOCK -->
+  <rect x="-90" y="-1790" width="770" height="100" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+  <text class="title" x="290" y="-1740" text-anchor="middle">COASTAL WIND 35 — 1:11 MODEL SAIL PLAN</text>
+  <text class="labelXs" x="290" y="-1710" text-anchor="middle">Mast 1500mm · I=1409 · J=409 · P=1454 · E=500mm (all model dims)</text>
+  <text class="labelXs" x="660" y="-1740" text-anchor="end">Sheet M2 of M3</text>
+
+  <!-- DWL -->
+  <line x1="-80" y1="0" x2="700" y2="0" stroke="#0000cc" stroke-width="1.5" stroke-dasharray="10,5"/>
+  <text class="labelXs" x="-85" y="3" text-anchor="end" fill="#0000cc">DWL</text>
+
+  <!-- HULL PROFILE (model scale) -->
+  <path class="hull" d="
+    M -36,-127
+    C 0,-127 55,-123 164,-109
+    C 245,-105 409,-100 491,-100
+    C 573,-100 655,-98 818,-109
+    C 836,-100 900,-100 900,-45 L 950,-45
+  "/>
+  <path d="M -36,-127 C -38,-90 -23,0 0,64" stroke="#000" stroke-width="2" fill="none"/>
+  <path d="M 0,64 L 900,45" stroke="#000" stroke-width="2" fill="none"/>
+  <path d="M 900,-100 L 900,45" stroke="#000" stroke-width="2" fill="none"/>
+
+  <!-- Keel + bulb (model) -->
+  <path d="M 318,64 C 309,91 327,159 327,159 C 354,160 464,160 464,159 C 464,159 482,91 473,64"
+        stroke="#000" stroke-width="2" fill="#ccc"/>
+  <ellipse cx="400" cy="177" rx="100" ry="18" fill="#999" stroke="#000" stroke-width="2"/>
+  <text class="labelXs" x="400" y="200" text-anchor="middle">LEAD BULB 2.25kg</text>
+
+  <!-- MAST (model: from deck at y=-100 to masthead y=-1600) -->
+  <line class="rig" x1="291" y1="-177" x2="291" y2="-1600" stroke-width="5"/>
+
+  <!-- BOOM -->
+  <line class="rig" x1="291" y1="-118" x2="791" y2="-118" stroke-width="4"/>
+  <text class="labelXs" x="540" y="-123" text-anchor="middle">E = 500mm</text>
+
+  <!-- FORESTAY -->
+  <line class="wire" x1="291" y1="-1600" x2="-9" y2="-118"/>
+  <text class="labelXs" x="100" y="-900" transform="rotate(-48,100,-900)">FORESTAY 1467mm</text>
+
+  <!-- BACKSTAY -->
+  <line class="wire" x1="291" y1="-1600" x2="836" y2="-118"/>
+
+  <!-- CAP SHROUDS -->
+  <line class="wire" x1="291" y1="-1600" x2="218" y2="-100"/>
+  <line class="wire" x1="291" y1="-1600" x2="364" y2="-100"/>
+  <!-- Lower shroud attachment (fractional) -->
+  <line class="wire" x1="291" y1="-1182" x2="200" y2="-100"/>
+  <line class="wire" x1="291" y1="-1182" x2="382" y2="-100"/>
+
+  <!-- MAINSAIL -->
+  <path class="sail" d="
+    M 291,-118
+    C 291,-400 291,-900 291,-1600
+    C 450,-1200 620,-800 791,-118
+    Z
+  "/>
+  <text class="labelSm" x="480" y="-750" text-anchor="middle">MAIN</text>
+  <text class="labelXs" x="480" y="-720" text-anchor="middle">364 cm²</text>
+
+  <!-- JIB -->
+  <path class="sail" d="
+    M -9,-118
+    C 100,-450 200,-900 291,-1600
+    C 200,-1100 120,-650 -9,-118
+    Z
+  "/>
+  <text class="labelSm" x="120" y="-860" text-anchor="middle">JIB</text>
+  <text class="labelXs" x="120" y="-830" text-anchor="middle">289 cm²</text>
+
+  <!-- CE marker -->
+  <circle cx="360" cy="-660" r="18" class="ce"/>
+  <line x1="360" y1="-678" x2="360" y2="-642" stroke="#f60" stroke-width="3"/>
+  <line x1="342" y1="-660" x2="378" y2="-660" stroke="#f60" stroke-width="3"/>
+  <text class="labelXs" x="385" y="-655" fill="#f60">CE</text>
+
+  <!-- CLR marker -->
+  <polygon points="382,-32 355,18 409,18" class="clr"/>
+  <text class="labelXs" x="420" y="10" fill="#0066ff">CLR</text>
+
+  <!-- Dimension: I (forestay height) -->
+  <line class="dim" x1="315" y1="-100" x2="315" y2="-1509"/>
+  <text class="labelXs" x="320" y="-810">I = 1409mm</text>
+
+  <!-- Dimension: J (forestay base) -->
+  <line class="dim" x1="291" y1="-88" x2="-9" y2="-88"/>
+  <text class="labelXs" x="140" y="-80">J = 409mm</text>
+
+  <!-- Dimension: P (mainsail luff) -->
+  <line class="dim" x1="265" y1="-118" x2="265" y2="-1572"/>
+  <text class="labelXs" x="210" y="-840" transform="rotate(-90,210,-840)">P = 1454mm</text>
+
+  <!-- Mast height dim -->
+  <line class="dim" x1="550" y1="-100" x2="550" y2="-1600"/>
+  <line class="dim" x1="542" y1="-100" x2="558" y2="-100"/>
+  <line class="dim" x1="542" y1="-1600" x2="558" y2="-1600"/>
+  <text class="label" x="560" y="-860">MAST</text>
+  <text class="label" x="560" y="-835">1500mm</text>
+
+  <!-- Reefing annotation -->
+  <rect x="400" y="-550" width="260" height="200" fill="#ffffd0" stroke="#888" stroke-width="1"/>
+  <text class="labelXs" x="415" y="-530">REEFING GUIDE:</text>
+  <text class="labelXs" x="415" y="-510">R1 (−20%): tie at 290mm up luff</text>
+  <text class="labelXs" x="415" y="-490">R2 (−38%): tie at 552mm up luff</text>
+  <text class="labelXs" x="415" y="-465">Storm: reduce to 582cm²</text>
+  <text class="labelXs" x="415" y="-445">Jib reef at 75%: 217cm²</text>
+
+  <!-- Sail area table -->
+  <rect x="-90" y="-1650" width="340" height="200" fill="#f8f8f8" stroke="#888" stroke-width="1"/>
+  <text class="labelXs" x="-80" y="-1630">MODEL SAIL AREAS (1:11 SCALE)</text>
+  <text class="labelXs" x="-80" y="-1610">Mainsail (full): 364 cm²</text>
+  <text class="labelXs" x="-80" y="-1590">Jib 100%:       289 cm²</text>
+  <text class="labelXs" x="-80" y="-1570">Total working:  653 cm²</text>
+  <text class="labelXs" x="-80" y="-1550">≈ A4 paper area (for reference)</text>
+  <text class="labelXs" x="-80" y="-1510">Cloth: 40g/m² rip-stop nylon</text>
+  <text class="labelXs" x="-80" y="-1490">or 0.05mm Mylar film</text>
+
+  <!-- Scale bar -->
+  <rect x="-90" y="250" width="200" height="10" fill="#000"/>
+  <rect x="-90" y="250" width="100" height="10" fill="#fff"/>
+  <text class="labelXs" x="-90" y="270">0</text>
+  <text class="labelXs" x="10" y="270">100mm</text>
+  <text class="labelXs" x="110" y="270">200mm</text>
+  <text class="label" x="-90" y="300">SCALE: 1:1 model (print 1:2 for A3)</text>
+  <text class="note" x="-90" y="330">All dimensions in mm (model scale). Mast step at model x=291mm from FP. Masthead at y=−1600mm above DWL.</text>
+  <text class="note" x="-90" y="350">Rig material: 12mm aluminium tube (mast), 8mm tube (boom). Shrouds: 0.8mm SS wire. Forestay: 0.8mm SS wire.</text>
+
+</svg>
