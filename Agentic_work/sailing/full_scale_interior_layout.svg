@@ -49,23 +49,27 @@
   <text class="labelXs" x="-720" y="20" text-anchor="end">CL</text>
 
   <!-- HULL WATERPLANE OUTLINE (approx at deck level, same as deck plan) -->
+  <!-- SCOW BOW: FP half-breadth = 800mm (wide flat bow face, no pointed entry) -->
   <path class="hull" d="
-    M 0,490
-    C 400,700 700,1000 900,1230
-    C 1300,1450 1600,1580 1800,1660
-    C 2200,1740 2500,1780 2700,1810
-    C 3100,1840 3600,1880 4500,1880
+    M 0,800
+    C 400,1000 700,1150 900,1350
+    C 1300,1520 1600,1630 1800,1700
+    C 2200,1770 2500,1800 2700,1830
+    C 3100,1855 3600,1880 4500,1880
     C 5400,1800 6300,1635 7200,1430
     C 7500,1360 7800,1200 8100,1090
     C 8500,1000 8700,920 9000,840
     L 9300,840 L 9300,-840
     C 8700,-920 8100,-1090 7200,-1430
     C 6300,-1635 5400,-1800 4500,-1880
-    C 3600,-1880 2700,-1810 1800,-1660
-    C 900,-1230 400,-700 0,-490
-    C -200,-300 -400,-100 -400,0
-    C -400,100 -200,300 0,490 Z
+    C 3600,-1880 2700,-1830 1800,-1700
+    C 900,-1350 400,-1000 0,-800
+    L 0,800 Z
   " fill="#f5f0e8" stroke="#000" stroke-width="8"/>
+  <!-- Scow bow flat face (plumb vertical face at x=0) -->
+  <line x1="0" y1="-800" x2="0" y2="800" stroke="#00a" stroke-width="10"/>
+  <text class="labelXs" x="80" y="-900" fill="#00a" font-weight="bold">SCOW BOW</text>
+  <text class="labelXs" x="80" y="-820" fill="#00a">800mm HB at FP</text>
 
   <!-- =====================================================
        BULKHEADS (from FP, positions in mm along x-axis)
@@ -76,12 +80,15 @@
   <!-- BH-1: x=900 (chain locker / gas separator) -->
   <line class="bh" x1="900" y1="-1230" x2="900" y2="1230"/>
   <text class="labelXs" x="900" y="1370" text-anchor="middle">BH-1</text>
-  <!-- BH-2: x=1800 (fwd cabin aft wall) -->
-  <line class="bh" x1="1800" y1="-1660" x2="1800" y2="1660"/>
-  <text class="labelXs" x="1800" y="1800" text-anchor="middle">BH-2</text>
-  <!-- BH-3: x=3600 (forward cabin aft, chainplate BH) -->
-  <line class="bh" x1="3600" y1="-1880" x2="3600" y2="1880"/>
-  <text class="labelXs" x="3600" y="2020" text-anchor="middle">BH-3</text>
+  <!-- BH-2: x=1800 removed in scow-bow open-plan design (no wall here — seamless saloon/berth) -->
+  <!-- Partial structural ring frame only (no full bulkhead) — shown dashed -->
+  <line x1="1800" y1="-1700" x2="1800" y2="1700" stroke="#aaa" stroke-width="5" stroke-dasharray="30,20"/>
+  <text class="labelXs" x="1800" y="1840" text-anchor="middle" fill="#888">BH-2 (RING FRAME ONLY)</text>
+  <!-- BH-3: x=3600 (chainplate + mast compression BH — partial width only, NOT full room divider) -->
+  <!-- Open plan: no full-height wall here; structural frame only at sides for chainplates -->
+  <line x1="3600" y1="-1880" x2="3600" y2="-880" stroke="#888" stroke-width="7" stroke-dasharray="25,15"/>
+  <line x1="3600" y1="880" x2="3600" y2="1880" stroke="#888" stroke-width="7" stroke-dasharray="25,15"/>
+  <text class="labelXs" x="3600" y="2020" text-anchor="middle" fill="#888">BH-3 (CHAINPLATE FRAME — open centre)</text>
   <!-- BH-4: x=4500 (saloon fwd, keel bolt fwd row) -->
   <line class="bh" x1="4500" y1="-1880" x2="4500" y2="1880"/>
   <text class="labelXs" x="4500" y="2020" text-anchor="middle">BH-4</text>
@@ -115,20 +122,31 @@
   <line x1="0" y1="-300" x2="900" y2="-300" stroke="#000" stroke-width="6"/>
   <text class="labelXs" x="450" y="-400" text-anchor="middle">GAS BTLS</text>
 
-  <!-- FORWARD CABIN / V-BERTH (x=900 to 3600) -->
-  <rect class="berth" x="900" y="-1660" width="2700" height="3320" rx="0"/>
-  <text class="label" x="2250" y="-700" text-anchor="middle">FORWARD</text>
-  <text class="label" x="2250" y="-560" text-anchor="middle">CABIN</text>
-  <!-- V-berth port -->
-  <path d="M 900,-1230 C 1200,-1500 1800,-1650 1800,-1650 L 1800,-200 L 900,-200 Z" class="berth"/>
-  <text class="labelXs" x="1350" y="-800" text-anchor="middle">V-BERTH</text>
-  <text class="labelXs" x="1350" y="-700" text-anchor="middle">PORT</text>
-  <!-- V-berth stbd -->
-  <path d="M 900,1230 C 1200,1500 1800,1650 1800,1650 L 1800,200 L 900,200 Z" class="berth"/>
-  <text class="labelXs" x="1350" y="800" text-anchor="middle">V-BERTH</text>
-  <text class="labelXs" x="1350" y="900" text-anchor="middle">STBD</text>
-  <!-- V-berth dimensions -->
-  <text class="labelXs" x="2250" y="-400">FWD CABIN: 2× single berths or 1 double (convertible)</text>
+  <!-- FORWARD BERTH — OPEN PLAN (x=900 to 3600, seamlessly connected to saloon) -->
+  <!-- Scow bow provides wide sections forward — same width as midship by St2/x=1800 -->
+  <!-- No dividing wall between forward berth and saloon (open plan) -->
+  <rect class="berth" x="900" y="-1700" width="2700" height="3400" rx="0" fill-opacity="0.3"/>
+  <text class="label" x="2250" y="-1100" text-anchor="middle" fill="#060">FORWARD BERTH</text>
+  <text class="label" x="2250" y="-960" text-anchor="middle" fill="#060">(OPEN PLAN)</text>
+  <!-- Wide double berth (scow bow gives full width forward) -->
+  <!-- Port berth cushion: full length 2000mm, 750mm wide -->
+  <rect x="950" y="-1680" width="2000" height="750" fill="#b8d4b8" stroke="#555" stroke-width="3" rx="20" opacity="0.75"/>
+  <text class="labelXs" x="1950" y="-1380" text-anchor="middle">PORT BERTH 2000mm</text>
+  <!-- Stbd berth cushion -->
+  <rect x="950" y="930" width="2000" height="750" fill="#b8d4b8" stroke="#555" stroke-width="3" rx="20" opacity="0.75"/>
+  <text class="labelXs" x="1950" y="1330" text-anchor="middle">STBD BERTH 2000mm</text>
+  <!-- Centreline berth / double option -->
+  <rect x="1000" y="-400" width="1800" height="800" fill="#b8e4b8" stroke="#555" stroke-width="4" rx="30" opacity="0.6"/>
+  <text class="labelXs" x="1900" y="-100" text-anchor="middle" fill="#060">CENTRE BERTH — DOUBLE BED OPTION</text>
+  <text class="labelXs" x="1900" y="20" text-anchor="middle" fill="#060">1800×800mm (convert to double with cushions)</text>
+  <!-- Heads (port side, x=1800-2800, curtain only — scow bow width enables this) -->
+  <rect class="head" x="1900" y="-1700" width="950" height="750" rx="20" opacity="0.80"/>
+  <text class="labelXs" x="2375" y="-1440" text-anchor="middle">HEADS (PORT)</text>
+  <text class="labelXs" x="2375" y="-1350" text-anchor="middle">curtain-off</text>
+  <!-- SEAMLESS ZONE label -->
+  <text class="labelXs" x="2250" y="-400" fill="#c60" font-weight="bold">OPEN PLAN — NO WALL TO SALOON</text>
+  <text class="labelXs" x="2250" y="-290" fill="#c60">Forward berth visually and physically connected</text>
+  <text class="labelXs" x="2250" y="-180" fill="#c60">Sole at same level (seamless transition)</text>
 
   <!-- HEADS / WC (x=3000 to 3600, port side) -->
   <rect class="head" x="3000" y="-1880" width="600" height="1000" rx="0"/>
@@ -290,6 +308,6 @@
   <text class="labelXs" x="4300" y="3150">5000 mm</text>
   <text class="label" x="-700" y="3300">SCALE 1:20</text>
 
-  <text class="note" x="-700" y="-3050">NOTE: Port (left) = owner's cabin aft. Stbd (right) = engine/toolbox aft. Seamless saloon-to-cabin transition possible (no door required, optional curtain/step). 4 sleeping positions total.</text>
+  <text class="note" x="-700" y="-3050">NOTE: Scow-bow (Revolution 29 derived) — plumb stem, wide bow, no overhang. OPEN PLAN: forward berth to saloon has no dividing wall (x=900–5800, 4900mm). Heads port side, curtain-separated. 4–6 sleeping positions.</text>
 
 </svg>

@@ -34,8 +34,8 @@
        TITLE BLOCK
        ============================================================ -->
   <rect x="-750" y="-3150" width="11900" height="310" fill="#f0f0f0" stroke="#000" stroke-width="4"/>
-  <text class="title" x="5200" y="-2960" text-anchor="middle">COASTAL WIND 35 — LINES PLAN</text>
-  <text class="labelSm" x="5200" y="-2850" text-anchor="middle">LOA 10500 mm · LWL 9000 mm · Beam 3400 mm · Draft 1950 mm · Scale 1:20 (print A0)</text>
+  <text class="title" x="5200" y="-2960" text-anchor="middle">COASTAL WIND 35 — LINES PLAN (SCOW-BOW · REVOLUTION 29 DERIVED)</text>
+  <text class="labelSm" x="5200" y="-2850" text-anchor="middle">LOA 9900 mm · LWL 9000 mm · Beam 3400 mm · Draft 1950 mm · Scow bow: plumb stem, no overhang · Scale 1:20 (print A0)</text>
   <text class="labelXs" x="10900" y="-2960" text-anchor="end">Sheet 1 of 5</text>
   <text class="labelXs" x="10900" y="-2855" text-anchor="end">All dims in mm</text>
 
@@ -100,16 +100,15 @@
   <text class="labelXs" x="-500" y="720" text-anchor="end">HULL BASE</text>
 
   <!-- SHEER LINE (deck edge profile) — smooth curve via bezier
+       SCOW BOW (Revolution 29 derived): bow at x=0 (plumb transom, no forward overhang).
        Key points (x, SVG_y = -freeboard):
-       Bow (-400, -1500), FP (0, -1400), St2 (1800,-1200), St3(2700,-1150),
+       FP/bow face (0, -1400), St2 (1800,-1200), St3(2700,-1150),
        St4(3600,-1120), St5-midship(4500,-1100), St6(5400,-1100),
-       cockpit area (6400,-900 — deck steps down for cockpit),
-       St7(6300,-1080), St8(7200,-1100), St9(8100,-1150), AP(9000,-1200),
+       cockpit area (6400,-900), St8(7200,-1100), St9(8100,-1150), AP(9000,-1200),
        transom(9300,-1100), bathing platform(9900,-600)
   -->
   <path class="hull" d="
-    M -400,-1500
-    C -200,-1450 -100,-1420 0,-1400
+    M 0,-1400
     C 600,-1350 1200,-1270 1800,-1200
     C 2250,-1170 2580,-1155 2700,-1150
     C 3100,-1130 3350,-1120 3600,-1120
@@ -124,15 +123,15 @@
   <!-- Bathing platform (low stern extension) -->
   <path class="hull" d="M 9300,-1100 L 9300,-500 L 9900,-500 L 9900,-400"/>
 
-  <!-- STEM / BOW PROFILE -->
-  <path class="hull" d="
-    M -400,-1500
-    C -420,-1000 -400,-500 -250,0
-    C -100,300 0,500 0,700
-  "/>
-
-  <!-- WATERLINE ENTRY AT BOW (bulb bow visible in profile) -->
-  <path d="M -250,0 C -150,50 -50,80 0,100" stroke="#000" stroke-width="5" fill="none" stroke-dasharray="20,10"/>
+  <!-- SCOW BOW: plumb bow transom at x=0 (Revolution 29 derived) -->
+  <!-- Replaces conventional pointed stem + forward overhang -->
+  <line class="hull" x1="0" y1="-1400" x2="0" y2="700"/>
+  <!-- Wide waterline entry at bow (DWL half-breadth 600 mm) -->
+  <path d="M 0,0 C 200,10 400,50 600,100" stroke="#0000cc" stroke-width="5" fill="none"/>
+  <!-- Scow bow annotation -->
+  <text class="labelXs" x="120" y="-1530" fill="#00a" font-weight="bold">SCOW BOW (REVOLUTION 29 DERIVED)</text>
+  <text class="labelXs" x="120" y="-1440" fill="#00a">Plumb stem · No forward overhang</text>
+  <text class="labelXs" x="120" y="-1350" fill="#00a">DWL HB at bow = 600 mm (wide entry)</text>
 
   <!-- BOTTOM OF HULL (keel root baseline at y=700) -->
   <path class="hull" d="M 0,700 C 1000,700 2000,700 2700,700 C 3200,700 3400,700 3600,700 C 4000,700 4200,700 4500,700 C 5000,700 5500,700 6000,700 C 6500,700 7000,700 7500,700 C 8000,700 8500,700 9000,700"/>
@@ -176,10 +175,10 @@
   <text class="label" x="9700" y="1100" text-anchor="start">1950 mm</text>
 
   <!-- Dimension: LOA -->
-  <line class="dim" x1="-400" y1="2200" x2="9900" y2="2200"/>
-  <line class="dim" x1="-400" y1="2100" x2="-400" y2="2300"/>
+  <line class="dim" x1="0" y1="2200" x2="9900" y2="2200"/>
+  <line class="dim" x1="0" y1="2100" x2="0" y2="2300"/>
   <line class="dim" x1="9900" y1="2100" x2="9900" y2="2300"/>
-  <text class="label" x="4750" y="2150" text-anchor="middle">LOA = 10500 mm</text>
+  <text class="label" x="4950" y="2150" text-anchor="middle">LOA = 9900 mm (scow bow, no forward overhang)</text>
 
   <!-- Dimension: LWL -->
   <line class="dim" x1="0" y1="-80" x2="9000" y2="-80"/>
@@ -214,9 +213,9 @@
   <text class="labelXs" x="3300" y="-17610">16500mm</text>
   <text class="labelXs" x="3300" y="-17510">above deck</text>
 
-  <!-- Forestay (from masthead to bow) -->
-  <line x1="3200" y1="-17800" x2="-200" y2="-1200" stroke="#333" stroke-width="4"/>
-  <text class="labelXs" x="1300" y="-10200" transform="rotate(-48,1300,-10200)">FORESTAY 16139mm</text>
+  <!-- Forestay (from masthead to bow — scow bow: ends at x=0) -->
+  <line x1="3200" y1="-17800" x2="0" y2="-1400" stroke="#333" stroke-width="4"/>
+  <text class="labelXs" x="1300" y="-10200" transform="rotate(-48,1300,-10200)">FORESTAY 16100mm</text>
 
   <!-- Backstay -->
   <line x1="3200" y1="-17800" x2="9200" y2="-1200" stroke="#333" stroke-width="4"/>
@@ -232,9 +231,9 @@
   <text class="labelXs" x="7100" y="-630" text-anchor="middle">COCKPIT</text>
 
   <!-- Anchor locker label -->
-  <rect x="-380" y="-1380" width="880" height="700" fill="#e0f0ff" stroke="#888" stroke-width="4" fill-opacity="0.5"/>
-  <text class="labelXs" x="60" y="-900" text-anchor="middle">ANCHOR</text>
-  <text class="labelXs" x="60" y="-820" text-anchor="middle">LOCKER</text>
+  <rect x="30" y="-1380" width="870" height="700" fill="#e0f0ff" stroke="#888" stroke-width="4" fill-opacity="0.5"/>
+  <text class="labelXs" x="465" y="-900" text-anchor="middle">ANCHOR</text>
+  <text class="labelXs" x="465" y="-820" text-anchor="middle">LOCKER</text>
 
   <!-- Saildrive position -->
   <circle cx="6800" cy="900" r="120" fill="none" stroke="#c00" stroke-width="6"/>
@@ -282,40 +281,44 @@
        St5=1420, St6=1360, St7=1200, St8=980, St9=640, St10=280
        In half-breadth plan: y_SVG = 3200 + half_breadth
   -->
+  <!-- DWL waterplane: scow bow wide entry — HB at bow=600mm (vs 100mm conventional) -->
+  <!-- Scow-derived offset table at DWL: St0=600,St1=1250,St2=1500,St3=1580,St4=1600,St5=1420,St6=1360,St7=1200,St8=980,St9=640,St10=280 -->
   <path d="
-    M 0,3300
-    C 200,3340 600,3500 900,3820
-    C 1350,4120 1600,4200 1800,4250
-    C 2250,4320 2500,4370 2700,4470
-    C 3100,4520 3350,4570 3600,4580
-    C 4050,4590 4200,4600 4500,4620
+    M 0,3800
+    C 300,4000 600,4250 900,4450
+    C 1350,4650 1600,4700 1800,4700
+    C 2200,4720 2500,4740 2700,4780
+    C 3100,4800 3350,4800 3600,4800
+    C 4050,4800 4200,4800 4500,4620
     C 4800,4620 5100,4580 5400,4560
     C 5800,4520 6000,4480 6300,4400
     C 6700,4310 7000,4200 7200,4180
     C 7500,4130 7900,4090 8100,4140
     C 8500,4180 8800,4200 9000,4280
   " stroke="#0000cc" stroke-width="6" fill="none"/>
-  <text class="labelXs" x="4500" y="4700" text-anchor="middle" fill="#0000cc">DWL WATERPLANE</text>
+  <text class="labelXs" x="4500" y="4850" text-anchor="middle" fill="#0000cc">DWL WATERPLANE (scow: wide fwd entry)</text>
 
   <!-- Deck / sheer curve (half-breadth)
        St0=490,St1=1230,St2=1660,St3=1810,St4=1880,St5=1880,
        St6=1800,St7=1635,St8=1430,St9=1090,St10=840
   -->
+  <!-- Deck / sheer curve: scow bow — HB at bow=800mm (flat wide bow face)    -->
+  <!-- Scow offset table deck: St0=800,St1=1450,St2=1700(same as max),St3+: same as original -->
   <path d="
-    M 0,3690
-    C 300,3810 600,3980 900,4430
-    C 1350,4760 1600,4840 1800,4860
-    C 2250,4970 2500,5010 2700,5010
-    C 3100,5050 3350,5070 3600,5080
-    C 4050,5080 4200,5080 4500,5080
-    C 4800,5080 5100,5050 5400,5000
-    C 5700,4940 6000,4870 6300,4835
-    C 6600,4800 6900,4800 7200,4830
-    C 7500,4860 7800,4870 8100,4830
-    C 8500,4820 8700,4820 9000,5040
-    C 9100,4980 9200,4930 9300,5040
+    M 0,4000
+    C 300,4200 600,4420 900,4650
+    C 1350,4870 1600,4900 1800,4900
+    C 2250,4920 2500,4940 2700,4900
+    C 3100,4920 3350,4940 3600,4900
+    C 4050,4900 4200,4900 4500,4900
+    C 4800,4900 5100,4870 5400,4820
+    C 5700,4760 6000,4700 6300,4665
+    C 6600,4630 6900,4630 7200,4660
+    C 7500,4690 7800,4700 8100,4660
+    C 8500,4650 8700,4650 9000,4870
+    C 9100,4810 9200,4760 9300,4870
   " stroke="#000" stroke-width="8" fill="none"/>
-  <text class="labelXs" x="4500" y="5120" text-anchor="middle">SHEER / DECK EDGE</text>
+  <text class="labelXs" x="4500" y="4950" text-anchor="middle">SHEER / DECK EDGE (scow bow: HB=800 mm at bow face)</text>
 
   <!-- Keel planform (top view of fin keel, centred on CL) -->
   <path d="M 3500,3200 C 3400,3210 3380,3220 3600,3220 C 4000,3220 4800,3220 5100,3220 C 5300,3220 5250,3210 5200,3200" stroke="#000" stroke-width="6" fill="#ddd"/>
@@ -335,6 +338,7 @@
   <line class="dim" x1="-550" y1="5080" x2="-350" y2="5080"/>
   <text class="labelXs" x="-460" y="4200" text-anchor="end">BOA/2</text>
   <text class="labelXs" x="-460" y="4300" text-anchor="end">1700 mm</text>
+  <text class="labelXs" x="-460" y="4400" text-anchor="end">(max beam)</text>
 
   <!-- ============================================================
        SECTION 3: BODY PLAN (cross-sections at each station)
@@ -342,8 +346,8 @@
        Shows half-sections of hull shape at each station
        ============================================================ -->
 
-  <text class="label" x="9600" y="-2400">BODY PLAN</text>
-  <text class="labelXs" x="9600" y="-2300">Fwd stations left · Aft stations right</text>
+  <text class="label" x="9600" y="-2400">BODY PLAN (SCOW-BOW VERSION)</text>
+  <text class="labelXs" x="9600" y="-2300">Fwd stations left · Aft stations right · St0/St1/St2 show wide scow sections</text>
 
   <!-- Body plan centreline -->
   <line x1="10850" y1="-2200" x2="10850" y2="2100" stroke="#000" stroke-width="4" stroke-dasharray="40,20"/>
@@ -383,11 +387,21 @@
   <path d="M 10850,700 C 10550,700 10200,660 10000,300 C 9940,100 9940,0 9960,-300 C 10000,-600 10070,-900 10140,-1050 L 10850,-1050" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
   <text class="labelXs" x="10500" y="-1100" text-anchor="middle">St3</text>
 
-  <!-- St2 -->
-  <path d="M 10850,700 C 10620,700 10380,640 10200,300 C 10140,100 10140,0 10160,-300 C 10200,-600 10250,-800 10300,-980 L 10850,-980" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+  <!-- St2 (SCOW-WIDE: DWL HB=1500mm vs 1050mm conventional) -->
+  <path d="M 10850,700 C 10500,700 10050,670 9850,300 C 9750,100 9710,0 9730,-300 C 9760,-600 9800,-800 9150,-1020 L 10850,-1020" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+  <text class="labelXs" x="10500" y="-1070" text-anchor="middle">St2</text>
 
-  <!-- St1 -->
-  <path d="M 10850,700 C 10730,700 10600,640 10540,300 C 10500,100 10500,0 10510,-200 C 10530,-500 10560,-700 10600,-870 L 10850,-870" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+  <!-- St1 (SCOW-WIDE: DWL HB=1250mm vs 620mm conventional) -->
+  <path d="M 10850,700 C 10500,700 10100,680 9850,300 C 9760,100 9710,0 9720,-200 C 9740,-500 9760,-700 9400,-960 L 10850,-960" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+  <text class="labelXs" x="10300" y="-1010" text-anchor="middle">St1</text>
+
+  <!-- St0 / BOW TRANSOM (SCOW BOW): flat trapezoid cross-section at x=0 -->
+  <!-- DWL HB=600mm → x=10850-600=10250; deck HB=800mm → x=10850-800=10050 -->
+  <!-- Height: deck at y=-1400 above DWL, bottom AT DWL (bow transom meets water at y=0) -->
+  <path d="M 10850,0 L 10250,0 C 10180,-250 10100,-800 10050,-1400 L 10850,-1400 Z"
+        stroke="#00a" stroke-width="5" fill="#ddeeff" fill-opacity="0.35"/>
+  <text class="labelXs" x="10450" y="-1450" text-anchor="middle" fill="#00a">St0/BOW</text>
+  <text class="labelXs" x="10450" y="-1530" text-anchor="middle" fill="#00a">SCOW</text>
 
   <!-- Aft sections (right of CL): St6–St10 -->
   <!-- St6 -->

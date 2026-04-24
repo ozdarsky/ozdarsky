@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  COASTAL WIND 35 — FULL SCALE INTERIOR SECTIONS
+  Derived from Scow-Bow Revolution 29 hull form.
+  Sheet 6 of 6: Longitudinal section (centreline cut, port side) + cross-sections at 5 key stations.
+  Key design feature: Open-plan seamless transition from saloon into forward berth — no dividing bulkhead.
+  Scow bow (plumb stem, wide flat entry) provides full interior width all the way to the bow.
+  Scale: 1:20 (print A0/A1)
+  Coordinate system: x = mm from FP; y = mm, DWL at y=0, positive upward; SVG y inverted (SVG_y = -design_y).
+  Interior sole: DWL + 400 mm (SVG y = -400).
+  Coachroof underside: DWL + 2350 mm (SVG y = -2350) → 1950 mm headroom above sole.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1400" height="900"
+     viewBox="-600 -3600 11200 9600">
+
+  <title>Coastal Wind 35 — Interior Sections (Sheet 6 of 6)</title>
+
+  <defs>
+    <style>
+      .hull    { stroke:#000; stroke-width:10; fill:none; }
+      .solid   { stroke:#000; stroke-width:10; fill:#d8d8c8; fill-opacity:0.45; }
+      .inner   { stroke:#555; stroke-width:5; fill:none; stroke-dasharray:20,10; }
+      .bh      { stroke:#000; stroke-width:12; fill:none; }
+      .sole    { stroke:#333; stroke-width:7; fill:none; }
+      .berth   { stroke:#555; stroke-width:4; fill:#b8d4b8; fill-opacity:0.65; }
+      .saloon  { stroke:#666; stroke-width:4; fill:#e8f0e0; fill-opacity:0.40; }
+      .galley  { stroke:#666; stroke-width:4; fill:#f0d8b0; fill-opacity:0.60; }
+      .head    { stroke:#4466aa; stroke-width:4; fill:#c8e0f0; fill-opacity:0.65; }
+      .locker  { stroke:#666; stroke-width:4; fill:#e0e0e0; fill-opacity:0.55; }
+      .cockpit { stroke:#888; stroke-width:6; fill:#ffe8c0; fill-opacity:0.60; }
+      .engine  { stroke:#c00; stroke-width:4; fill:#ffd0c0; fill-opacity:0.60; }
+      .anchor  { stroke:#4466aa; stroke-width:6; fill:#cce4ff; fill-opacity:0.55; }
+      .roof    { stroke:#000; stroke-width:6; fill:#d8d0c0; fill-opacity:0.45; }
+      .dim     { stroke:#000; stroke-width:3; fill:none; }
+      .refline { stroke:#4466aa; stroke-width:3; fill:none; stroke-dasharray:20,10; }
+      .clline  { stroke:#888; stroke-width:3; fill:none; stroke-dasharray:30,15; }
+      .open    { stroke:#c60; stroke-width:6; fill:none; stroke-dasharray:30,15; }
+      .label   { font-family:Arial,sans-serif; font-size:110px; fill:#000; }
+      .labelSm { font-family:Arial,sans-serif; font-size:80px; fill:#333; }
+      .labelXs { font-family:Arial,sans-serif; font-size:65px; fill:#444; }
+      .title   { font-family:Arial,sans-serif; font-size:175px; fill:#000; font-weight:bold; }
+      .sub     { font-family:Arial,sans-serif; font-size:95px; fill:#222; font-weight:bold; }
+      .note    { font-family:Arial,sans-serif; font-size:68px; fill:#444; font-style:italic; }
+      .hilight { font-family:Arial,sans-serif; font-size:82px; fill:#c00; font-weight:bold; }
+      .scow    { font-family:Arial,sans-serif; font-size:75px; fill:#00a; font-weight:bold; }
+      .seaml   { font-family:Arial,sans-serif; font-size:78px; fill:#c60; font-weight:bold; }
+    </style>
+    <marker id="arrB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#000"/>
+    </marker>
+    <marker id="arrR" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#c00"/>
+    </marker>
+    <marker id="arrB2" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0,0 3.5,10 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- ============================================================
+       TITLE BLOCK
+       ============================================================ -->
+  <rect x="-550" y="-3560" width="11100" height="325" fill="#f0f0f0" stroke="#000" stroke-width="4"/>
+  <text class="title" x="5000" y="-3320" text-anchor="middle">COASTAL WIND 35 — INTERIOR SECTIONS</text>
+  <text class="label"  x="5000" y="-3195" text-anchor="middle">Longitudinal Section A–A (Centreline Cut) · Cross-Sections B–B to E–E · Scow-Bow Revolution 29 Derivation · Scale 1:20</text>
+  <text class="labelXs" x="10450" y="-3320" text-anchor="end">Sheet 6 of 6</text>
+  <text class="labelXs" x="10450" y="-3210" text-anchor="end">All dims in mm</text>
+
+  <!-- ============================================================
+       PANEL 1: LONGITUDINAL SECTION  (Centreline cut, looking from port side)
+       y = 0 at DWL. SVG y = -design_y (positive design_y = above DWL = negative SVG_y).
+       Sole: SVG y = -400 (400 mm above DWL).
+       Coachroof u/s: SVG y = -2350 (1950 mm headroom above sole).
+       Coachroof top: SVG y = -3150 (800 mm above u/s).
+       Hull baseline: SVG y = +700 (700 mm below DWL).
+       ============================================================ -->
+  <text class="sub" x="-550" y="-3000">SECTION A–A — LONGITUDINAL (CENTRELINE CUT, PORT SIDE VIEW)</text>
+  <text class="labelXs" x="-550" y="-2900">Interior sole at DWL+400 mm · Seamless open plan: forward berth flows into saloon without any dividing wall</text>
+
+  <!-- Reference lines -->
+  <line x1="-500" y1="0"    x2="9700" y2="0"    class="refline"/>
+  <text class="labelXs" x="-550" y="22" fill="#4466aa" text-anchor="end">DWL</text>
+  <line x1="-500" y1="-400" x2="9700" y2="-400" stroke="#333" stroke-width="3" stroke-dasharray="25,12"/>
+  <text class="labelXs" x="-550" y="-378" text-anchor="end">SOLE</text>
+  <line x1="-500" y1="700"  x2="9700" y2="700"  stroke="#666" stroke-width="3" stroke-dasharray:"18,12"/>
+  <text class="labelXs" x="-550" y="720" text-anchor="end">BASE</text>
+
+  <!-- ── Scow bow plumb transom (x=0) ── -->
+  <line class="hull" x1="0" y1="-1400" x2="0" y2="700"/>
+  <text class="scow"  x="80"  y="-1530">SCOW BOW</text>
+  <text class="labelXs" x="80"  y="-1440" fill="#00a">Plumb stem · No overhang</text>
+  <text class="labelXs" x="80"  y="-1350" fill="#00a">Wide flat entry (Rev.29)</text>
+  <text class="labelXs" x="80"  y="-1260" fill="#00a">DWL HB = 600 mm at bow</text>
+
+  <!-- ── Sheer line (deck edge profile, port side) ── -->
+  <path class="hull" d="
+    M 0,-1400
+    C 600,-1350 1200,-1270 1800,-1200
+    C 2400,-1170 3000,-1140 3600,-1120
+    C 4100,-1110 4300,-1100 4500,-1100
+    C 4800,-1100 5200,-1100 5600,-1100
+    C 5900,-1095 6200,-1090 6400,-1090
+    L 6400,-870
+    C 6600,-870 7000,-870 7800,-950
+    C 8300,-1010 8800,-1100 9000,-1200
+    C 9150,-1165 9250,-1130 9300,-1100
+  "/>
+
+  <!-- ── Hull bottom ── -->
+  <line class="hull" x1="0" y1="700" x2="9300" y2="700"/>
+  <!-- ── Transom ── -->
+  <line class="hull" x1="9300" y1="-1100" x2="9300" y2="700"/>
+  <!-- ── Bathing platform ── -->
+  <path class="hull" d="M 9300,-1100 L 9300,-500 L 9900,-500 L 9900,700 L 9300,700"/>
+
+  <!-- ── Coachroof profile ── -->
+  <!-- Coachroof underside rises from deck at x=1800 up to constant -2350 between x≈2300 and x≈7500 -->
+  <path class="roof" d="
+    M 1800,-1200
+    C 1920,-1650 2100,-2150 2300,-2350
+    L 7500,-2350
+    C 7700,-2150 7880,-1650 8000,-1100
+    L 1800,-1200 Z
+  "/>
+  <!-- Coachroof top ridge line -->
+  <path d="
+    M 2200,-2350
+    C 2260,-2900 2400,-3100 2700,-3150
+    L 7100,-3150
+    C 7400,-3100 7540,-2900 7600,-2350
+  " stroke="#000" stroke-width="6" fill="#d0c8b0" fill-opacity="0.35"/>
+  <text class="labelXs" x="4900" y="-3200" text-anchor="middle">COACHROOF TOP</text>
+  <text class="labelXs" x="4900" y="-2430" text-anchor="middle">COACHROOF U/S — HEADLINING</text>
+
+  <!-- ── ANCHOR LOCKER (x=0 to 900, watertight GRP) ── -->
+  <path class="anchor" d="M 0,-1400 L 0,700 L 900,700 L 900,-1230 C 600,-1270 200,-1340 0,-1400 Z" fill-opacity="0.30"/>
+  <line class="bh" x1="900" y1="-1230" x2="900" y2="700"/>
+  <text class="label"   x="450" y="-950" text-anchor="middle">ANCHOR</text>
+  <text class="label"   x="450" y="-810" text-anchor="middle">LOCKER</text>
+  <text class="labelXs" x="450" y="-660" text-anchor="middle">Chain, anchor, gas bottles</text>
+  <!-- Chain pipe symbol -->
+  <circle cx="500" cy="-400" r="80" fill="none" stroke="#000" stroke-width="6"/>
+  <line x1="500" y1="-320" x2="500" y2="100" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="500" y="-300" text-anchor="middle">CHAIN</text>
+  <text class="labelXs" x="500" y="-220" text-anchor="middle">PIPE ↓</text>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SEAMLESS OPEN-PLAN ZONE (x=900 to x=5800)
+       Highlighted band across the top of the section
+       ══════════════════════════════════════════════════════════════ -->
+  <rect x="900" y="-2500" width="4900" height="110" fill="#c60" fill-opacity="0.18" stroke="#c60" stroke-width="5"/>
+  <text class="seaml" x="3350" y="-2400" text-anchor="middle">
+    ← SEAMLESS OPEN-PLAN ZONE: 4900 mm — NO DIVIDING WALL (Forward Berth ↔ Saloon) →
+  </text>
+
+  <!-- ── FORWARD BERTH ZONE (x=900 to 2800) ── -->
+  <!-- Zone fill -->
+  <rect class="berth" x="900" y="-2350" width="1900" height="1950" rx="0" fill-opacity="0.22"/>
+  <text class="label"   x="1850" y="-1780" text-anchor="middle">FORWARD</text>
+  <text class="label"   x="1850" y="-1640" text-anchor="middle">BERTH</text>
+  <!-- Berth cushion on sole (150 mm foam, same sole level as saloon — SEAMLESS) -->
+  <rect x="900" y="-550" width="1600" height="150" fill="#b8d4b8" stroke="#555" stroke-width="5" rx="20"/>
+  <text class="labelXs" x="1700" y="-490" text-anchor="middle">BERTH CUSHION 150mm (same sole level as saloon)</text>
+  <!-- Sole at forward berth (continuous, no step) -->
+  <line class="sole" x1="900" y1="-400" x2="2800" y2="-400"/>
+  <text class="hilight" x="1850" y="-260" text-anchor="middle">SOLE = SAME LEVEL</text>
+  <text class="hilight" x="1850" y="-160" text-anchor="middle">AS SALOON (seamless)</text>
+
+  <!-- Heads access (port side, curtain only — no door required) -->
+  <rect class="head" x="1750" y="-2300" width="950" height="600" rx="20"/>
+  <text class="labelXs" x="2225" y="-2160" text-anchor="middle">HEADS (PORT)</text>
+  <text class="labelXs" x="2225" y="-2070" text-anchor="middle">curtain / folding door</text>
+
+  <!-- Storage under forward berth platform area -->
+  <rect class="locker" x="950" y="-380" width="750" height="700" rx="10" fill-opacity="0.5"/>
+  <text class="labelXs" x="1325" y="-80" text-anchor="middle">STOWAGE</text>
+  <text class="labelXs" x="1325" y="20"  text-anchor="middle">under berth</text>
+
+  <!-- ── OPEN-PLAN BOUNDARY (where BH-3 would have been at x=2800) ── -->
+  <line x1="2800" y1="-2350" x2="2800" y2="-400" stroke="#c60" stroke-width="7" stroke-dasharray:"28,18"/>
+  <text class="seaml" x="2870" y="-1800">NO</text>
+  <text class="seaml" x="2870" y="-1690">WALL</text>
+  <text class="labelXs" x="2870" y="-1590" fill="#c60">open to</text>
+  <text class="labelXs" x="2870" y="-1500" fill="#c60">saloon</text>
+
+  <!-- ── MAIN SALOON (x=2800 to 5800) ── -->
+  <rect class="saloon" x="2800" y="-2350" width="3000" height="1950" rx="0"/>
+  <text class="label"   x="4300" y="-1770" text-anchor="middle">MAIN SALOON</text>
+  <!-- Sole -->
+  <line class="sole" x1="2800" y1="-400" x2="5800" y2="-400"/>
+  <!-- Port settee berth (seat surface at DWL+800mm = SVG y=-800, depth 400mm to sole) -->
+  <rect x="2850" y="-800" width="1850" height="400" fill="#b8d4b8" stroke="#555" stroke-width="4" rx="10"/>
+  <text class="labelXs" x="3775" y="-720" text-anchor="middle">PORT SETTEE BERTH — 1850 mm (sleeping length)</text>
+  <!-- Settee back -->
+  <rect x="2820" y="-1200" width="220" height="400" fill="#b8d4b8" stroke="#555" stroke-width="3" rx="8" opacity="0.7"/>
+  <!-- Saloon table (between settees, at DWL+900mm = SVG y=-900) -->
+  <rect x="3600" y="-1000" width="1400" height="300" fill="#c8b860" stroke="#000" stroke-width="5" rx="30" opacity="0.85"/>
+  <text class="labelXs" x="4300" y="-840" text-anchor="middle">SALOON TABLE</text>
+  <!-- Stbd settee (mirror of port) -->
+  <rect x="2850" y="-800" width="1850" height="400" fill="#b8d4b8" stroke="#555" stroke-width="4" rx="10" transform="translate(0,1200)"/>
+  <text class="labelXs" x="3775" y="480"  text-anchor="middle">STBD SETTEE BERTH — 1850 mm</text>
+
+  <!-- ── GALLEY (x=5200–5800, stbd side in this CL cut) ── -->
+  <rect class="galley" x="5200" y="-2350" width="600" height="1950" rx="0"/>
+  <text class="labelXs" x="5500" y="-1950" text-anchor="middle">GALLEY</text>
+  <text class="labelXs" x="5500" y="-1855" text-anchor="middle">(stbd)</text>
+  <!-- Worktop -->
+  <rect x="5240" y="-1130" width="520" height="80" fill="#e8c080" stroke="#000" stroke-width="4"/>
+  <text class="labelXs" x="5500" y="-1180" text-anchor="middle">WORKTOP</text>
+  <!-- Fridge below -->
+  <rect x="5240" y="-1040" width="520" height="640" fill="#d8d8f0" stroke="#000" stroke-width="3" opacity="0.8"/>
+  <text class="labelXs" x="5500" y="-700"  text-anchor="middle">FRIDGE</text>
+  <!-- Stove above -->
+  <rect x="5240" y="-2200" width="520" height="280" fill="#f4c880" stroke="#000" stroke-width="4"/>
+  <text class="labelXs" x="5500" y="-2070" text-anchor="middle">STOVE</text>
+
+  <!-- ── PASSAGE TO COCKPIT (x=5800 to 6400) ── -->
+  <rect x="5800" y="-2100" width="600" height="1700" fill="#fff8e0" stroke="#aaa" stroke-width="5" opacity="0.65"/>
+  <text class="labelXs" x="6100" y="-1300" text-anchor="middle">PASS-</text>
+  <text class="labelXs" x="6100" y="-1200" text-anchor="middle">WAY</text>
+  <!-- Companionway hatch into cockpit -->
+  <rect x="6050" y="-2200" width="350" height="200" fill="#cce4ff" stroke="#000" stroke-width="7"/>
+  <text class="labelXs" x="6230" y="-2270" text-anchor="middle">COMPANION-WAY</text>
+
+  <!-- ── CENTRE COCKPIT (x=6400 to 7800) ── -->
+  <!-- Cockpit sole at DWL+200mm = SVG y=-200 -->
+  <rect class="cockpit" x="6400" y="-870" width="1400" height="670" rx="60"/>
+  <text class="label"   x="7100" y="-630" text-anchor="middle">CENTRE COCKPIT</text>
+  <text class="labelXs" x="7100" y="-490" text-anchor="middle">Sole DWL+200mm</text>
+  <!-- Cockpit seat port -->
+  <rect x="6450" y="-1060" width="220" height="600" fill="#ffe8c0" stroke="#888" stroke-width="5" rx="15" opacity="0.85"/>
+  <!-- Cockpit seat stbd -->
+  <rect x="7530" y="-1060" width="220" height="600" fill="#ffe8c0" stroke="#888" stroke-width="5" rx="15" opacity="0.85"/>
+  <!-- Wheel -->
+  <circle cx="7550" cy="-430" r="320" fill="none" stroke="#444" stroke-width="7"/>
+  <circle cx="7550" cy="-430" r="50"  fill="#444"/>
+  <text class="labelXs" x="7550" y="-160" text-anchor="middle">WHEEL Ø640</text>
+  <!-- Aft entry companionway -->
+  <rect x="7800" y="-1060" width="360" height="200" fill="#cce4ff" stroke="#000" stroke-width="7"/>
+  <text class="labelXs" x="7980" y="-1110" text-anchor="middle">AFT ENTRY</text>
+
+  <!-- ── AFT SECTION (x=7800–9300) ── -->
+  <!-- Owner's cabin (port) -->
+  <rect class="berth" x="7800" y="-2350" width="1500" height="1600" fill-opacity="0.30"/>
+  <text class="labelSm" x="8550" y="-1880" text-anchor="middle">OWNER'S CABIN</text>
+  <text class="labelXs" x="8550" y="-1760" text-anchor="middle">(port aft — private)</text>
+  <rect x="7850" y="-700" width="1350" height="250" fill="#b8d4b8" stroke="#555" stroke-width="4" rx="15"/>
+  <text class="labelXs" x="8525" y="-618" text-anchor="middle">DOUBLE BERTH ≈ 2100 mm</text>
+  <!-- Engine room (stbd — annotation only in CL cut) -->
+  <text class="labelXs" x="8550" y="-450" text-anchor="middle" fill="#c00">ENGINE ROOM / SAILDRIVE (STBD)</text>
+  <text class="labelXs" x="8550" y="-350" text-anchor="middle" fill="#c00">Saildrive at x≈6800 mm</text>
+
+  <!-- ── FIN KEEL ── -->
+  <path class="hull" d="M 3500,700 C 3450,900 3400,1200 3600,1750"/>
+  <path class="hull" d="M 5200,700 C 5300,900 5400,1200 5100,1750"/>
+  <path class="hull" d="M 3600,1750 C 3900,1760 4500,1760 5100,1750"/>
+  <path d="M 3600,1750 C 3300,1790 3100,1840 3200,1960 C 3400,1990 4000,2000 4500,2000
+           C 5000,2000 5600,1990 5700,1960 C 5800,1840 5600,1790 5100,1750 Z"
+       stroke="#000" stroke-width="8" fill="#888" fill-opacity="0.35"/>
+  <text class="labelXs" x="4400" y="1950" text-anchor="middle">LEAD BULB 2400 kg</text>
+  <text class="labelXs" x="4400" y="2060" text-anchor="middle">(keel root x=3400–5300)</text>
+
+  <!-- ── MAST + COMPRESSION POST ── -->
+  <line x1="3200" y1="-3150" x2="3200" y2="-1950" stroke="#666" stroke-width="8" stroke-dasharray="40,20"/>
+  <text class="labelXs" x="3300" y="-3100" fill="#555">MAST x=3200</text>
+  <rect x="3150" y="-1950" width="100" height="1550" fill="#aaa" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="3080" y="-1300" text-anchor="end">COMP</text>
+  <text class="labelXs" x="3080" y="-1200" text-anchor="end">POST</text>
+
+  <!-- ── SECTION CUT MARKERS ── -->
+  <!-- B-B at x=1800, C-C at x=3200, D-D at x=4500, E-E at x=7200 -->
+  <g stroke="#c00" stroke-width="4" stroke-dasharray="20,10" fill="none">
+    <line x1="1800" y1="-3050" x2="1800" y2="780"/>
+    <line x1="3200" y1="-3050" x2="3200" y2="780"/>
+    <line x1="4500" y1="-3050" x2="4500" y2="780"/>
+    <line x1="7200" y1="-3050" x2="7200" y2="780"/>
+  </g>
+  <text class="labelXs" x="1770" y="-3130" fill="#c00" text-anchor="end">B–B</text>
+  <text class="labelXs" x="3170" y="-3130" fill="#c00" text-anchor="end">C–C</text>
+  <text class="labelXs" x="4470" y="-3130" fill="#c00" text-anchor="end">D–D</text>
+  <text class="labelXs" x="7170" y="-3130" fill="#c00" text-anchor="end">E–E</text>
+
+  <!-- Station tick marks on sole -->
+  <g stroke="#aaa" stroke-width="3" fill="none">
+    <line x1="0"    y1="-380" x2="0"    y2="-420"/>
+    <line x1="900"  y1="-380" x2="900"  y2="-420"/>
+    <line x1="1800" y1="-380" x2="1800" y2="-420"/>
+    <line x1="2700" y1="-380" x2="2700" y2="-420"/>
+    <line x1="3600" y1="-380" x2="3600" y2="-420"/>
+    <line x1="4500" y1="-380" x2="4500" y2="-420"/>
+    <line x1="5400" y1="-380" x2="5400" y2="-420"/>
+    <line x1="6300" y1="-380" x2="6300" y2="-420"/>
+    <line x1="7200" y1="-380" x2="7200" y2="-420"/>
+    <line x1="8100" y1="-380" x2="8100" y2="-420"/>
+  </g>
+  <text class="labelXs" x="0"    y="-445" text-anchor="middle">0·FP</text>
+  <text class="labelXs" x="900"  y="-445" text-anchor="middle">1</text>
+  <text class="labelXs" x="1800" y="-445" text-anchor="middle">2</text>
+  <text class="labelXs" x="2700" y="-445" text-anchor="middle">3</text>
+  <text class="labelXs" x="3600" y="-445" text-anchor="middle">4</text>
+  <text class="labelXs" x="4500" y="-445" text-anchor="middle">5</text>
+  <text class="labelXs" x="5400" y="-445" text-anchor="middle">6</text>
+  <text class="labelXs" x="6300" y="-445" text-anchor="middle">7</text>
+  <text class="labelXs" x="7200" y="-445" text-anchor="middle">8</text>
+  <text class="labelXs" x="8100" y="-445" text-anchor="middle">9</text>
+
+  <!-- ── DIMENSION ANNOTATIONS ── -->
+  <!-- Headroom 1950mm at saloon -->
+  <line x1="5950" y1="-400" x2="5950" y2="-2350" stroke="#c00" stroke-width="4" marker-end="url(#arrR)"/>
+  <line x1="5900" y1="-400"  x2="6000" y2="-400"  stroke="#c00" stroke-width="3"/>
+  <line x1="5900" y1="-2350" x2="6000" y2="-2350" stroke="#c00" stroke-width="3"/>
+  <text class="hilight" x="6060" y="-1430">1950mm</text>
+  <text class="labelXs"  x="6060" y="-1320" fill="#c00">INT. HEADROOM</text>
+
+  <!-- Headroom above berth -->
+  <line x1="1060" y1="-550"  x2="1060" y2="-2350" stroke="#c00" stroke-width="4" marker-end="url(#arrR)"/>
+  <line x1="1010" y1="-550"  x2="1110" y2="-550"  stroke="#c00" stroke-width="3"/>
+  <line x1="1010" y1="-2350" x2="1110" y2="-2350" stroke="#c00" stroke-width="3"/>
+  <text class="labelXs" x="950" y="-1500" fill="#c00" text-anchor="end">1800mm</text>
+  <text class="labelXs" x="950" y="-1400" fill="#c00" text-anchor="end">above berth</text>
+
+  <!-- LOA dimension -->
+  <line x1="0"    y1="920" x2="9900" y2="920" stroke="#000" stroke-width="3" marker-end="url(#arrB)"/>
+  <line x1="9900" y1="920" x2="0"    y2="920" stroke="#000" stroke-width="3" marker-end="url(#arrB2)"/>
+  <line x1="0"    y1="870" x2="0"    y2="970" stroke="#000" stroke-width="3"/>
+  <line x1="9900" y1="870" x2="9900" y2="970" stroke="#000" stroke-width="3"/>
+  <text class="label" x="4950" y="880" text-anchor="middle">LOA = 9900 mm (scow bow — no forward overhang)</text>
+
+  <!-- Interior zone length -->
+  <line x1="900"  y1="1080" x2="7800" y2="1080" stroke="#000" stroke-width="3" marker-end="url(#arrB)"/>
+  <line x1="7800" y1="1080" x2="900"  y2="1080" stroke="#000" stroke-width="3" marker-end="url(#arrB2)"/>
+  <line x1="900"  y1="1040" x2="900"  y2="1120" stroke="#000" stroke-width="3"/>
+  <line x1="7800" y1="1040" x2="7800" y2="1120" stroke="#000" stroke-width="3"/>
+  <text class="labelXs" x="4350" y="1050" text-anchor="middle">INTERIOR (anchor aft wall to cockpit fwd BH): 6900 mm</text>
+
+  <!-- Freeboard at midship dim -->
+  <line x1="-300" y1="0"    x2="-300" y2="-1100" stroke="#000" stroke-width="3" marker-end="url(#arrB)"/>
+  <line x1="-300" y1="-1100" x2="-300" y2="0"   stroke="#000" stroke-width="3" marker-end="url(#arrB2)"/>
+  <line x1="-350" y1="0"    x2="-250" y2="0"    stroke="#000" stroke-width="3"/>
+  <line x1="-350" y1="-1100" x2="-250" y2="-1100" stroke="#000" stroke-width="3"/>
+  <text class="labelXs" x="-360" y="-550" text-anchor="end">FB MID</text>
+  <text class="labelXs" x="-360" y="-450" text-anchor="end">1100mm</text>
+
+  <!-- ============================================================
+       PANEL 2: CROSS-SECTIONS (5 half-sections, side-by-side)
+       Below longitudinal section. Y_offset: DWL reference at y_svg=+3850
+       Half-sections show PORT side only (left of CL). Mirror for STBD.
+       Vertical scale same as main panel (1:20).
+       CL positions: A=1000, B=2900, C=5000, D=7200, E=9350
+       ============================================================ -->
+
+  <text class="sub" x="-550" y="2340">CROSS-SECTIONS (PORT HALF SHOWN · MIRROR FOR STARBOARD)</text>
+  <text class="labelXs" x="-550" y="2460">Scow bow produces much fuller forward sections · Same 1700 mm half-breadth reached at St2 (x=1800) instead of St5 (x=4500)</text>
+  <line x1="-550" y1="2510" x2="10500" y2="2510" stroke="#000" stroke-width="4"/>
+
+  <!-- ======================================================
+       SECTION B–B: x=1800, FORWARD BERTH (SCOW-DERIVED)
+       Centre at xc=1000, DWL at ys=3850
+       Scow half-breadths at x=1800:
+         Deck HB = 1700mm (full beam reached early — scow benefit)
+         DWL  HB = 1500mm (vs 1050mm conventional — key scow gain)
+         Base HB = 1100mm at y=700mm below DWL
+         Freeboard = 1200mm → deck SVG y = 3850-1200 = 2650
+       Interior sole: ys-400 = 3450
+       Coachroof u/s: ys-2350 = 1500
+       ====================================================== -->
+  <text class="label" x="1000" y="2730" text-anchor="middle">SECTION B–B</text>
+  <text class="labelSm" x="1000" y="2860" text-anchor="middle">x = 1800 · FORWARD BERTH</text>
+  <text class="labelXs" x="1000" y="2970" text-anchor="middle">Wide scow section · 1700mm half-beam reached early</text>
+
+  <!-- CL -->
+  <line class="clline" x1="1000" y1="3050" x2="1000" y2="5200"/>
+  <!-- DWL ref -->
+  <line class="refline" x1="50"  y1="3850" x2="1800" y2="3850"/>
+  <text class="labelXs" x="30" y="3870" fill="#4466aa" text-anchor="end">DWL</text>
+  <!-- Baseline -->
+  <line x1="50"  y1="4550" x2="1800" y2="4550" stroke="#666" stroke-width="2" stroke-dasharray="15,8"/>
+  <text class="labelXs" x="30" y="4565" fill="#666" text-anchor="end">BASE</text>
+
+  <!-- Hull cross-section at x=1800 (port half, left of CL x=1000):
+       deck: x=1000-1700=-700 → clamped to panel left, y=2650
+       DWL:  x=1000-1500=-500, y=3850
+       base: x=1000-1100=-100, y=4550
+  -->
+  <path class="solid" d="
+    M 1000,4550
+    C 800,4550 500,4530 -100,4550
+    C -250,4350 -380,4050 -500,3850
+    C -580,3500 -620,3100 -700,2650
+    L 1000,2650
+    Z
+  "/>
+  <!-- Inner hull (GRP laminate ~35mm) -->
+  <path class="inner" d="
+    M 1000,4500
+    C 820,4500 540,4480 -50,4500
+    C -190,4310 -320,4030 -435,3850
+    C -510,3520 -545,3140 -625,2730
+    L 1000,2730
+  "/>
+
+  <!-- Interior sole at ys=3450 -->
+  <line class="sole" x1="-625" y1="3450" x2="1000" y2="3450"/>
+  <text class="labelXs" x="-650" y="3450" text-anchor="end">SOLE</text>
+  <!-- Berth cushion (150mm, same level as saloon sole — seamless) -->
+  <rect x="-625" y="3300" width="1625" height="150" fill="#b8d4b8" stroke="#555" stroke-width="4" rx="18"/>
+  <text class="labelXs" x="187"  y="3240" text-anchor="middle">BERTH CUSHION 150mm</text>
+  <!-- Coachroof u/s at ys=1500 -->
+  <line x1="-625" y1="1500" x2="1000" y2="1500" stroke="#000" stroke-width="7"/>
+  <rect x="-625" y="1500" width="1625" height="280" class="roof" rx="25"/>
+  <text class="labelXs" x="187" y="1610" text-anchor="middle">COACHROOF / HEADLINING</text>
+
+  <!-- Heads (port, curtain) -->
+  <rect x="-600" y="2750" width="600" height="700" class="head" rx="20" opacity="0.80"/>
+  <text class="labelXs" x="-300" y="3000" text-anchor="middle">HEADS</text>
+  <text class="labelXs" x="-300" y="3100" text-anchor="middle">(curtain)</text>
+
+  <!-- Dimensions -->
+  <!-- DWL HB -->
+  <line class="dim" x1="-500" y1="3950" x2="1000" y2="3950"/>
+  <line class="dim" x1="-500" y1="3900" x2="-500" y2="4000"/>
+  <line class="dim" x1="1000" y1="3900" x2="1000" y2="4000"/>
+  <text class="labelXs" x="250" y="4060" text-anchor="middle" fill="#00a">1500mm DWL HB (scow — vs 1050mm conv.)</text>
+  <!-- Deck HB -->
+  <line class="dim" x1="-700" y1="2570" x2="1000" y2="2570"/>
+  <text class="labelXs" x="150"  y="2530" text-anchor="middle">1700mm HB (deck)</text>
+  <!-- Headroom -->
+  <line x1="1080" y1="3450" x2="1080" y2="1500" stroke="#c00" stroke-width="4" marker-end="url(#arrR)"/>
+  <line x1="1040" y1="3450" x2="1120" y2="3450" stroke="#c00" stroke-width="3"/>
+  <line x1="1040" y1="1500" x2="1120" y2="1500" stroke="#c00" stroke-width="3"/>
+  <text class="labelXs" x="1140" y="2475" fill="#c00">1950mm</text>
+  <text class="labelXs" x="1140" y="2575" fill="#c00">headroom</text>
+  <!-- Freeboard -->
+  <line x1="1080" y1="2650" x2="1080" y2="3850" stroke="#000" stroke-width="3" marker-end="url(#arrB)"/>
+  <line x1="1080" y1="3850" x2="1080" y2="2650" stroke="#000" stroke-width="3" marker-end="url(#arrB2)"/>
+  <line x1="1040" y1="2650" x2="1120" y2="2650" stroke="#000" stroke-width="3"/>
+  <text class="labelXs" x="1140" y="3255">FB=1200mm</text>
+
+  <text class="labelXs" x="1000" y="5100" text-anchor="middle" fill="#c00">B–B · x=1800</text>
+
+  <!-- ======================================================
+       SECTION C–C: x=3200, MAST FRAME (near max beam)
+       Centre at xc=3000, DWL at ys=3850
+       Half-breadths at x=3200:
+         Deck HB = 1700mm (max beam)
+         DWL  HB = 1380mm
+         Base HB = 1050mm at y=700mm below DWL
+         Freeboard = 1120mm → deck y = 3850-1120 = 2730
+       ====================================================== -->
+  <text class="label" x="3000" y="2730" text-anchor="middle">SECTION C–C</text>
+  <text class="labelSm" x="3000" y="2860" text-anchor="middle">x = 3200 · MAST FRAME</text>
+  <text class="labelXs" x="3000" y="2970" text-anchor="middle">Chainplate BH · Mast compression post · Nav station (stbd)</text>
+
+  <line class="clline" x1="3000" y1="3050" x2="3000" y2="5200"/>
+  <line class="refline" x1="2050" y1="3850" x2="3800" y2="3850"/>
+  <text class="labelXs" x="2030" y="3870" fill="#4466aa" text-anchor="end">DWL</text>
+  <line x1="2050" y1="4550" x2="3800" y2="4550" stroke="#666" stroke-width="2" stroke-dasharray="15,8"/>
+
+  <!-- Hull: deck x=3000-1700=1300,y=2730; DWL x=3000-1380=1620,y=3850; base x=3000-1050=1950,y=4550 -->
+  <path class="solid" d="
+    M 3000,4550
+    C 2600,4550 2200,4530 1950,4550
+    C 1820,4380 1700,4080 1620,3850
+    C 1520,3480 1420,3100 1300,2730
+    L 3000,2730
+    Z
+  "/>
+  <path class="inner" d="
+    M 3000,4500
+    C 2620,4500 2240,4480 2000,4500
+    C 1880,4340 1760,4060 1685,3850
+    C 1590,3500 1490,3130 1370,2820
+    L 3000,2820
+  "/>
+
+  <!-- Sole -->
+  <line class="sole" x1="1370" y1="3450" x2="3000" y2="3450"/>
+  <!-- Nav station stbd (right of CL, shown as annotation) -->
+  <rect x="2600" y="3100" width="400" height="350" fill="#d0c8f0" stroke="#00a" stroke-width="4" rx="15" opacity="0.80"/>
+  <text class="labelXs" x="2800" y="3280" text-anchor="middle" fill="#00a">NAV</text>
+  <!-- Chainplate (port side, in hull) -->
+  <rect x="1340" y="2780" width="120" height="320" fill="#999" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="1270" y="2950" text-anchor="end">CPLATE</text>
+  <!-- Mast compression post (at CL) -->
+  <rect x="2950" y="2820" width="100" height="630" fill="#aaa" stroke="#000" stroke-width="6"/>
+  <text class="labelXs" x="2890" y="3130" text-anchor="end">COMP</text>
+  <text class="labelXs" x="2890" y="3230" text-anchor="end">POST</text>
+  <!-- Coachroof u/s -->
+  <line x1="1370" y1="1500" x2="3000" y2="1500" stroke="#000" stroke-width="7"/>
+  <rect x="1370" y="1500" width="1630" height="280" class="roof" rx="25"/>
+
+  <!-- Dims -->
+  <line class="dim" x1="1620" y1="3950" x2="3000" y2="3950"/>
+  <text class="labelXs" x="2310" y="4060" text-anchor="middle">1380mm DWL HB</text>
+  <line class="dim" x1="1300" y1="2650" x2="3000" y2="2650"/>
+  <text class="labelXs" x="2150" y="2610" text-anchor="middle">1700mm HB (max beam)</text>
+  <line x1="3080" y1="3450" x2="3080" y2="1500" stroke="#c00" stroke-width="4" marker-end="url(#arrR)"/>
+  <line x1="3040" y1="3450" x2="3120" y2="3450" stroke="#c00" stroke-width="3"/>
+  <line x1="3040" y1="1500" x2="3120" y2="1500" stroke="#c00" stroke-width="3"/>
+  <text class="labelXs" x="3140" y="2475" fill="#c00">1950mm</text>
+
+  <text class="labelXs" x="3000" y="5100" text-anchor="middle" fill="#c00">C–C · x=3200</text>
+
+  <!-- ======================================================
+       SECTION D–D: x=4500, MIDSHIP SALOON (FULL SECTION — both halves shown)
+       Centre at xc=5200, DWL at ys=3850
+       Half-breadths at St5 (x=4500):
+         Deck HB = 1700mm (max beam)
+         DWL  HB = 1420mm → BWL = 2840mm
+         Base HB = 1200mm at y=700mm below DWL
+         Freeboard = 1100mm → deck y = 3850-1100 = 2750
+       Full section shown — port LEFT, stbd RIGHT of CL
+       Shows: port settee + stbd settee + saloon table + keel stub
+       ====================================================== -->
+  <text class="label" x="5200" y="2730" text-anchor="middle">SECTION D–D</text>
+  <text class="labelSm" x="5200" y="2860" text-anchor="middle">x = 4500 · MIDSHIP — SALOON (FULL SECTION)</text>
+  <text class="labelXs" x="5200" y="2970" text-anchor="middle">Max beam · 1950mm headroom · Port+stbd settee berths · Keel stub below sole</text>
+
+  <line class="clline" x1="5200" y1="3050" x2="5200" y2="5200"/>
+  <line class="refline" x1="3400" y1="3850" x2="7000" y2="3850"/>
+  <text class="labelXs" x="3380" y="3870" fill="#4466aa" text-anchor="end">DWL</text>
+  <line x1="3400" y1="4550" x2="7000" y2="4550" stroke="#666" stroke-width="2" stroke-dasharray="15,8"/>
+
+  <!-- Full hull section — port (left) and stbd (right):
+       Port  deck: x=5200-1700=3500, y=2750
+       Port  DWL:  x=5200-1420=3780, y=3850
+       Port  base: x=5200-1200=4000, y=4550
+       Stbd  deck: x=5200+1700=6900, y=2750
+       Stbd  DWL:  x=5200+1420=6620, y=3850
+       Stbd  base: x=5200+1200=6400, y=4550
+  -->
+  <path class="solid" d="
+    M 5200,4550
+    C 4700,4550 4300,4530 4000,4550
+    C 3870,4350 3820,4100 3780,3850
+    C 3660,3450 3580,3080 3500,2750
+    L 6900,2750
+    C 6820,3080 6740,3450 6620,3850
+    C 6580,4100 6530,4350 6400,4550
+    C 6100,4530 5700,4550 5200,4550
+    Z
+  "/>
+  <!-- Inner hull both sides -->
+  <path class="inner" d="
+    M 5200,4500
+    C 4720,4500 4360,4480 4080,4500
+    C 3960,4310 3905,4080 3865,3850
+    C 3748,3480 3665,3115 3580,2840
+    L 6820,2840
+    C 6735,3115 6652,3480 6535,3850
+    C 6495,4080 6440,4310 6320,4500
+    C 6040,4480 5680,4500 5200,4500
+  "/>
+
+  <!-- Sole (full width) -->
+  <line class="sole" x1="3580" y1="3450" x2="6820" y2="3450"/>
+  <!-- Keel stub (centred at CL) -->
+  <rect x="4950" y="3450" width="500" height="280" fill="#888" stroke="#000" stroke-width="6" opacity="0.65"/>
+  <text class="labelXs" x="5200" y="3620" text-anchor="middle">KEEL STUB (8 bolts)</text>
+  <!-- Batteries below sole under keel stub -->
+  <rect x="4700" y="3730" width="1000" height="250" fill="#60a0e0" stroke="#000" stroke-width="4" rx="12" opacity="0.55"/>
+  <text class="labelXs" x="5200" y="3880" text-anchor="middle" fill="#00a">BATTERIES 25kWh</text>
+
+  <!-- Port settee berth -->
+  <path d="M 3580,3450 L 3580,3050 L 4700,3050 L 4700,3450 Z" class="berth"/>
+  <text class="labelXs" x="4140" y="3280" text-anchor="middle">PORT SETTEE</text>
+  <text class="labelXs" x="4140" y="3380" text-anchor="middle">BERTH</text>
+  <!-- Port back rest -->
+  <rect x="3545" y="2840" width="210" height="620" fill="#b8d4b8" stroke="#555" stroke-width="3" rx="8" opacity="0.75"/>
+
+  <!-- Stbd settee berth (mirror) -->
+  <path d="M 5700,3050 L 5700,3450 L 6820,3450 L 6820,3050 Z" class="berth"/>
+  <text class="labelXs" x="6260" y="3280" text-anchor="middle">STBD SETTEE</text>
+  <text class="labelXs" x="6260" y="3380" text-anchor="middle">BERTH</text>
+  <!-- Stbd back rest -->
+  <rect x="6645" y="2840" width="210" height="620" fill="#b8d4b8" stroke="#555" stroke-width="3" rx="8" opacity="0.75"/>
+
+  <!-- Saloon table (centrally on CL) -->
+  <rect x="4700" y="3000" width="1000" height="260" fill="#c8b860" stroke="#000" stroke-width="5" rx="30" opacity="0.90"/>
+  <text class="labelXs" x="5200" y="3150" text-anchor="middle">SALOON TABLE</text>
+
+  <!-- Coachroof u/s -->
+  <line x1="3580" y1="1500" x2="6820" y2="1500" stroke="#000" stroke-width="7"/>
+  <rect x="3580" y="1500" width="3240" height="280" class="roof" rx="25"/>
+  <text class="labelXs" x="5200" y="1615" text-anchor="middle">COACHROOF / HEADLINING</text>
+
+  <!-- Dimensions -->
+  <!-- Full BOA dim -->
+  <line class="dim" x1="3500" y1="2660" x2="6900" y2="2660"/>
+  <line class="dim" x1="3500" y1="2610" x2="3500" y2="2710"/>
+  <line class="dim" x1="6900" y1="2610" x2="6900" y2="2710"/>
+  <text class="labelXs" x="5200" y="2620" text-anchor="middle">BOA = 3400 mm (max beam — 2 × 1700mm HB)</text>
+  <!-- BWL dim -->
+  <line class="dim" x1="3780" y1="3960" x2="6620" y2="3960"/>
+  <line class="dim" x1="3780" y1="3910" x2="3780" y2="4010"/>
+  <line class="dim" x1="6620" y1="3910" x2="6620" y2="4010"/>
+  <text class="labelXs" x="5200" y="4070" text-anchor="middle">BWL = 2840 mm (DWL beam — 2 × 1420mm HB)</text>
+  <!-- Headroom -->
+  <line x1="3460" y1="3450" x2="3460" y2="1500" stroke="#c00" stroke-width="4" marker-end="url(#arrR)"/>
+  <line x1="3420" y1="3450" x2="3500" y2="3450" stroke="#c00" stroke-width="3"/>
+  <line x1="3420" y1="1500" x2="3500" y2="1500" stroke="#c00" stroke-width="3"/>
+  <text class="labelXs" x="3350" y="2475" fill="#c00" text-anchor="end">1950mm</text>
+  <text class="labelXs" x="3350" y="2575" fill="#c00" text-anchor="end">HEADROOM</text>
+
+  <text class="labelXs" x="5200" y="5100" text-anchor="middle" fill="#c00">D–D · x=4500 MIDSHIP</text>
+
+  <!-- ======================================================
+       SECTION E–E: x=7200 (St8), CENTRE COCKPIT AREA
+       Centre at xc=7500 → adjusted to xc=9000, DWL at ys=3850
+       Half-breadths at St8 (x=7200):
+         Deck HB = 1430mm → full deck = 2860mm
+         DWL  HB = 980mm
+         Base HB = 700mm at y=700mm below DWL
+         Freeboard = 1100mm → deck y = 3850-1100 = 2750
+       Cockpit opening: 700mm half-width → port wall at 9000-700=8300, stbd at 9000+700=9700
+       Cockpit sole: 200mm above DWL → ys = 3850-200 = 3650
+       Side-cabin (aft owner/engine): under side-deck to cockpit coaming
+       ====================================================== -->
+  <text class="label" x="9000" y="2730" text-anchor="middle">SECTION E–E</text>
+  <text class="labelSm" x="9000" y="2860" text-anchor="middle">x = 7200 · CENTRE COCKPIT</text>
+  <text class="labelXs" x="9000" y="2970" text-anchor="middle">Cockpit opening · Aft cabin (port) + Engine room (stbd) under side-decks</text>
+
+  <line class="clline" x1="9000" y1="3050" x2="9000" y2="5200"/>
+  <line class="refline" x1="7400" y1="3850" x2="10600" y2="3850"/>
+  <text class="labelXs" x="7380" y="3870" fill="#4466aa" text-anchor="end">DWL</text>
+  <line x1="7400" y1="4550" x2="10600" y2="4550" stroke="#666" stroke-width="2" stroke-dasharray="15,8"/>
+
+  <!-- Full hull section at x=7200:
+       Port  deck: x=9000-1430=7570, y=2750
+       Port  DWL:  x=9000-980=8020,  y=3850
+       Port  base: x=9000-700=8300,   y=4550
+       Stbd  deck: x=9000+1430=10430, y=2750
+       Stbd  DWL:  x=9000+980=9980,   y=3850
+       Stbd  base: x=9000+700=9700,    y=4550
+       Cockpit opening: port wall x=8300, stbd wall x=9700 (700mm half-width)
+  -->
+  <path class="solid" d="
+    M 9000,4550
+    C 8750,4550 8500,4535 8300,4550
+    C 8170,4380 8080,4100 8020,3850
+    C 7880,3430 7740,3070 7570,2750
+    L 10430,2750
+    C 10260,3070 10120,3430 9980,3850
+    C 9920,4100 9830,4380 9700,4550
+    C 9500,4535 9250,4550 9000,4550
+    Z
+  "/>
+  <!-- Inner hull -->
+  <path class="inner" d="
+    M 9000,4500
+    C 8770,4500 8540,4485 8360,4500
+    C 8240,4340 8150,4080 8090,3850
+    C 7955,3460 7815,3105 7650,2840
+    L 10350,2840
+    C 10185,3105 10045,3460 9910,3850
+    C 9850,4080 9760,4340 9640,4500
+    C 9460,4485 9230,4500 9000,4500
+  "/>
+
+  <!-- Cockpit well -->
+  <!-- Deck/coaming structure at top: x=7570 to 10430 -->
+  <!-- Cockpit opening cuts through: 8300 (port) to 9700 (stbd) -->
+  <!-- Port side-deck (x=7650 to 8300) and stbd side-deck (x=9700 to 10350) remain solid -->
+  <!-- Cockpit coaming height above deck: 300mm → y=2750-300=2450 -->
+  <!-- Cockpit sole at ys=3650 (200mm above DWL) -->
+
+  <!-- Port side-deck solid fill -->
+  <rect x="7650" y="2840" width="650" height="280" fill="#e8edd5" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="7975" y="2990" text-anchor="middle">SIDE-DECK</text>
+  <!-- Stbd side-deck solid fill -->
+  <rect x="9700" y="2840" width="650" height="280" fill="#e8edd5" stroke="#000" stroke-width="5"/>
+  <text class="labelXs" x="10025" y="2990" text-anchor="middle">SIDE-DECK</text>
+
+  <!-- Cockpit coamings -->
+  <rect x="8230" y="2450" width="150" height="680" fill="#d8c090" stroke="#000" stroke-width="6"/>
+  <rect x="9620" y="2450" width="150" height="680" fill="#d8c090" stroke="#000" stroke-width="6"/>
+
+  <!-- Cockpit sole at y=3650 (visible space between coamings) -->
+  <line x1="8230" y1="3650" x2="9770" y2="3650" stroke="#000" stroke-width="6"/>
+  <rect x="8230" y="3650" width="1540" height="100" fill="#ffe8c0" stroke="#888" stroke-width="4" opacity="0.85"/>
+  <text class="labelXs" x="9000" y="3730" text-anchor="middle">COCKPIT SOLE (DWL+200mm)</text>
+  <!-- Cockpit label -->
+  <text class="label"   x="9000" y="3200" text-anchor="middle">COCKPIT</text>
+  <text class="labelXs" x="9000" y="3320" text-anchor="middle">open to sky</text>
+
+  <!-- Port aft cabin (under port side-deck, between inner hull and cockpit wall) -->
+  <path d="M 7650,2840 L 7650,3450 L 8230,3450 L 8230,2840 Z" class="berth" opacity="0.60"/>
+  <text class="labelXs" x="7940" y="3050" text-anchor="middle">AFT</text>
+  <text class="labelXs" x="7940" y="3160" text-anchor="middle">CABIN</text>
+  <text class="labelXs" x="7940" y="3270" text-anchor="middle">(port)</text>
+  <!-- Stbd engine room (under stbd side-deck) -->
+  <path d="M 9770,2840 L 9770,3450 L 10350,3450 L 10350,2840 Z" class="engine" opacity="0.60"/>
+  <text class="labelXs" x="10060" y="3050" text-anchor="middle">ENG</text>
+  <text class="labelXs" x="10060" y="3160" text-anchor="middle">ROOM</text>
+  <text class="labelXs" x="10060" y="3270" text-anchor="middle">(stbd)</text>
+
+  <!-- Side-cabin soles -->
+  <line class="sole" x1="7650" y1="3450" x2="8230" y2="3450"/>
+  <line class="sole" x1="9770" y1="3450" x2="10350" y2="3450"/>
+
+  <!-- Coachroof u/s runs from inner edge (no full-length coachroof here — just side-deck) -->
+  <rect x="7650" y="1500" width="650"  height="280" class="roof" rx="15" opacity="0.50"/>
+  <rect x="9700" y="1500" width="650"  height="280" class="roof" rx="15" opacity="0.50"/>
+  <text class="labelXs" x="9000" y="1380" text-anchor="middle">(no coachroof at cockpit — open)</text>
+
+  <!-- Dims -->
+  <line class="dim" x1="7570" y1="2660" x2="10430" y2="2660"/>
+  <line class="dim" x1="7570" y1="2610" x2="7570"  y2="2710"/>
+  <line class="dim" x1="10430" y1="2610" x2="10430" y2="2710"/>
+  <text class="labelXs" x="9000" y="2620" text-anchor="middle">BOA = 2860 mm (deck beam at x=7200)</text>
+  <line class="dim" x1="8020" y1="3960" x2="9980" y2="3960"/>
+  <text class="labelXs" x="9000" y="4070" text-anchor="middle">BWL = 1960 mm</text>
+  <!-- Cockpit width -->
+  <line class="dim" x1="8230" y1="4150" x2="9770" y2="4150"/>
+  <text class="labelXs" x="9000" y="4260" text-anchor="middle" fill="#888">COCKPIT WIDTH = 1540 mm</text>
+
+  <text class="labelXs" x="9000" y="5100" text-anchor="middle" fill="#c00">E–E · x=7200 (COCKPIT)</text>
+
+  <!-- ============================================================
+       SCALE BAR + NOTES
+       ============================================================ -->
+  <rect x="-550" y="5340" width="2500" height="100" fill="#000"/>
+  <rect x="-550" y="5340" width="1250" height="100" fill="#fff"/>
+  <rect x="-550" y="5440" width="2500" height="50"  fill="none" stroke="#000" stroke-width="3"/>
+  <text class="labelXs" x="-550" y="5560">0</text>
+  <text class="labelXs" x="700"  y="5560">1250 mm</text>
+  <text class="labelXs" x="1950" y="5560">2500 mm</text>
+  <text class="label"   x="-550" y="5720">SCALE BAR (1:20 print · 62.5 mm on paper = 1250 mm real)</text>
+
+  <text class="note" x="-550" y="5900">NOTE: All dims in mm. Section A–A is longitudinal CL cut (port side). Sections B–E are half-sections (port half; mirror for stbd). Scow bow (Revolution 29 derived): plumb stem,</text>
+  <text class="note" x="-550" y="5990">no forward overhang, wide DWL entry (600mm HB at bow vs ~100mm conventional). Key design benefit: full interior width available by St2 (x=1800) — enables the wide forward berth.</text>
+  <text class="note" x="-550" y="6080">Seamless saloon ↔ forward berth: sole at same level throughout (DWL+400mm), no dividing bulkhead from x=900 to x=5800 (4900mm open span). Heads at x=1800–2800 port, curtain-separated only.</text>
+  <text class="note" x="-550" y="6170">Cross-section dimensions: Deck HB = half-breadth at deck edge. DWL HB = half-breadth at design waterline. Keel stub omitted from cross-sections B–E; see full_scale_lines_plan.svg for keel details.</text>
+
+</svg>
