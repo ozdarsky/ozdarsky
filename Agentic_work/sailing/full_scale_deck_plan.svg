@@ -37,7 +37,7 @@
   <!-- TITLE BLOCK -->
   <rect x="-750" y="-2950" width="11900" height="350" fill="#f0f0f0" stroke="#000" stroke-width="4"/>
   <text class="title" x="5200" y="-2730" text-anchor="middle">COASTAL WIND 35 — DECK PLAN · SCOW-BOW (REVOLUTION 29 DERIVED)</text>
-  <text class="label" x="5200" y="-2610" text-anchor="middle">LOA 10500 mm · Beam 3400 mm · Centre Cockpit · Scale 1:20</text>
+  <text class="label" x="5200" y="-2610" text-anchor="middle">LOA 9900 mm (scow bow) · Beam 3400 mm · Centre Cockpit · Scale 1:20</text>
   <text class="labelXs" x="10900" y="-2730" text-anchor="end">Sheet 3 of 5</text>
 
   <!-- CENTRELINE -->
@@ -277,11 +277,11 @@
   <text class="labelXs" x="1200" y="-2050">STANCHION BASES (typ.)</text>
 
   <!-- Dimensions -->
-  <!-- LOA -->
+  <!-- LOA (scow bow: no forward overhang, measured bow face to bathing platform) -->
   <line class="dim" x1="-400" y1="2500" x2="9900" y2="2500"/>
   <line class="dim" x1="-400" y1="2400" x2="-400" y2="2600"/>
   <line class="dim" x1="9900" y1="2400" x2="9900" y2="2600"/>
-  <text class="label" x="4750" y="2450" text-anchor="middle">LOA = 10500 mm</text>
+  <text class="label" x="4950" y="2450" text-anchor="middle">LOA = 9900 mm (scow bow — plumb stem, no overhang)</text>
 
   <!-- Beam -->
   <line class="dim" x1="-650" y1="-1880" x2="-650" y2="1880"/>

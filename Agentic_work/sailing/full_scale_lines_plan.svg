@@ -388,7 +388,7 @@
   <text class="labelXs" x="10500" y="-1100" text-anchor="middle">St3</text>
 
   <!-- St2 (SCOW-WIDE: DWL HB=1500mm vs 1050mm conventional) -->
-  <path d="M 10850,700 C 10500,700 10050,670 9850,300 C 9750,100 9710,0 9730,-300 C 9760,-600 9800,-800 9150,-1020 L 10850,-1020" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
+  <path d="M 10850,700 C 10500,700 10100,680 9850,300 C 9650,100 9400,0 9350,-200 C 9250,-500 9190,-800 9150,-1020 L 10850,-1020" stroke="#000" stroke-width="3" fill="none" stroke-dasharray="15,8"/>
   <text class="labelXs" x="10500" y="-1070" text-anchor="middle">St2</text>
 
   <!-- St1 (SCOW-WIDE: DWL HB=1250mm vs 620mm conventional) -->
